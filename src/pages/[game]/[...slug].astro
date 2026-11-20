@@ -1,0 +1,348 @@
+---
+// Guide page, one per guide: /rob-run/first-hour-in-looty-bay
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import GuideCard from '@/components/GuideCard.astro';
+import {
+  getGames,
+  getGuides,
+  getGuideGameId,
+  getGuideSlug,
+  getGameUrl,
+  getCategoryLabel,
+  type Game,
+  type Guide,
+} from '@/utils/content';
+import { formatDate, toIsoDate } from '@/utils/date';
+
+export const getStaticPaths = (async () => {
+  // Constants used here must live inside getStaticPaths: Astro runs it on its own.
+  const RELATED_GUIDES_COUNT = 4;
+  const [games, guides] = await Promise.all([getGames(), getGuides()]);
+  const gamesById = new Map(games.map((game) => [game.id, game]));
+
+  return guides.map((guide) => {
+    const game = gamesById.get(getGuideGameId(guide))!;
+    const otherGuides = guides.filter((g) => g.id !== guide.id && getGuideGameId(g) === game.id);
+    // Same topic first, then the rest of the game's guides (both newest first).
+    const related = [
+      ...otherGuides.filter((g) => g.data.category === guide.data.category),
+      ...otherGuides.filter((g) => g.data.category !== guide.data.category),
+    ].slice(0, RELATED_GUIDES_COUNT);
+
+    return {
+      params: { game: game.id, slug: getGuideSlug(guide) },
+      props: { guide, game, related },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  guide: Guide;
+  game: Game;
+  related: Guide[];
+}
+
+const { guide, game, related } = Astro.props;
+const { title, description, category, quickAnswer, publishedAt, updatedAt, gameVersion, author, draft } =
+  guide.data;
+const { Content, headings } = await render(guide);
+
+const categoryLabel = getCategoryLabel(game, category);
+const gameUrl = getGameUrl(game);
+---
+
+<BaseLayout title={title} description={description} type="article">
+  <div class="container guide-layout">
+    <article class="guide">
+      <header class="guide-header">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: game.data.name, href: gameUrl },
+            { label: categoryLabel, href: `${gameUrl}#${category}` },
+          ]}
+        />
+
+        <div class="tags">
+          <a href={`${gameUrl}#${category}`} class="category">{categoryLabel}</a>
+          {draft && <span class="draft">Draft — not visible on the live site</span>}
+        </div>
+
+        <h1>{title}</h1>
+        <p class="lead">{description}</p>
+
+        <ul class="meta">
+          <li class="author">By {author}</li>
+          <li>
+            {updatedAt ? 'Updated' : 'Published'}{' '}
+            <time datetime={toIsoDate(updatedAt ?? publishedAt)}>{formatDate(updatedAt ?? publishedAt)}</time>
+          </li>
+          {gameVersion && <li>Game version: {gameVersion}</li>}
+        </ul>
+      </header>
+
+      {
+        quickAnswer && (
+          <aside class="quick-answer" aria-labelledby="quick-answer-heading">
+            <h2 id="quick-answer-heading">Quick answer</h2>
+            <p>{quickAnswer}</p>
+          </aside>
+        )
+      }
+
+      <div class="toc-mobile">
+        <TableOfContents headings={headings} />
+      </div>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      {
+        related.length > 0 && (
+          <section class="related" aria-labelledby="related-heading">
+            <h2 id="related-heading">More {game.data.name} guides</h2>
+            <div class="related-grid">
+              {related.map((g) => (
+                <GuideCard guide={g} categoryLabel={getCategoryLabel(game, g.data.category)} />
+              ))}
+            </div>
+            <a href={gameUrl} class="all-link">
+              All {game.data.name} guides →
+            </a>
+          </section>
+        )
+      }
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <TableOfContents headings={headings} />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-12);
+  }
+
+  .guide {
+    flex: 999 1 34rem;
+    min-width: 0;
+    max-width: var(--content-width);
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .sidebar {
+    flex: 1 1 15rem;
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .sidebar-inner {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-6));
+  }
+
+  /* --- Header ------------------------------------------------------------- */
+
+  .guide-header {
+    display: grid;
+    gap: var(--space-4);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .category,
+  .draft {
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .category {
+    background: var(--color-surface-2);
+    color: var(--color-text-muted);
+  }
+
+  .category:hover {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .draft {
+    background: #3a2c10;
+    color: var(--color-warning);
+  }
+
+  .guide-header h1 {
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    list-style: none;
+    padding: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .author {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* --- Quick answer ------------------------------------------------------- */
+
+  .quick-answer {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+  }
+
+  .quick-answer h2 {
+    font-size: var(--text-base);
+  }
+
+  .quick-answer p {
+    color: #c9ccd3;
+  }
+
+  /* --- Guide content (rendered from Markdown) ----------------------------- */
+
+  .prose {
+    display: grid;
+    gap: var(--space-4);
+    color: #c9ccd3;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .prose :global(h2) {
+    margin-top: var(--space-6);
+    color: var(--color-text);
+  }
+
+  .prose :global(h3) {
+    margin-top: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .prose :global(strong) {
+    color: var(--color-text);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: var(--space-6);
+  }
+
+  .prose :global(blockquote) {
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid #4a3d16;
+    border-radius: 12px;
+    background: #2a2412;
+    color: #e6d9b8;
+  }
+
+  .prose :global(blockquote strong) {
+    color: var(--color-warning);
+  }
+
+  .prose :global(img) {
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .prose :global(th) {
+    background: var(--color-surface-2);
+    color: var(--color-text);
+  }
+
+  .prose :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* --- Related guides ----------------------------------------------------- */
+
+  .related {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-4);
+  }
+
+  .all-link {
+    font-weight: 600;
+  }
+
+  /* The table of contents sits in the sidebar on wide screens,
+     and above the guide content on phones and tablets. */
+  .toc-mobile {
+    display: none;
+  }
+
+  .toc-mobile:empty {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    .sidebar {
+      display: none;
+    }
+
+    .toc-mobile {
+      display: block;
+    }
+  }
+</style>
