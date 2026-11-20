@@ -10,6 +10,7 @@
     { "id": "heists", "label": "Heists" },
     { "id": "base", "label": "Base & plot" },
     { "id": "police", "label": "Police" },
+    { "id": "gear", "label": "Gear" },
     { "id": "maps", "label": "Maps" }
   ],
   "order": 1
