@@ -1,0 +1,12 @@
+---
+// Prints one or more structured-data objects as <script type="application/ld+json">.
+export interface Props {
+  data: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const items = Array.isArray(Astro.props.data) ? Astro.props.data : [Astro.props.data];
+// Escape "<" so text inside the JSON can never close the script tag early.
+const toJson = (item: Record<string, unknown>) => JSON.stringify(item).replace(/</g, '\\u003c');
+---
+
+{items.map((item) => <script type="application/ld+json" set:html={toJson(item)} />)}

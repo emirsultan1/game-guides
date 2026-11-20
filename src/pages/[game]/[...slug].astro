@@ -6,6 +6,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TableOfContents from '@/components/TableOfContents.astro';
 import GuideCard from '@/components/GuideCard.astro';
+import JsonLd from '@/components/JsonLd.astro';
 import {
   getGames,
   getGuides,
@@ -13,10 +14,12 @@ import {
   getGuideSlug,
   getGameUrl,
   getCategoryLabel,
+  getGuideUrl,
   type Game,
   type Guide,
 } from '@/utils/content';
 import { formatDate, toIsoDate } from '@/utils/date';
+import { breadcrumbSchema, guideSchema } from '@/utils/schema';
 
 export const getStaticPaths = (async () => {
   // Constants used here must live inside getStaticPaths: Astro runs it on its own.
@@ -55,7 +58,21 @@ const categoryLabel = getCategoryLabel(game, category);
 const gameUrl = getGameUrl(game);
 ---
 
-<BaseLayout title={title} description={description} type="article">
+<BaseLayout title={title} description={description} type="article" noindex={draft}>
+  <JsonLd
+    slot="head"
+    data={[
+      guideSchema(guide, game, Astro.site!),
+      breadcrumbSchema(
+        [
+          { name: 'Home', path: '/' },
+          { name: game.data.name, path: gameUrl },
+          { name: title, path: getGuideUrl(guide) },
+        ],
+        Astro.site!,
+      ),
+    ]}
+  />
   <div class="container guide-layout">
     <article class="guide">
       <header class="guide-header">
