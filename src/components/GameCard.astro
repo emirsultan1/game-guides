@@ -1,0 +1,102 @@
+---
+// A game tile for the homepage grid: cover art (or a placeholder), name, status and tagline.
+import StatusBadge from '@/components/StatusBadge.astro';
+import { getGameUrl, type Game } from '@/utils/content';
+
+export interface Props {
+  game: Game;
+  guideCount: number;
+}
+
+const { game, guideCount } = Astro.props;
+const { name, tagline, status, cover } = game.data;
+---
+
+<a href={getGameUrl(game)} class="game-card">
+  {
+    cover ? (
+      <img src={cover} alt="" class="cover" width="640" height="340" loading="lazy" />
+    ) : (
+      <div class="cover cover-placeholder" aria-hidden="true">
+        {name}
+      </div>
+    )
+  }
+  <div class="body">
+    <div class="title-row">
+      <h3 class="name">{name}</h3>
+      <StatusBadge status={status} />
+    </div>
+    <p class="tagline">{tagline}</p>
+    <p class="count">
+      {guideCount === 0 ? 'Guides coming soon' : `${guideCount} guide${guideCount === 1 ? '' : 's'}`}
+    </p>
+  </div>
+</a>
+
+<style>
+  .game-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .game-card:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+
+  .cover {
+    width: 100%;
+    aspect-ratio: 16 / 8.5;
+    object-fit: cover;
+  }
+
+  .cover-placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--color-surface-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .body {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-4) var(--space-6);
+  }
+
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .name {
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+
+  .tagline {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .count {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+</style>

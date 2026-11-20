@@ -1,0 +1,44 @@
+---
+// Small colored pill showing a game's status: Live, Coming soon or Archived.
+import type { Game } from '@/utils/content';
+
+export interface Props {
+  status: Game['data']['status'];
+}
+
+const { status } = Astro.props;
+
+const labels: Record<Props['status'], string> = {
+  live: 'Live',
+  'coming-soon': 'Coming soon',
+  archived: 'Archived',
+};
+---
+
+<span class={`badge badge-${status}`}>{labels[status]}</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .badge-live {
+    background: #123526;
+    color: var(--color-success);
+  }
+
+  .badge-coming-soon {
+    background: #3a2c10;
+    color: var(--color-warning);
+  }
+
+  .badge-archived {
+    background: var(--color-surface-2);
+    color: var(--color-text-muted);
+  }
+</style>

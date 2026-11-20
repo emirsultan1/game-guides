@@ -1,26 +1,179 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import GameCard from '@/components/GameCard.astro';
+import GuideList from '@/components/GuideList.astro';
 import { SITE } from '@/site.config';
+import { getGames, getGuides, getGuideGameId } from '@/utils/content';
+
+const LATEST_GUIDES_COUNT = 6;
+
+const [games, guides] = await Promise.all([getGames(), getGuides()]);
+const latestGuides = guides.slice(0, LATEST_GUIDES_COUNT);
+
+// How many guides each game has, for the game cards.
+const guideCounts = new Map<string, number>();
+for (const guide of guides) {
+  const gameId = getGuideGameId(guide);
+  guideCounts.set(gameId, (guideCounts.get(gameId) ?? 0) + 1);
+}
+
+const visibleGames = games.filter((game) => game.data.status !== 'archived');
 ---
 
 <BaseLayout>
-  <section class="container coming-soon">
-    <h1>{SITE.name}</h1>
-    <p>{SITE.tagline}</p>
-    <p class="muted">Coming soon.</p>
+  <section class="container hero">
+    <p class="eyebrow">Written by players with hundreds of hours in each game</p>
+    <h1>{SITE.tagline}</h1>
+    <p class="lead">
+      Money routes, heists, maps and beginner paths — tested in-game and kept up to date after every patch.
+    </p>
+    <div class="hero-actions">
+      <a href="#games" class="button button-primary">Browse games</a>
+      <a href="#latest" class="button button-secondary">Latest guides</a>
+    </div>
+  </section>
+
+  <section id="games" class="container section" aria-labelledby="games-heading">
+    <div class="section-head">
+      <h2 id="games-heading">Games</h2>
+      <p class="muted">More games added as they come out</p>
+    </div>
+    <div class="game-grid">
+      {visibleGames.map((game) => <GameCard game={game} guideCount={guideCounts.get(game.id) ?? 0} />)}
+      <div class="next-game">
+        <span class="next-title">Next game</span>
+        <span class="muted">Added when a new hit drops</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest" class="container section" aria-labelledby="latest-heading">
+    <div class="section-head">
+      <h2 id="latest-heading">Latest guides</h2>
+    </div>
+    {
+      latestGuides.length > 0 ? (
+        <GuideList guides={latestGuides} games={games} />
+      ) : (
+        <p class="empty">The first guides are on the way. Check back soon.</p>
+      )
+    }
   </section>
 </BaseLayout>
 
 <style>
-  .coming-soon {
+  .hero {
     display: grid;
     gap: var(--space-4);
-    justify-items: center;
-    text-align: center;
-    padding-block: var(--space-16);
+    justify-items: start;
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .eyebrow {
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    max-width: 48rem;
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    max-width: 38rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 700;
+  }
+
+  .button:hover {
+    text-decoration: none;
+  }
+
+  .button-primary {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .button-primary:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-bg);
+  }
+
+  .button-secondary {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-surface-2);
+    color: var(--color-text);
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-6);
+    padding-block: var(--space-8);
+  }
+
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
   }
 
   .muted {
     color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .next-game {
+    display: grid;
+    place-content: center;
+    gap: var(--space-1);
+    min-height: 16rem;
+    padding: var(--space-6);
+    border: 1px dashed var(--color-border);
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .next-title {
+    font-weight: 700;
+  }
+
+  .empty {
+    padding: var(--space-8);
+    border: 1px dashed var(--color-border);
+    border-radius: 14px;
+    color: var(--color-text-muted);
+    text-align: center;
   }
 </style>
