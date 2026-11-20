@@ -1,6 +1,6 @@
 ---
 title: 'How to Launder Money in ROB RUN'
-description: 'How money laundering works in ROB RUN: opening a bank account, using the Laundering Desk at your base or Lenny’s service, how to launder faster and why banked money is safe.'
+description: 'How laundering works in ROB RUN: opening a bank account, using the Laundering Desk or Lenny’s service, how to launder faster and why banked money is safe.'
 category: 'money'
 quickAnswer: 'Open an account at the Looty Bay Bank as a civilian, then put your cash into the Laundering Desk at your base. It takes time, but once the money reaches your bank account nobody can steal it until the next wipe.'
 publishedAt: 2026-11-20
