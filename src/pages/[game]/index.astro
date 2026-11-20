@@ -1,0 +1,246 @@
+---
+// Game hub page, one per game: /rob-run, /gta-6, ...
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import StatusBadge from '@/components/StatusBadge.astro';
+import GuideCard from '@/components/GuideCard.astro';
+import GuideList from '@/components/GuideList.astro';
+import { getGames, getGuidesForGame, getCategoryLabel, type Game } from '@/utils/content';
+
+export const getStaticPaths = (async () => {
+  const games = await getGames();
+  return games.map((game) => ({ params: { game: game.id }, props: { game } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+const { name, description, status, platforms, categories, cover } = game.data;
+
+const guides = await getGuidesForGame(game.id);
+const featuredGuides = guides.filter((guide) => guide.data.featured).slice(0, 3);
+
+// Only show topics that have at least one guide, in the order the game file lists them.
+const sections = categories
+  .map((category) => ({
+    ...category,
+    guides: guides.filter((guide) => guide.data.category === category.id),
+  }))
+  .filter((section) => section.guides.length > 0);
+---
+
+<BaseLayout title={`${name} Guides`} description={description}>
+  <section class="hub-header">
+    <div class="container header-inner">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: name }]} />
+
+      <div class="intro">
+        {
+          cover ? (
+            <img src={cover} alt="" class="cover" width="440" height="260" />
+          ) : (
+            <div class="cover cover-placeholder" aria-hidden="true">
+              {name}
+            </div>
+          )
+        }
+        <div class="intro-text">
+          <div class="title-row">
+            <h1>{name} guides</h1>
+            <StatusBadge status={status} />
+          </div>
+          <p class="description">{description}</p>
+          <ul class="facts">
+            {platforms.length > 0 && <li>{platforms.join(' · ')}</li>}
+            {guides.length > 0 && <li>{guides.length === 1 ? '1 guide' : `${guides.length} guides`}</li>}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {
+    guides.length === 0 ? (
+      <section class="container section">
+        <p class="empty">
+          {name} guides are on the way. Check back soon, or browse the <a href="/#games">other games</a>.
+        </p>
+      </section>
+    ) : (
+      <>
+        <nav class="container topics" aria-label={`${name} topics`}>
+          <h2 class="topics-heading">Browse by topic</h2>
+          <ul class="chips">
+            {sections.map((section) => (
+              <li>
+                <a href={`#${section.id}`} class="chip">
+                  {section.label}
+                  <span class="chip-count">{section.guides.length}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {featuredGuides.length > 0 && (
+          <section class="container section" aria-labelledby="start-here">
+            <h2 id="start-here">Start here</h2>
+            <div class="featured-grid">
+              {featuredGuides.map((guide) => (
+                <GuideCard guide={guide} categoryLabel={getCategoryLabel(game, guide.data.category)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {sections.map((section) => (
+          <section id={section.id} class="container section" aria-labelledby={`${section.id}-heading`}>
+            <h2 id={`${section.id}-heading`}>{section.label}</h2>
+            <GuideList guides={section.guides} games={[game]} showGame={false} />
+          </section>
+        ))}
+      </>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hub-header {
+    margin-top: calc(var(--space-8) * -1);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .header-inner {
+    display: grid;
+    gap: var(--space-6);
+    padding-block: var(--space-8) var(--space-12);
+  }
+
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .cover {
+    width: min(100%, 15rem);
+    aspect-ratio: 16 / 9.5;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .cover-placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--color-surface-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+
+  .intro-text {
+    flex: 1 1 24rem;
+    min-width: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .title-row h1 {
+    letter-spacing: -0.02em;
+  }
+
+  .description {
+    max-width: 40rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    list-style: none;
+    padding: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .topics {
+    display: grid;
+    gap: var(--space-3);
+    padding-top: var(--space-8);
+  }
+
+  .topics-heading {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .chip:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .chip-count {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-4);
+  }
+
+  .empty {
+    padding: var(--space-8);
+    border: 1px dashed var(--color-border);
+    border-radius: 14px;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
