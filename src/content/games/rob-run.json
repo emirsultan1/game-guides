@@ -11,6 +11,7 @@
     { "id": "base", "label": "Base & plot" },
     { "id": "police", "label": "Police" },
     { "id": "gear", "label": "Gear & cars" },
+    { "id": "clans", "label": "Clans & territory" },
     { "id": "maps", "label": "Maps" }
   ],
   "order": 1
