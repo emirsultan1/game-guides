@@ -2,8 +2,10 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import GameCard from '@/components/GameCard.astro';
 import GuideList from '@/components/GuideList.astro';
+import JsonLd from '@/components/JsonLd.astro';
 import { SITE } from '@/site.config';
 import { getGames, getGuides, getGuideGameId } from '@/utils/content';
+import { websiteSchema } from '@/utils/schema';
 
 const LATEST_GUIDES_COUNT = 6;
 
@@ -21,6 +23,8 @@ const visibleGames = games.filter((game) => game.data.status !== 'archived');
 ---
 
 <BaseLayout>
+  <JsonLd slot="head" data={websiteSchema(Astro.site!)} />
+
   <section class="container hero">
     <p class="eyebrow">Written by players with hundreds of hours in each game</p>
     <h1>{SITE.tagline}</h1>

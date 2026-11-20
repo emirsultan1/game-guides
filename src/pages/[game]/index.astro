@@ -6,7 +6,9 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import StatusBadge from '@/components/StatusBadge.astro';
 import GuideCard from '@/components/GuideCard.astro';
 import GuideList from '@/components/GuideList.astro';
-import { getGames, getGuidesForGame, getCategoryLabel, type Game } from '@/utils/content';
+import JsonLd from '@/components/JsonLd.astro';
+import { getGames, getGuidesForGame, getCategoryLabel, getGameUrl, type Game } from '@/utils/content';
+import { breadcrumbSchema, gameHubSchema } from '@/utils/schema';
 
 export const getStaticPaths = (async () => {
   const games = await getGames();
@@ -33,6 +35,19 @@ const sections = categories
 ---
 
 <BaseLayout title={`${name} Guides`} description={description}>
+  <JsonLd
+    slot="head"
+    data={[
+      gameHubSchema(game, guides.filter((guide) => !guide.data.draft), Astro.site!),
+      breadcrumbSchema(
+        [
+          { name: 'Home', path: '/' },
+          { name, path: getGameUrl(game) },
+        ],
+        Astro.site!,
+      ),
+    ]}
+  />
   <section class="hub-header">
     <div class="container header-inner">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: name }]} />

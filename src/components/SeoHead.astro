@@ -35,6 +35,12 @@ const imageUrl = image ? new URL(image, Astro.site) : null;
 <link rel="canonical" href={canonicalUrl} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
+{
+  SITE.googleSiteVerification && (
+    <meta name="google-site-verification" content={SITE.googleSiteVerification} />
+  )
+}
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="theme-color" content="#0f1115" />
 

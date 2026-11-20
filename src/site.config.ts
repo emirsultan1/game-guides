@@ -9,6 +9,9 @@ export const SITE = {
   // Default image for social link previews, e.g. '/og-default.png' (1200x630, in /public).
   // Leave as null until the image exists, so previews don't point to a missing file.
   defaultOgImage: null as string | null,
+  // Google Search Console "HTML tag" verification code (only the content="..." value).
+  // Leave as null until you set up Search Console for the real domain.
+  googleSiteVerification: null as string | null,
 } as const;
 
 // Links shown in the header and footer navigation.
