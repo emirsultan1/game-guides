@@ -12,10 +12,22 @@ export const SITE = {
   // Google Search Console "HTML tag" verification code (only the content="..." value).
   // Leave as null until you set up Search Console for the real domain.
   googleSiteVerification: null as string | null,
+  // Public contact email shown on the Contact and Privacy pages.
+  // Leave as null until you have one; the pages then say it's coming soon.
+  contactEmail: null as string | null,
+  // Shown on the Privacy Policy. Update it whenever you change that page.
+  privacyUpdated: '2026-11-21',
 } as const;
 
 // Links shown in the header and footer navigation.
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Games', href: '/#games' },
+] as const;
+
+// Links shown in the footer only.
+export const FOOTER_LINKS = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy Policy', href: '/privacy' },
 ] as const;

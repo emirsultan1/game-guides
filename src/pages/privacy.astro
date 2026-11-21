@@ -1,0 +1,90 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { SITE } from '@/site.config';
+import { formatDate } from '@/utils/date';
+
+const updated = formatDate(new Date(SITE.privacyUpdated));
+---
+
+<PageLayout
+  title="Privacy Policy"
+  description={`How ${SITE.name} handles your data: what’s collected, cookies, advertising and analytics, and your choices.`}
+  intro={`Last updated: ${updated}`}
+>
+  <p>
+    This page explains what information is collected when you visit {SITE.name}, how it’s used, and the choices you
+    have. We keep it short and in plain language.
+  </p>
+
+  <h2>Information we collect</h2>
+  <p>
+    You don’t need an account to use {SITE.name}, and we don’t ask for your name, email or any other personal details
+    to read the guides.
+  </p>
+  <p>
+    Like almost every website, our hosting provider automatically records basic technical information when you visit,
+    such as your IP address, browser type and the pages you request. This is used to deliver the site, keep it secure
+    and fix problems.
+  </p>
+
+  <h2>Analytics</h2>
+  <p>
+    We may use an analytics service to understand how many people visit and which guides are most useful. We use this
+    information in aggregate only, to improve the site. If we use an analytics service that sets cookies, we’ll name it
+    here.
+  </p>
+
+  <h2>Advertising and cookies</h2>
+  <p>
+    {SITE.name} may show ads to cover its costs. If we do, third-party vendors, including <strong>Google</strong>, may
+    use cookies to serve ads based on your previous visits to this and other websites.
+  </p>
+  <ul>
+    <li>
+      Google’s use of advertising cookies lets it and its partners serve ads based on your visits to this site and/or
+      other sites on the internet.
+    </li>
+    <li>
+      You can opt out of personalised advertising by visiting
+      <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>.
+    </li>
+    <li>
+      You can learn more about how Google uses data at
+      <a href="https://policies.google.com/technologies/partner-sites" rel="noopener"
+        >How Google uses information from sites that use its services</a
+      >.
+    </li>
+    <li>
+      You can also opt out of many third-party vendors’ use of cookies at
+      <a href="https://www.aboutads.info/choices" rel="noopener">aboutads.info</a>.
+    </li>
+  </ul>
+  <p>You can block or delete cookies at any time in your browser settings.</p>
+
+  <h2>Links to other sites</h2>
+  <p>
+    Our guides sometimes link to other websites. We’re not responsible for their content or privacy practices, so
+    please check their policies too.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    {SITE.name} is not directed at children under 13, and we don’t knowingly collect personal information from them.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we change how we handle data, we’ll update this page and the date at the top.</p>
+
+  <h2>Contact</h2>
+  {
+    SITE.contactEmail ? (
+      <p>
+        Questions about this policy? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+      </p>
+    ) : (
+      <p>
+        Questions about this policy? See our <a href="/contact">contact page</a>.
+      </p>
+    )
+  }
+</PageLayout>
