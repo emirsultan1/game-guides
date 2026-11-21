@@ -175,6 +175,21 @@ The build fails with a clear message if a field is missing, a date is wrong, or 
 
 Put images in `public/images/<game-id>/` and reference them starting with `/images/`.
 
+### Images
+
+| Image                 | Where it goes                         | Size                | Used for                                   |
+| --------------------- | ------------------------------------- | ------------------- | ------------------------------------------ |
+| Game cover            | `public/images/games/<game-id>.jpg`   | 16:9, ~1280×720     | Game cards, hub page, link previews        |
+| Guide main image      | `public/images/<game-id>/<name>.jpg`  | 16:9, ~1280×720     | Top of the guide and its link preview      |
+| Screenshots in guides | `public/images/<game-id>/<name>.jpg`  | Any, max ~1600 wide | Inside the guide text                      |
+| Default link preview  | `public/og-default.png`               | 1200×630            | Pages with no image of their own           |
+
+- Set a game cover with `"cover": "/images/games/rob-run.jpg"` in the game's JSON file.
+- Set a guide's main image with `image` and `imageAlt` in its frontmatter.
+- Link previews pick the guide image, then the game cover, then the default.
+- **Use your own screenshots.** Official art and other sites' images belong to their owners.
+- Keep files small: save screenshots as JPG or WebP at around 80% quality.
+
 ## Writing guides that rank
 
 - **One question per guide.** "How to launder money in ROB RUN" gets its own page.
