@@ -20,7 +20,7 @@ Here’s how to go from broke to steady income on your own, in the order that ma
 | Method                | When            | Risk     | What you need               |
 | --------------------- | --------------- | -------- | --------------------------- |
 | Dumpster looting      | First hour      | Very low | Nothing                     |
-| Small store robberies | Early game      | Medium   | Lockpick, Mini Drill        |
+| Small store robberies | Early game      | Medium   | Lockpicks (Mini Drill later) |
 | Action Camera         | Early to mid    | Medium   | Cash to buy it, criminal actions |
 | Cargo                 | Mid game        | Medium–high | A car with cargo space   |
 | Grow Room             | Once you have a plot | Low (passive) | A rented plot and base |
@@ -36,7 +36,7 @@ It won’t make you rich, but it gets you the cash for your first tools without 
 
 ## 2. Small store robberies: your main early income
 
-Once you have a **lockpick** and a **Mini Drill**, small stores are the backbone of solo money.
+Once you have **lockpicks**, small stores are the backbone of solo money. Add **Mini Drills** once you’re in a level 2 settlement to crack the heavy safes in locked rooms.
 
 **Good solo targets:** convenience stores, cafés, pharmacies, gas stations and jewelry stores in quieter parts of the city.
 
