@@ -10,6 +10,8 @@ quickAnswer: 'The short answer in one or two sentences.'
 publishedAt: 2026-11-19
 # updatedAt: 2026-11-25   # set this every time you update the guide
 # gameVersion: '0.9.2'
+# image: '/images/rob-run/your-screenshot.jpg'   # optional, 16:9, your own screenshot
+# imageAlt: 'What the screenshot shows'
 featured: false
 tags: []
 draft: true # set to false when it's ready to go live

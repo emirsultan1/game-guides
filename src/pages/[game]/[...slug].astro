@@ -50,15 +50,33 @@ interface Props {
 }
 
 const { guide, game, related } = Astro.props;
-const { title, description, category, quickAnswer, publishedAt, updatedAt, gameVersion, author, draft } =
-  guide.data;
+const {
+  title,
+  description,
+  category,
+  quickAnswer,
+  publishedAt,
+  updatedAt,
+  gameVersion,
+  author,
+  draft,
+  image,
+  imageAlt,
+} = guide.data;
 const { Content, headings } = await render(guide);
 
 const categoryLabel = getCategoryLabel(game, category);
+// Link previews use the guide's image, then the game's cover, then the site default.
 const gameUrl = getGameUrl(game);
 ---
 
-<BaseLayout title={title} description={description} type="article" noindex={draft}>
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  noindex={draft}
+  image={image ?? game.data.cover}
+>
   <JsonLd
     slot="head"
     data={[
@@ -101,6 +119,12 @@ const gameUrl = getGameUrl(game);
           {gameVersion && <li>Game version: {gameVersion}</li>}
         </ul>
       </header>
+
+      {
+        image && (
+          <img src={image} alt={imageAlt ?? title} class="hero-image" width="1280" height="720" />
+        )
+      }
 
       {
         quickAnswer && (
@@ -231,6 +255,14 @@ const gameUrl = getGameUrl(game);
   .author {
     color: var(--color-text);
     font-weight: 600;
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
   }
 
   /* --- Quick answer ------------------------------------------------------- */

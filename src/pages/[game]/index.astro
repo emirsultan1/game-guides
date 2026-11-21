@@ -34,7 +34,7 @@ const sections = categories
   .filter((section) => section.guides.length > 0);
 ---
 
-<BaseLayout title={`${name} Guides`} description={description}>
+<BaseLayout title={`${name} Guides`} description={description} image={cover}>
   <JsonLd
     slot="head"
     data={[
