@@ -5,12 +5,12 @@ import GuideList from '@/components/GuideList.astro';
 import JsonLd from '@/components/JsonLd.astro';
 import SearchForm from '@/components/SearchForm.astro';
 import { SITE } from '@/site.config';
-import { getGames, getGuides, getGuideGameId } from '@/utils/content';
+import { getActiveGames, getGuides, getGuideGameId } from '@/utils/content';
 import { websiteSchema } from '@/utils/schema';
 
 const LATEST_GUIDES_COUNT = 6;
 
-const [games, guides] = await Promise.all([getGames(), getGuides()]);
+const [games, guides] = await Promise.all([getActiveGames(), getGuides()]);
 const latestGuides = guides.slice(0, LATEST_GUIDES_COUNT);
 
 // How many guides each game has, for the game cards.
@@ -20,7 +20,6 @@ for (const guide of guides) {
   guideCounts.set(gameId, (guideCounts.get(gameId) ?? 0) + 1);
 }
 
-const visibleGames = games.filter((game) => game.data.status !== 'archived');
 ---
 
 <BaseLayout>
@@ -45,13 +44,21 @@ const visibleGames = games.filter((game) => game.data.status !== 'archived');
       <h2 id="games-heading">Games</h2>
       <p class="muted">More games added as they come out</p>
     </div>
-    <div class="game-grid">
-      {visibleGames.map((game) => <GameCard game={game} guideCount={guideCounts.get(game.id) ?? 0} />)}
-      <div class="next-game">
-        <span class="next-title">Next game</span>
-        <span class="muted">Added when a new hit drops</span>
-      </div>
-    </div>
+    {
+      games.length > 0 ? (
+        <div class="game-grid">
+          {games.map((game) => (
+            <GameCard game={game} guideCount={guideCounts.get(game.id) ?? 0} />
+          ))}
+          <div class="next-game">
+            <span class="next-title">Next game</span>
+            <span class="muted">Added when a new hit drops</span>
+          </div>
+        </div>
+      ) : (
+        <p class="empty">The first guides are on the way. Check back soon.</p>
+      )
+    }
   </section>
 
   <section id="latest" class="container section" aria-labelledby="latest-heading">
