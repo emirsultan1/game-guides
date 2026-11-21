@@ -7,11 +7,12 @@ import StatusBadge from '@/components/StatusBadge.astro';
 import GuideCard from '@/components/GuideCard.astro';
 import GuideList from '@/components/GuideList.astro';
 import JsonLd from '@/components/JsonLd.astro';
-import { getGames, getGuidesForGame, getCategoryLabel, getGameUrl, type Game } from '@/utils/content';
+import { getGamesWithGuides, getGuidesForGame, getCategoryLabel, getGameUrl, type Game } from '@/utils/content';
 import { breadcrumbSchema, gameHubSchema } from '@/utils/schema';
 
 export const getStaticPaths = (async () => {
-  const games = await getGames();
+  // Only games with guides get a hub page, so there are no empty pages for Google to find.
+  const games = await getGamesWithGuides();
   return games.map((game) => ({ params: { game: game.id }, props: { game } }));
 }) satisfies GetStaticPaths;
 

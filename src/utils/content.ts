@@ -67,6 +67,24 @@ export async function getGuides(): Promise<Guide[]> {
     .sort((a, b) => getGuideDate(b).getTime() - getGuideDate(a).getTime());
 }
 
+/**
+ * Games that have at least one guide to show, in homepage order.
+ * A game with no guides yet (like a game that just came out) stays hidden
+ * everywhere, so the site never shows an empty section.
+ * Drafts count in `npm run dev`, so you can preview a game before publishing.
+ */
+export async function getGamesWithGuides(): Promise<Game[]> {
+  const [games, guides] = await Promise.all([getGames(), getGuides()]);
+  const gameIds = new Set(guides.map(getGuideGameId));
+  return games.filter((game) => gameIds.has(game.id));
+}
+
+/** Games to list on the homepage and other pages: has guides and isn't archived. */
+export async function getActiveGames(): Promise<Game[]> {
+  const games = await getGamesWithGuides();
+  return games.filter((game) => game.data.status !== 'archived');
+}
+
 /** Guides for one game, newest first. */
 export async function getGuidesForGame(gameId: string): Promise<Guide[]> {
   const guides = await getGuides();

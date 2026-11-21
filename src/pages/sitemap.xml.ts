@@ -28,10 +28,11 @@ export const GET: APIRoute = async ({ site }) => {
     { path: '/about' },
     { path: '/contact' },
     { path: '/privacy' },
-    ...games.map((game) => ({
-      path: getGameUrl(game),
-      lastmod: newestGuideDate(publicGuides.filter((g) => getGuideGameId(g) === game.id)),
-    })),
+    // Only games with published guides; a hub page is built for each of them.
+    ...games
+      .map((game) => ({ game, gameGuides: publicGuides.filter((g) => getGuideGameId(g) === game.id) }))
+      .filter(({ gameGuides }) => gameGuides.length > 0)
+      .map(({ game, gameGuides }) => ({ path: getGameUrl(game), lastmod: newestGuideDate(gameGuides) })),
     ...publicGuides.map((guide) => ({ path: getGuideUrl(guide), lastmod: getGuideDate(guide) })),
   ];
 

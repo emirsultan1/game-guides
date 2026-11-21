@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import { SITE } from '@/site.config';
-import { getGames, getGameUrl } from '@/utils/content';
+import { getActiveGames, getGameUrl } from '@/utils/content';
 
-const games = (await getGames()).filter((game) => game.data.status !== 'archived');
+const games = await getActiveGames();
 ---
 
 <PageLayout
@@ -31,15 +31,19 @@ const games = (await getGames()).filter((game) => game.data.status !== 'archived
   </ul>
 
   <h2>Games we cover</h2>
-  <ul>
-    {
-      games.map((game) => (
-        <li>
-          <a href={getGameUrl(game)}>{game.data.name}</a>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    games.length > 0 ? (
+      <ul>
+        {games.map((game) => (
+          <li>
+            <a href={getGameUrl(game)}>{game.data.name}</a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>The first guides are on the way.</p>
+    )
+  }
 
   <h2>Not affiliated</h2>
   <p>

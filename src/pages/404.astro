@@ -1,9 +1,9 @@
 ---
 // Shown for any URL that doesn't exist. Hidden from search engines.
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getGames, getGameUrl } from '@/utils/content';
+import { getActiveGames, getGameUrl } from '@/utils/content';
 
-const games = (await getGames()).filter((game) => game.data.status !== 'archived');
+const games = await getActiveGames();
 ---
 
 <BaseLayout title="Page not found" description="This page doesn't exist." noindex>
