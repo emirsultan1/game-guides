@@ -1,0 +1,172 @@
+---
+// /search?q=... — searches every guide in the browser using /search-index.json.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SearchForm from '@/components/SearchForm.astro';
+---
+
+<BaseLayout title="Search" description="Search every guide on the site." noindex>
+  <section class="container search-page">
+    <h1>Search guides</h1>
+    <SearchForm autofocus id="search-page-input" />
+    <p class="status" id="search-status" role="status" aria-live="polite"></p>
+    <ul class="results" id="search-results"></ul>
+    <noscript>
+      <p class="status">Search needs JavaScript. You can also browse the <a href="/#games">games</a>.</p>
+    </noscript>
+  </section>
+</BaseLayout>
+
+<script>
+  interface SearchEntry {
+    title: string;
+    description: string;
+    quickAnswer: string;
+    url: string;
+    game: string;
+    category: string;
+    tags: string[];
+    date: string;
+  }
+
+  const MAX_RESULTS = 30;
+
+  const input = document.querySelector<HTMLInputElement>('#search-page-input');
+  const status = document.querySelector<HTMLParagraphElement>('#search-status');
+  const list = document.querySelector<HTMLUListElement>('#search-results');
+
+  // Lowercase and strip accents and punctuation, so "Lenny's" matches "lennys".
+  function normalize(text: string): string {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[’'`]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  // Every word must appear somewhere. Matches in the title count most.
+  function score(entry: SearchEntry, terms: string[]): number {
+    const title = normalize(entry.title);
+    const meta = normalize(`${entry.game} ${entry.category} ${entry.tags.join(' ')}`);
+    const body = normalize(`${entry.description} ${entry.quickAnswer}`);
+    let total = 0;
+    for (const term of terms) {
+      if (title.includes(term)) total += 5;
+      else if (meta.includes(term)) total += 3;
+      else if (body.includes(term)) total += 1;
+      else return 0;
+    }
+    return total;
+  }
+
+  function renderResult(entry: SearchEntry): HTMLLIElement {
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = entry.url;
+    link.className = 'result';
+
+    const meta = document.createElement('span');
+    meta.className = 'result-meta';
+    meta.textContent = `${entry.game} · ${entry.category}`;
+
+    const title = document.createElement('span');
+    title.className = 'result-title';
+    title.textContent = entry.title;
+
+    const description = document.createElement('span');
+    description.className = 'result-description';
+    description.textContent = entry.description;
+
+    link.append(meta, title, description);
+    item.append(link);
+    return item;
+  }
+
+  async function run(): Promise<void> {
+    if (!input || !status || !list) return;
+
+    const query = new URLSearchParams(window.location.search).get('q')?.trim() ?? '';
+    input.value = query;
+    if (!query) {
+      status.textContent = 'Type what you’re looking for, like “laundering”, “bank vault” or “best car”.';
+      return;
+    }
+
+    status.textContent = 'Searching…';
+    let entries: SearchEntry[];
+    try {
+      const response = await fetch('/search-index.json');
+      if (!response.ok) throw new Error(String(response.status));
+      entries = await response.json();
+    } catch {
+      status.textContent = 'Search isn’t working right now. Please try again in a moment.';
+      return;
+    }
+
+    const terms = normalize(query).split(' ').filter(Boolean);
+    const results = entries
+      .map((entry) => ({ entry, points: score(entry, terms) }))
+      .filter((result) => result.points > 0)
+      .sort((a, b) => b.points - a.points || b.entry.date.localeCompare(a.entry.date))
+      .slice(0, MAX_RESULTS);
+
+    list.replaceChildren(...results.map((result) => renderResult(result.entry)));
+    status.textContent =
+      results.length === 0
+        ? `No guides found for “${query}”. Try fewer or different words.`
+        : `${results.length} guide${results.length === 1 ? '' : 's'} for “${query}”`;
+  }
+
+  run();
+</script>
+
+<style>
+  .search-page {
+    display: grid;
+    gap: var(--space-6);
+    max-width: calc(var(--content-width) + 2 * var(--space-6));
+  }
+
+  .status {
+    color: var(--color-text-muted);
+  }
+
+  .results {
+    display: grid;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+  }
+
+  .results :global(.result) {
+    display: grid;
+    gap: var(--space-1);
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .results :global(.result:hover) {
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .results :global(.result-meta) {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .results :global(.result-title) {
+    font-size: var(--text-lg);
+    font-weight: 700;
+  }
+
+  .results :global(.result-description) {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+</style>

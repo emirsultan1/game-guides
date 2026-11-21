@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import GameCard from '@/components/GameCard.astro';
 import GuideList from '@/components/GuideList.astro';
 import JsonLd from '@/components/JsonLd.astro';
+import SearchForm from '@/components/SearchForm.astro';
 import { SITE } from '@/site.config';
 import { getGames, getGuides, getGuideGameId } from '@/utils/content';
 import { websiteSchema } from '@/utils/schema';
@@ -31,10 +32,12 @@ const visibleGames = games.filter((game) => game.data.status !== 'archived');
     <p class="lead">
       Money routes, heists, maps and beginner paths — tested in-game and kept up to date after every patch.
     </p>
-    <div class="hero-actions">
-      <a href="#games" class="button button-primary">Browse games</a>
-      <a href="#latest" class="button button-secondary">Latest guides</a>
+    <div class="hero-search">
+      <SearchForm id="hero-search-input" />
     </div>
+    <p class="hero-links">
+      Or browse <a href="#games">all games</a> and the <a href="#latest">latest guides</a>.
+    </p>
   </section>
 
   <section id="games" class="container section" aria-labelledby="games-heading">
@@ -93,44 +96,14 @@ const visibleGames = games.filter((game) => game.data.status !== 'archived');
     font-size: var(--text-lg);
   }
 
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
+  .hero-search {
+    width: 100%;
     margin-top: var(--space-2);
   }
 
-  .button {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 var(--space-6);
-    border-radius: var(--radius);
-    font-weight: 700;
-  }
-
-  .button:hover {
-    text-decoration: none;
-  }
-
-  .button-primary {
-    background: var(--color-accent);
-    color: var(--color-bg);
-  }
-
-  .button-primary:hover {
-    background: var(--color-accent-hover);
-    color: var(--color-bg);
-  }
-
-  .button-secondary {
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-  }
-
-  .button-secondary:hover {
-    background: var(--color-surface-2);
-    color: var(--color-text);
+  .hero-links {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .section {
