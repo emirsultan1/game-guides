@@ -40,7 +40,7 @@ These are where every robber starts. They have a safe or two, some cabinets, a c
 
 ## Houses and mansions: quiet money
 
-**Cottages, houses and mansions**, including **Noble’s Mansion** in **Lorraine Hills**.
+**Cottages, houses and mansions**, including a large mansion in **Loraine Hills**.
 
 Remote houses are a favourite for solo players. Police care much more about the big stores downtown, so a quiet house with its alarm disabled can be very low risk. Some houses have no alarm at all.
 
