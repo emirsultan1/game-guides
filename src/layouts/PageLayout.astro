@@ -1,0 +1,73 @@
+---
+// Layout for simple text pages like About, Contact and Privacy Policy:
+// a title, an optional intro line, and readable content.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  intro?: string;
+  noindex?: boolean;
+}
+
+const { title, description, intro, noindex = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <article class="container page">
+    <header class="page-header">
+      <h1>{title}</h1>
+      {intro && <p class="intro">{intro}</p>}
+    </header>
+    <div class="page-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: calc(var(--content-width) + 2 * var(--space-6));
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .page-header {
+    display: grid;
+    gap: var(--space-3);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    letter-spacing: -0.02em;
+  }
+
+  .intro {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+
+  .page-content {
+    display: grid;
+    gap: var(--space-4);
+    color: #c9ccd3;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .page-content :global(h2) {
+    margin-top: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .page-content :global(strong) {
+    color: var(--color-text);
+  }
+
+  .page-content :global(ul) {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: var(--space-6);
+  }
+</style>

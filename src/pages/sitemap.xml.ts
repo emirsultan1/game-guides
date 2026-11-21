@@ -25,6 +25,9 @@ export const GET: APIRoute = async ({ site }) => {
 
   const entries: SitemapEntry[] = [
     { path: '/', lastmod: newestGuideDate(publicGuides) },
+    { path: '/about' },
+    { path: '/contact' },
+    { path: '/privacy' },
     ...games.map((game) => ({
       path: getGameUrl(game),
       lastmod: newestGuideDate(publicGuides.filter((g) => getGuideGameId(g) === game.id)),

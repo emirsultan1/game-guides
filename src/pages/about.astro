@@ -1,0 +1,49 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { SITE } from '@/site.config';
+import { getGames, getGameUrl } from '@/utils/content';
+
+const games = (await getGames()).filter((game) => game.data.status !== 'archived');
+---
+
+<PageLayout
+  title={`About ${SITE.name}`}
+  description={`Who writes ${SITE.name}, how the guides are made and kept up to date, and which games we cover.`}
+  intro="Game guides written by players, for players."
+>
+  <p>
+    {SITE.name} is a guide site for the games people are playing right now. We focus on new and fast-moving games,
+    where answers are hard to find and change with every patch.
+  </p>
+
+  <h2>Who writes the guides</h2>
+  <p>
+    The guides are written by <strong>Emir</strong>, a player with hundreds of hours in the games we cover. Every guide
+    is based on playing the game, not on rewriting other sites.
+  </p>
+
+  <h2>How we keep guides accurate</h2>
+  <ul>
+    <li>Guides are checked in-game before they’re published.</li>
+    <li>Every guide shows the date it was last updated, and the game version it was checked on where it matters.</li>
+    <li>When a patch changes something, we update the guide and its date.</li>
+    <li>Spotted a mistake? <a href="/contact">Tell us</a> and we’ll fix it.</li>
+  </ul>
+
+  <h2>Games we cover</h2>
+  <ul>
+    {
+      games.map((game) => (
+        <li>
+          <a href={getGameUrl(game)}>{game.data.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Not affiliated</h2>
+  <p>
+    {SITE.name} is an independent fan site. We’re not affiliated with, endorsed by or sponsored by any game developer or
+    publisher. All game names, images and trademarks belong to their respective owners.
+  </p>
+</PageLayout>
