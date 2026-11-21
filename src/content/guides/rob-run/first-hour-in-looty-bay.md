@@ -57,14 +57,13 @@ Drive into the city as a civilian and look around:
 
 ## Step 4: Buy the tools for your first job
 
-Open Lenny’s laptop and buy what you need for a small store:
+Open Shipments (**H**) and unlock **Lockpicks**, then buy a few from the Black Market on Lenny’s laptop. A lockpick opens doors and containers without setting off the alarm.
 
-- A **lockpick** for the back door
-- A **Mini Drill** for the safe
+That’s all you need for a first store: cabinets, registers and small safes. The **Mini Drill**, which cracks the heavy safes in locked rooms, needs your base in a level 2 settlement, so it comes later. See [every robbery tool](/rob-run/robbery-tools).
 
 Don’t buy expensive weapons yet. A gold weapon in your bag is a gold weapon you can lose.
 
-<!-- CHECK: lockpick and Mini Drill prices. Online sources say $99 and $18,000. -->
+<!-- CHECK: lockpick price. Online sources say $5,000 to unlock and $99 each. -->
 
 ## Step 5: Rob one small store
 
@@ -73,7 +72,7 @@ Mask on, go in through the back, and work in this order:
 1. **Disable the alarm.**
 2. **Shoot out the cameras.**
 3. **Keep the employees under threat** the whole time.
-4. **Drill the safe** and empty the cabinets.
+4. **Empty the cabinets and register**, and open any small safe you have a key for.
 5. **Leave the way you came in**, and get out of the city.
 
 Rob **one** store, not the bank or a gallery. Bigger targets need a crew and better gear.
@@ -129,7 +128,7 @@ So the best time to start is the first day or two of a fresh server, and you sho
 - [ ] Finished Lenny’s intro quests
 - [ ] Took the free car
 - [ ] Scouted one small store without a mask
-- [ ] Bought a lockpick and a Mini Drill
+- [ ] Unlocked and bought lockpicks
 - [ ] Robbed one store and got out of the city
 - [ ] Sold to the Fence and took the cash right away
 - [ ] Opened a bank account as a civilian
