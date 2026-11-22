@@ -5,8 +5,8 @@ category: 'vehicles'
 quickAnswer: 'It’s the green Maibatsu ’97 Penumbra FF, locked in a villa garage in the middle of Vespucci Island (Rialto Islands, Vice City). You can steal it as soon as free roam opens. Bring it to Moses as your first car in Chapter 2 and he registers it for free, saving about $6,750.'
 publishedAt: 2026-11-22
 tags: ['cars', 'paul walker', 'fast and furious', 'penumbra ff', 'free car']
-featured: false
-draft: true # Emir: check against videos / a friend's game, then set to false
+featured: true
+draft: false
 ---
 
 <!-- EMIR: confirmed by GamesRadar, PCGamesN, Shacknews, Vice, Insider Gaming, Sportskeeda, GTABoom, Keengamer, TechWiser, DualShockers, Bo3, HowToVideoGame and others. -->

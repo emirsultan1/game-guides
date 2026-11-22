@@ -5,7 +5,8 @@ category: 'vehicles'
 quickAnswer: 'Scan the car with WAiNK first. Older cars can be smashed open and hotwired, the Slim Jim (Chapter 2) opens locked cars without setting off the alarm, and the Key Cloner (Chapter 3) is the only way to take keyless cars. Then check the tracker before you decide to keep or sell it.'
 publishedAt: 2026-11-22
 tags: ['cars', 'stealing', 'slim jim', 'key cloner', 'trackers']
-draft: true # Emir: check against videos / a friend's game, then set to false
+featured: true
+draft: false
 ---
 
 <!-- EMIR: GTA 6 launched on 19 Nov, so info is still settling. Every fact here was confirmed by at least 2 separate guides (PC Gamer, GamesRadar, Game Rant, GTABase, Sportskeeda, Beebom and others). Anything less certain has a CHECK comment. No story spoilers: only mission names and when tools unlock. -->

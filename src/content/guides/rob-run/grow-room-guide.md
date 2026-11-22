@@ -5,7 +5,7 @@ category: 'money'
 quickAnswer: 'Rent a plot, unlock and buy a Grow Room and a Grow Table, then find Growing Bushes in Looty Bay and place them on the table. A mature bush gives a few Harvest Bags and regrows on its own. Sell the bags to a Fence and launder the cash.'
 publishedAt: 2026-11-21
 tags: ['money', 'grow room', 'production']
-draft: true # Emir: check against your own Grow Room, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your real numbers (how much your room makes per hour) would be the best part of this guide. -->

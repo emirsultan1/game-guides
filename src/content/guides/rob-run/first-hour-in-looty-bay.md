@@ -6,7 +6,7 @@ quickAnswer: 'Finish Lenny’s intro quests, take the free car, scout Looty Bay 
 publishedAt: 2026-11-20
 featured: true
 tags: ['beginner', 'first hour', 'money']
-draft: true # Emir: check every step and number against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments like this one. They don't show on the site. -->

@@ -6,7 +6,7 @@ quickAnswer: 'Start with small stores and remote houses, move up to the two jewe
 publishedAt: 2026-11-20
 featured: true
 tags: ['heists', 'locations', 'map']
-draft: true # Emir: check every location and requirement, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the map with your favourite targets marked would make this guide much better. -->

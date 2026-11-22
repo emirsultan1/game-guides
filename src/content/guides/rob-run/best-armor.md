@@ -5,7 +5,7 @@ category: 'gear'
 quickAnswer: 'Medium Body Armor is the best everyday choice: solid protection without a huge loss if you die. Always carry spare Steel Plates, because hits break your armor before your health. Save Heavy and Bastion for crew heists.'
 publishedAt: 2026-11-21
 tags: ['armor', 'gear', 'plates']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

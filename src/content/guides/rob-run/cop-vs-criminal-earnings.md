@@ -5,7 +5,7 @@ category: 'money'
 quickAnswer: 'Criminals earn more, but they risk their bag and gear every run. Cops earn less by design, but risk none of their own equipment. Play cop to rebuild after losing everything, and criminal when you’re geared up and want big payouts.'
 publishedAt: 2026-11-20
 tags: ['money', 'police', 'roles']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your own numbers from a cop shift vs a criminal run would make this guide great. -->

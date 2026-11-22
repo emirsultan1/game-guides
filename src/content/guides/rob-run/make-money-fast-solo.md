@@ -6,7 +6,7 @@ quickAnswer: 'Start with dumpsters and small stores, sell to the Fence in the sa
 publishedAt: 2026-11-20
 featured: true
 tags: ['money', 'solo', 'farming']
-draft: true # Emir: check every method and number against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. This guide gets much better with YOUR route: where you farm, how much you make per hour. -->

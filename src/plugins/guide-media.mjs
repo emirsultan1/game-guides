@@ -12,7 +12,12 @@
  *      [SCREENSHOT: the heist store menu]
  *    marks where a screenshot still needs to go. It shows as a dashed box in `npm run dev`
  *    and is removed from the real site, so a guide can go live before every screenshot is ready.
+ *
+ * 4. HTML comments (like the hidden <!-- CHECK: ... --> notes) are removed from the output,
+ *    so they never end up in the page source that visitors and Google can read.
  */
+
+const HTML_COMMENT = /<!--[\s\S]*?-->/g;
 
 const SCREENSHOT_NOTE = /^\s*\[screenshot:\s*(.+?)\]\s*$/i;
 
@@ -48,6 +53,21 @@ export function guideMedia(options = {}) {
 
   return {
     name: 'guide-media',
+
+    // Strip <!-- ... --> notes from the published HTML.
+    comment(/** @type {any} */ node, /** @type {any} */ ctx) {
+      ctx.removeNode(node);
+    },
+    raw(/** @type {any} */ node, /** @type {any} */ ctx) {
+      const cleaned = String(node.value ?? '').replace(HTML_COMMENT, '');
+      if (cleaned === node.value) return;
+      if (!cleaned.trim()) {
+        ctx.removeNode(node);
+        return;
+      }
+      ctx.replaceNode(node, { ...node, value: cleaned });
+    },
+
     element: {
       filter: ['p'],
       /** @param {any} node @param {any} ctx */

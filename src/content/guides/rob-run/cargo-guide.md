@@ -5,7 +5,7 @@ category: 'money'
 quickAnswer: 'Sell cargo to the Smuggler for instant cash, or take it to a Cargo Workbench at your base and open it, which pays more but takes time. If you need money now or don’t have a plot, sell it. Otherwise, open it.'
 publishedAt: 2026-11-21
 tags: ['money', 'cargo', 'smuggler']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

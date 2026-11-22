@@ -5,7 +5,7 @@ category: 'money'
 quickAnswer: 'Your base can run four kinds of business: a Grow Room (weed farm), a Chemical Lab, contraband repacking, and opening cargo at a workbench. Start with cargo or the Grow Room, and save the Chemical Lab for when you have more money.'
 publishedAt: 2026-11-21
 tags: ['money', 'base', 'production']
-draft: true # Emir: check against your own base, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

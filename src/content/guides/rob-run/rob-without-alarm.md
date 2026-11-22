@@ -5,7 +5,7 @@ category: 'heists'
 quickAnswer: 'Disable the electrical panel outside, shoot the cameras, open doors with a lockpick instead of breaking glass, and keep the staff at gunpoint so nobody calls the police. Then leave the city before you sell.'
 publishedAt: 2026-11-20
 tags: ['heists', 'stealth', 'alarm']
-draft: true # Emir: check every step against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

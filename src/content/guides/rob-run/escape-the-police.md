@@ -5,7 +5,7 @@ category: 'police'
 quickAnswer: 'Plan your exit before you put on the mask, park facing the way out, and leave Looty Bay by the bridge the police aren’t blocking. Break line of sight on side streets, and if you’re caught with a small bag, surrender instead of dying.'
 publishedAt: 2026-11-20
 tags: ['police', 'escape', 'criminal']
-draft: true # Emir: check against your own escapes, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the city exits would really help this guide. -->

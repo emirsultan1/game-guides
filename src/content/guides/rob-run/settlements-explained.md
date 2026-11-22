@@ -5,7 +5,7 @@ category: 'base'
 quickAnswer: 'Residents rent one plot in a settlement and pay the owner a small tax when they launder money or buy from the Black Market. Owners buy the whole settlement with a Settlement Title, get a free base, and collect that tax at the Debt Collectors’ Van.'
 publishedAt: 2026-11-21
 tags: ['base', 'settlement', 'tax']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

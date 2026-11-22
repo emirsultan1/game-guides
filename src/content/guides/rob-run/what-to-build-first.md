@@ -5,7 +5,7 @@ category: 'base'
 quickAnswer: 'Place storage first, then your Security System with every fuse slot filled, then your Laundering Desk. Add production like a Grow Room only once your valuables are protected and your money is going to the bank.'
 publishedAt: 2026-11-21
 tags: ['base', 'build order', 'production']
-draft: true # Emir: check against your own base, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your own build order is the best possible content for this guide. -->

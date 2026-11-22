@@ -5,7 +5,7 @@ category: 'gear'
 quickAnswer: 'Buy the Longhorn Van first: it’s the cheapest car with the biggest trunk. For getaways, the Royal J balances speed, handling and space. The Buletti Soltempra is the fastest car in the game, but it’s hugely expensive and can’t carry cargo.'
 publishedAt: 2026-11-21
 tags: ['vehicles', 'cars', 'getaway']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Which car do you actually drive, and why? -->

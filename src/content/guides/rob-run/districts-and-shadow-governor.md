@@ -5,7 +5,7 @@ category: 'clans'
 quickAnswer: 'Districts are taken by clans, not single players. A clan that holds a district takes a cut of every settlement owner’s tax there and launders faster. The leader of the clan holding the central Highlands district becomes the Shadow Governor, the top of the Power Pyramid.'
 publishedAt: 2026-11-21
 tags: ['clans', 'territory', 'shadow governor']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. If your clan has fought for a district, describe how it went. -->

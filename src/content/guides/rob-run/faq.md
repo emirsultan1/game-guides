@@ -5,7 +5,7 @@ category: 'beginner'
 quickAnswer: 'ROB RUN is a free-to-play crime game on Windows PC (Steam), in Early Access since 4 November 2026. You can play solo or in a party of up to 3, servers wipe every 7 days, and there’s no console version yet.'
 publishedAt: 2026-11-21
 tags: ['faq', 'beginner']
-draft: true # Emir: check every answer, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. FAQ pages rank fast in Google, so keep answers short and correct, and update them when things change. -->

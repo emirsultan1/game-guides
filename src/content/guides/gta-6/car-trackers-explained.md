@@ -5,7 +5,7 @@ category: 'vehicles'
 quickAnswer: 'A standard tracker only stops you modifying the car until you register it. An advanced tracker reports your location to the police whenever you drive too slowly. Register a standard-tracker car at a Pay ’n’ Spray from Chapter 3; advanced-tracker cars can only be registered after a later job for Randy.'
 publishedAt: 2026-11-22
 tags: ['cars', 'trackers', 'advanced tracker', 'register']
-draft: true # Emir: check against videos / a friend's game, then set to false
+draft: false
 ---
 
 <!-- EMIR: confirmed by PC Gamer, GTABase, Tech4Gamers, MeowDB, Alcast HQ, The Click and others. Less-certain details have CHECK comments. -->

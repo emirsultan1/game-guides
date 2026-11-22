@@ -5,7 +5,7 @@ category: 'clans'
 quickAnswer: 'Open a bank account first. Then press Esc, open the Clan tab and press JOIN to search for a clan, or CREATE to start your own. Creating a clan needs laundered money in your bank account, not cash in your pocket.'
 publishedAt: 2026-11-21
 tags: ['clans', 'multiplayer', 'territory']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

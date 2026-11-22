@@ -5,7 +5,7 @@ category: 'gear'
 quickAnswer: 'Press H to open Shipments. Pay once to unlock an item, then buy it from the Black Market every time you need one. Some unlocks also need a higher-level settlement or enough jail time.'
 publishedAt: 2026-11-21
 tags: ['shipments', 'unlocks', 'gear']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your own unlock order would be the best part of this guide. -->

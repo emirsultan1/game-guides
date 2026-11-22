@@ -5,7 +5,7 @@ category: 'gear'
 quickAnswer: 'Rob your first stores with the cheap DP-9 pistol, upgrade to the KL-545 rifle as your first real gun, then save for the RC 5.56 Mk3. For close range, the AP Scalar Mk3 and TAG-12K are the strongest picks.'
 publishedAt: 2026-11-21
 tags: ['weapons', 'gear', 'tier list']
-draft: true # Emir: check against your own experience, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your own favourite loadout and why would make this guide much better than the generic tier lists. -->

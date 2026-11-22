@@ -5,7 +5,8 @@ category: 'vehicles'
 quickAnswer: 'By the in-game Speed rating, the fastest cars found so far are the Truffade Thrax (8.7/10), Progen Emerus (8.3) and Pegassi Vitello (8.2). Most top supercars are on Randy’s Wish List in Chapter 3 and need the Key Cloner. Early on, the best free car is the Penumbra FF (Paul Walker’s car).'
 publishedAt: 2026-11-22
 tags: ['cars', 'best cars', 'fastest cars', 'supercars', 'randy']
-draft: true # Emir: check against videos / a friend's game, then set to false
+featured: true
+draft: false
 ---
 
 <!-- EMIR: GTA 6 is days old and car stats are still being collected. The ratings here are the in-game Speed/Acceleration/Handling numbers (out of 10) that match across several sites (Tech Nerdiness, MeowDB, Khelnow, GameSpot, TimeSaver, OP.GG). Older lists with guessed mph numbers were ignored. Update this guide as more cars are found. -->

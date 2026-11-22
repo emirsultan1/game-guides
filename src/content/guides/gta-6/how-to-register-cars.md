@@ -5,7 +5,7 @@ category: 'vehicles'
 quickAnswer: 'You can’t register cars in Chapter 1. From Chapter 2, Moses in Port Gellhorn registers cars with no tracker (respray first, then choose Register). From early Chapter 3, any Pay ’n’ Spray also takes standard-tracker cars. Advanced-tracker cars only after Randy’s Mamba GT job later in Chapter 3.'
 publishedAt: 2026-11-22
 tags: ['cars', 'register', 'pay n spray', 'moses', 'trackers']
-draft: true # Emir: check against videos / a friend's game, then set to false
+draft: false
 ---
 
 <!-- EMIR: confirmed by Alcast HQ, MeowDB, The Click, G2A News, Yahoo/GameSpot, Keengamer, Tech4Gamers, PC Gamer and others. Less-certain details have CHECK comments. No story spoilers. -->
