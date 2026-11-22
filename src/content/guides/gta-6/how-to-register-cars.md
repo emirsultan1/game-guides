@@ -82,9 +82,7 @@ WAiNK shows the sell value and which buyer suits the car.
 
 - **Your first register is cheap practice.** Grab an untracked car you like on the way to the Moses mission and register it straight away.
 - **Scan before you pay.** WAiNK shows the registration cost, so you won’t pay thousands for a car you’ll get bored of.
-- **Want a great free car early?** The Paul Walker tribute car can be found early in the game. Guide coming soon.
-
-<!-- CHECK: GamesRadar says Moses registers the Paul Walker car for free if it's your first one. Only one source so far. -->
+- **Use your free registration well.** Your **first car with Moses is registered for free**. Make it a good one, like [Paul Walker’s car](/gta-6/paul-walker-car), which you can steal before you meet him.
 
 ## Related guides
 
@@ -92,3 +90,4 @@ WAiNK shows the sell value and which buyer suits the car.
 - [GTA 6 trackers explained](/gta-6/car-trackers-explained)
 - [How to get the Slim Jim in GTA 6](/gta-6/how-to-get-slim-jim)
 - [How to get the Key Cloner in GTA 6](/gta-6/how-to-get-key-cloner)
+- [How to get Paul Walker’s car in GTA 6](/gta-6/paul-walker-car)
