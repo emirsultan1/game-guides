@@ -3,9 +3,8 @@ import { defineConfig } from 'astro/config';
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
-  // Replace with the real domain once the site has a name.
-  // Used for canonical URLs and the sitemap.
-  site: 'https://example.com',
+  // The live domain. Used for canonical URLs, the sitemap, robots.txt and link previews.
+  site: 'https://respawnready.com',
 
   // Guide URLs look like /rob-run/how-to-make-money (no trailing slash).
   trailingSlash: 'never',

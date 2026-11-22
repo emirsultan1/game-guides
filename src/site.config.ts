@@ -1,7 +1,7 @@
-// Site-wide settings. Change these in one place once the site has a real name.
+// Site-wide settings. Change the name, email or tagline here and it updates everywhere.
 export const SITE = {
-  name: 'Game Guides', // placeholder until the brand name is chosen
-  tagline: 'Detailed guides for the games people are playing right now.',
+  name: 'RespawnReady',
+  tagline: 'Game guides from real players.',
   description:
     'In-depth game guides, tips and walkthroughs for ROB RUN, GTA and more — written by players with hundreds of hours in each game.',
   locale: 'en',
@@ -13,10 +13,10 @@ export const SITE = {
   // Leave as null until you set up Search Console for the real domain.
   googleSiteVerification: null as string | null,
   // Public contact email shown on the Contact and Privacy pages.
-  // Leave as null until you have one; the pages then say it's coming soon.
-  contactEmail: null as string | null,
+  // Forwarded to a private inbox with Cloudflare Email Routing. Set to null to hide it.
+  contactEmail: 'contact@respawnready.com' as string | null,
   // Shown on the Privacy Policy. Update it whenever you change that page.
-  privacyUpdated: '2026-11-21',
+  privacyUpdated: '2026-11-22',
 } as const;
 
 // Links shown in the header and footer navigation.
