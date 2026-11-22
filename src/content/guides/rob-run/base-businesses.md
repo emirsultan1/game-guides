@@ -2,7 +2,7 @@
 title: 'ROB RUN Base Businesses: Every Way to Earn From Your Base'
 description: 'Every base business in ROB RUN explained: the Grow Room, Chemical Lab, contraband and cargo cracking, the Sales Center, and which business to start first.'
 category: 'money'
-quickAnswer: 'Your base can run four kinds of business: a Grow Room (weed farm), a Chemical Lab, contraband repacking, and opening cargo at a workbench. Start with cargo or the Grow Room, and save the Chemical Lab for when you have more money.'
+quickAnswer: 'Your base can run four kinds of business: a Grow Room, a Chemical Lab, contraband repacking, and opening cargo at a workbench. Start with cargo or the Grow Room, and save the Chemical Lab for when you have more money.'
 publishedAt: 2026-11-21
 tags: ['money', 'base', 'production']
 draft: false
@@ -29,7 +29,7 @@ Becoming a **Settlement Resident** gives you:
 | ------------------------- | -------------------------------------------------- | ------------- | ----------------------------- |
 | **Cargo cracking**        | Opens cargo for its contents at a Cargo Workbench  | Low           | Your first business           |
 | **Contraband**            | Repacks cheap contraband into valuable cargo       | Low to medium | Steady profit without robbing |
-| **Grow Room** (weed farm) | Grows bushes that produce Harvest Bags, then regrow | Medium        | Passive income all week       |
+| **Grow Room**            | Grows bushes that produce Harvest Bags, then regrow | Medium        | Passive income all week       |
 | **Chemical Lab**          | Turns Chemical Reagents into product                | Highest       | Players with money to invest  |
 
 <!-- CHECK: is this the full list? One source mentions six businesses and a Collection Table for loot sets. -->
@@ -46,7 +46,7 @@ Buy cheap **Contraband Cargo** at your district’s Sales Center, repack it at a
 
 ### Grow Room
 
-The weed farm. Place **Growing Bushes** on **Grow Tables**, harvest the bags, sell them. Bushes regrow by themselves, so one setup keeps paying all week. See [the Grow Room guide](/rob-run/grow-room-guide).
+Your farm. Place **Growing Bushes** on **Grow Tables**, harvest the bags, sell them. Bushes regrow by themselves, so one setup keeps paying all week. See [the Grow Room guide](/rob-run/grow-room-guide).
 
 [SCREENSHOT: the Grow Room in a base]
 

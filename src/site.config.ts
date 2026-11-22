@@ -3,7 +3,7 @@ export const SITE = {
   name: 'RespawnReady',
   tagline: 'Game guides from real players.',
   description:
-    'In-depth game guides, tips and walkthroughs for ROB RUN, GTA and more — written by players with hundreds of hours in each game.',
+    'In-depth game guides, tips and walkthroughs for ROB RUN, GTA 6 and more — clear, fact-checked and kept up to date.',
   locale: 'en',
   ogLocale: 'en_US',
   // Default image for social link previews (1200x630, in /public).
