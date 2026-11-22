@@ -1,10 +1,10 @@
-# Game Guides
+# RespawnReady
 
-A gaming guide website with detailed, first-hand guides for ROB RUN, GTA and more — written by players with hundreds of hours in each game.
+**[respawnready.com](https://respawnready.com)** — a gaming guide website with detailed, first-hand guides for ROB RUN, GTA and more — written by players with hundreds of hours in each game.
 
 Built with [Astro](https://astro.build) as a fast static site: every page is plain HTML, which keeps it quick to load and easy for Google to read.
 
-> **The site name is a placeholder.** Change it in `src/site.config.ts` once the brand is chosen.
+> The site name, tagline and contact email live in `src/site.config.ts`. The domain lives in `astro.config.mjs`.
 
 ---
 
@@ -19,7 +19,8 @@ Built with [Astro](https://astro.build) as a fast static site: every page is pla
 - [Writing guides that rank](#writing-guides-that-rank)
 - [SEO features](#seo-features)
 - [Deploying to Cloudflare Pages](#deploying-to-cloudflare-pages)
-- [Before launch checklist](#before-launch-checklist)
+- [Email, analytics and Search Console](#email-analytics-and-search-console)
+- [Launch checklist](#launch-checklist)
 - [Git workflow](#git-workflow)
 
 ---
@@ -228,19 +229,57 @@ Built in, no setup needed:
 
 4. If the build uses an old Node version, add an environment variable `NODE_VERSION` = `24`.
 5. Deploy. Every merge into `main` redeploys the site automatically, and every PR gets its own preview link.
-6. Add your custom domain under the project's **Custom domains** tab.
+6. Under the project's **Custom domains** tab, add `respawnready.com`, then add `www.respawnready.com` too.
+   Because the domain is on Cloudflare, the DNS records are created for you and HTTPS works within a few minutes.
+7. To send `www` visitors to the main domain, go to **respawnready.com → Rules → Redirect Rules** and use the
+   **Redirect from WWW to root** template.
 
-## Before launch checklist
+## Email, analytics and Search Console
 
-- [ ] Choose the brand name and update `src/site.config.ts`
-- [ ] Set the real domain in `astro.config.mjs` (`site: 'https://your-domain.com'`)
-- [ ] Rewrite the example ROB RUN guide with your own experience and set `draft: false`
-- [ ] Publish at least 5–10 guides for ROB RUN
-- [ ] Add cover images for each game in `public/images/games/` and set `cover`
-- [ ] Add a default link-preview image (1200×630) and set `defaultOgImage`
-- [ ] Deploy to Cloudflare Pages and connect the domain
-- [ ] Set up Google Search Console, paste the verification code into `googleSiteVerification`, redeploy
-- [ ] Submit `https://your-domain.com/sitemap.xml` in Search Console
+**Contact email.** The site shows `contact@respawnready.com`. It isn't a real inbox: Cloudflare forwards it to a private Gmail.
+
+1. Cloudflare dashboard → **respawnready.com → Email → Email Routing** → **Get started**.
+2. Add the destination address (your Gmail) and click the confirmation link Cloudflare emails you.
+3. Create a custom address `contact` → send to that Gmail. Cloudflare adds the needed DNS records for you.
+4. Test it by emailing `contact@respawnready.com` from another account.
+
+**Analytics.** Cloudflare Web Analytics is free and cookieless, so no cookie banner is needed for it.
+In the Pages project → **Metrics** → **Web Analytics** → **Enable**. Cloudflare adds the script automatically on the
+next deploy. The Privacy Policy already mentions it.
+
+**Google Search Console.**
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) → **Add property** → **Domain** → `respawnready.com`.
+2. Google gives you a TXT record. Add it in Cloudflare → **DNS → Records**, then click **Verify**.
+3. Open **Sitemaps** and submit `https://respawnready.com/sitemap.xml`.
+4. (Optional) If you'd rather use the HTML-tag method, paste the code into `googleSiteVerification` in `src/site.config.ts` and redeploy.
+
+## Launch checklist
+
+**Done**
+
+- [x] Brand name (RespawnReady) and tagline in `src/site.config.ts`
+- [x] Domain `respawnready.com` bought on Cloudflare and set in `astro.config.mjs`
+- [x] Link-preview image (`public/og-default.png`) and favicon
+- [x] Contact email set (`contact@respawnready.com`)
+- [x] Privacy Policy covers hosting, analytics and ads
+
+**To do**
+
+- [ ] Set up Email Routing so `contact@respawnready.com` reaches your inbox
+- [ ] Review every ROB RUN guide, fix anything marked `CHECK` and set `draft: false`
+- [ ] Pick the 3 `featured` guides that show under "Start here"
+- [ ] Add in-game screenshots to the guides
+- [ ] Deploy to Cloudflare Pages and add `respawnready.com` (and `www.respawnready.com`) under **Custom domains**
+- [ ] Enable Web Analytics on the Pages project
+- [ ] Verify the domain in Google Search Console and submit the sitemap
+- [ ] Check a link preview by pasting a guide link into Discord or WhatsApp
+
+**After launch**
+
+- [ ] Publish new guides regularly — consistency matters more than volume
+- [ ] Watch Search Console for which searches bring visitors, and write more guides around them
+- [ ] Apply for Google AdSense once there's steady traffic and 20+ published guides
 
 ## Git workflow
 

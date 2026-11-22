@@ -20,7 +20,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-// "How to Make Money Fast | Game Guides", or just the site name on the homepage.
+// "How to Make Money Fast | RespawnReady", or just the site name on the homepage.
 const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
 const canonicalUrl = new URL(cleanPath(Astro.url.pathname), Astro.site);
 const imageUrl = image ? new URL(image, Astro.site) : null;
