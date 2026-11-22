@@ -115,3 +115,4 @@ WAiNK tells you which buyer a car suits.
 - [How to get the Key Cloner in GTA 6](/gta-6/how-to-get-key-cloner)
 - [GTA 6 trackers explained](/gta-6/car-trackers-explained)
 - [How to register cars in GTA 6](/gta-6/how-to-register-cars)
+- [The best cars in GTA 6](/gta-6/best-cars)
