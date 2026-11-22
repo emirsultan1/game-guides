@@ -8,36 +8,42 @@ const games = await getActiveGames();
 
 <PageLayout
   title={`About ${SITE.name}`}
-  description={`Who writes ${SITE.name}, how the guides are made and kept up to date, and which games we cover.`}
-  intro="Game guides written by players, for players."
+  description={`Who writes ${SITE.name}, how the guides are checked, and which games are covered.`}
+  intro="Hey, I’m Emir. I make the guides on this site."
 >
   <p>
-    {SITE.name} is a guide site for the games people are playing right now. We focus on new and fast-moving games,
-    where answers are hard to find and change with every patch.
+    I started {SITE.name} because I kept running into the same problem: you get stuck in a game, search for the answer,
+    and end up scrolling through a 20-minute video or a page full of filler. Here, every guide starts with the short
+    answer, then explains the details if you want them.
   </p>
 
-  <h2>Who writes the guides</h2>
-  <p>
-    The guides are written by <strong>Emir</strong>. The ROB RUN guides come from 100+ hours of playing it. For brand-new
-    games like GTA 6, guides are researched from gameplay footage and cross-checked across several independent sources
-    before they’re published. Everything is written in our own words, never copied from other sites.
-  </p>
-
-  <h2>How we keep guides accurate</h2>
+  <h2>How the guides are made</h2>
   <ul>
-    <li>Every fact is checked in-game or confirmed by at least two independent sources before it’s published.</li>
-    <li>Every guide shows the date it was last updated, and the game version it was checked on where it matters.</li>
-    <li>When a patch changes something, we update the guide and its date.</li>
-    <li>Spotted a mistake? <a href="/contact">Tell us</a> and we’ll fix it.</li>
+    <li>
+      <strong>ROB RUN:</strong> I’ve put 100+ hours into it, so these guides come from actually playing: robbing stores,
+      building bases and getting raided.
+    </li>
+    <li>
+      <strong>GTA 6:</strong> the game is brand new, so these guides are researched from gameplay footage and only
+      include facts confirmed by at least two independent sources.
+    </li>
+    <li>Everything is written in my own words. Nothing is copied from other sites.</li>
+    <li>Every guide shows when it was last updated. When a patch changes something, I update the guide.</li>
   </ul>
 
-  <h2>Games we cover</h2>
+  <h2>Found a mistake?</h2>
+  <p>
+    Games change fast, and I’d rather fix a wrong tip than leave it up. <a href="/contact">Send me a message</a> with
+    the guide and what’s wrong, and I’ll check it.
+  </p>
+
+  <h2>Games covered</h2>
   {
     games.length > 0 ? (
       <ul>
         {games.map((game) => (
           <li>
-            <a href={getGameUrl(game)}>{game.data.name}</a>
+            <a href={getGameUrl(game)}>{game.data.name} guides</a>
           </li>
         ))}
       </ul>
@@ -48,7 +54,7 @@ const games = await getActiveGames();
 
   <h2>Not affiliated</h2>
   <p>
-    {SITE.name} is an independent fan site. We’re not affiliated with, endorsed by or sponsored by any game developer or
-    publisher. All game names, images and trademarks belong to their respective owners.
+    {SITE.name} is an independent fan site. It’s not affiliated with, endorsed by or sponsored by any game developer or
+    publisher. Game names and trademarks belong to their owners.
   </p>
 </PageLayout>

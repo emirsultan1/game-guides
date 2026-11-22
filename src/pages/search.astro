@@ -68,7 +68,7 @@ import SearchForm from '@/components/SearchForm.astro';
 
     const meta = document.createElement('span');
     meta.className = 'result-meta';
-    meta.textContent = `${entry.game} · ${entry.category}`;
+    meta.textContent = `${entry.game} / ${entry.category}`;
 
     const title = document.createElement('span');
     title.className = 'result-title';
@@ -128,45 +128,54 @@ import SearchForm from '@/components/SearchForm.astro';
     max-width: calc(var(--content-width) + 2 * var(--space-6));
   }
 
+  .search-page h1 {
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    line-height: 1;
+  }
+
   .status {
     color: var(--color-text-muted);
   }
 
   .results {
-    display: grid;
-    gap: var(--space-3);
     list-style: none;
     padding: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .results :global(li) {
+    border-bottom: 1px solid var(--color-border);
   }
 
   .results :global(.result) {
     display: grid;
     gap: var(--space-1);
-    padding: var(--space-4) var(--space-6);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    background: var(--color-surface);
-    color: var(--color-text);
+    padding: var(--space-4) var(--space-2);
+    text-decoration: none;
   }
 
   .results :global(.result:hover) {
-    border-color: var(--color-accent);
-    text-decoration: none;
+    background: var(--color-highlight);
   }
 
   .results :global(.result-meta) {
     color: var(--color-text-muted);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: var(--text-sm);
   }
 
   .results :global(.result-title) {
     font-size: var(--text-lg);
     font-weight: 700;
+    line-height: 1.35;
   }
 
   .results :global(.result-description) {
     color: var(--color-text-muted);
     font-size: var(--text-sm);
+  }
+
+  .results :global(.result:hover .result-meta),
+  .results :global(.result:hover .result-description) {
+    color: var(--color-text);
   }
 </style>

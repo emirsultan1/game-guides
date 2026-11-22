@@ -1,24 +1,19 @@
 ---
-// A bordered list of guides: title, "Game · Category" and the last updated date.
-// Used on the homepage now, and on game hub pages later.
-import {
-  getCategoryLabel,
-  getGuideDate,
-  getGuideGameId,
-  getGuideUrl,
-  type Game,
-  type Guide,
-} from '@/utils/content';
-import { formatDate, toIsoDate } from '@/utils/date';
+// A plain list of guides, one per row. Each row shows the guide's title and, optionally,
+// its short description and which game it's for. Used on the homepage, game pages and
+// under each guide.
+import { getGuideGameId, getGuideUrl, type Game, type Guide } from '@/utils/content';
 
 export interface Props {
   guides: Guide[];
   games: Game[];
-  // Hide the game name, e.g. on a game's own hub page.
+  // Show which game each guide is for (homepage). Off on a game's own page.
   showGame?: boolean;
+  // Show the guide's one-line description under the title.
+  showDescription?: boolean;
 }
 
-const { guides, games, showGame = true } = Astro.props;
+const { guides, games, showGame = true, showDescription = false } = Astro.props;
 const gamesById = new Map(games.map((game) => [game.id, game]));
 ---
 
@@ -26,21 +21,15 @@ const gamesById = new Map(games.map((game) => [game.id, game]));
   {
     guides.map((guide) => {
       const game = gamesById.get(getGuideGameId(guide));
-      const category = game ? getCategoryLabel(game, guide.data.category) : guide.data.category;
-      const date = getGuideDate(guide);
       return (
         <li>
           <a href={getGuideUrl(guide)} class="guide-row">
-            <div class="text">
-              <span class="title">
-                {guide.data.title}
-                {guide.data.draft && <span class="draft">Draft</span>}
-              </span>
-              <span class="meta">{showGame && game ? `${game.data.name} · ${category}` : category}</span>
-            </div>
-            <span class="date">
-              {guide.data.updatedAt ? 'Updated' : 'Published'} <time datetime={toIsoDate(date)}>{formatDate(date)}</time>
+            <span class="title">
+              {guide.data.title}
+              {guide.data.draft && <span class="draft"> (draft)</span>}
             </span>
+            {showGame && game && <span class="game">{game.data.name}</span>}
+            {showDescription && <span class="description">{guide.data.description}</span>}
           </a>
         </li>
       );
@@ -52,56 +41,52 @@ const gamesById = new Map(games.map((game) => [game.id, game]));
   .guide-list {
     list-style: none;
     padding: 0;
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    overflow: hidden;
-    background: var(--color-surface);
-  }
-
-  li + li {
     border-top: 1px solid var(--color-border);
   }
 
-  .guide-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-2) var(--space-4);
-    padding: var(--space-4) var(--space-6);
-    color: var(--color-text);
+  li {
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .guide-row:hover {
-    background: var(--color-surface-2);
-    color: var(--color-text);
+  .guide-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-6);
+    padding: var(--space-4) var(--space-2);
     text-decoration: none;
   }
 
-  .text {
-    display: grid;
-    gap: var(--space-1);
-    min-width: 0;
+  .guide-row:hover {
+    background: var(--color-highlight);
   }
 
   .title {
     font-weight: 700;
+    font-size: var(--text-lg);
+    line-height: 1.35;
+  }
+
+  .game {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+  }
+
+  .description {
+    grid-column: 1 / -1;
+    max-width: 44rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .guide-row:hover .game,
+  .guide-row:hover .description {
+    color: var(--color-text);
   }
 
   .draft {
-    margin-left: var(--space-2);
-    padding: 0.1rem 0.45rem;
-    border-radius: 6px;
-    background: #3a2c10;
     color: var(--color-warning);
-    font-size: 0.7rem;
-    font-weight: 700;
-    vertical-align: middle;
-  }
-
-  .meta,
-  .date {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
+    font-weight: 500;
   }
 </style>

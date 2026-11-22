@@ -5,7 +5,7 @@ import { render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TableOfContents from '@/components/TableOfContents.astro';
-import GuideCard from '@/components/GuideCard.astro';
+import GuideList from '@/components/GuideList.astro';
 import JsonLd from '@/components/JsonLd.astro';
 import {
   getGames,
@@ -102,22 +102,16 @@ const gameUrl = getGameUrl(game);
           ]}
         />
 
-        <div class="tags">
-          <a href={`${gameUrl}#${category}`} class="category">{categoryLabel}</a>
-          {draft && <span class="draft">Draft — not visible on the live site</span>}
-        </div>
+        {draft && <p class="draft">Draft: only visible in npm run dev, not on the live site.</p>}
 
         <h1>{title}</h1>
         <p class="lead">{description}</p>
 
-        <ul class="meta">
-          <li class="author">By {author}</li>
-          <li>
-            {updatedAt ? 'Updated' : 'Published'}{' '}
-            <time datetime={toIsoDate(updatedAt ?? publishedAt)}>{formatDate(updatedAt ?? publishedAt)}</time>
-          </li>
-          {gameVersion && <li>Game version: {gameVersion}</li>}
-        </ul>
+        <p class="meta">
+          By <a href="/about">{author}</a>, {updatedAt ? 'updated' : 'published'}{' '}
+          <time datetime={toIsoDate(updatedAt ?? publishedAt)}>{formatDate(updatedAt ?? publishedAt)}</time>
+          {gameVersion && <span>, checked on version {gameVersion}</span>}
+        </p>
       </header>
 
       {
@@ -128,15 +122,17 @@ const gameUrl = getGameUrl(game);
 
       {
         quickAnswer && (
-          <aside class="quick-answer" aria-labelledby="quick-answer-heading">
-            <h2 id="quick-answer-heading">Quick answer</h2>
-            <p>{quickAnswer}</p>
-          </aside>
+          <section class="quick-answer" aria-labelledby="quick-answer-heading">
+            <h2 id="quick-answer-heading">Short answer</h2>
+            <p>
+              <mark>{quickAnswer}</mark>
+            </p>
+          </section>
         )
       }
 
       <div class="toc-mobile">
-        <TableOfContents headings={headings} />
+        <TableOfContents headings={headings} collapsible />
       </div>
 
       <div class="prose">
@@ -147,14 +143,12 @@ const gameUrl = getGameUrl(game);
         related.length > 0 && (
           <section class="related" aria-labelledby="related-heading">
             <h2 id="related-heading">More {game.data.name} guides</h2>
-            <div class="related-grid">
-              {related.map((g) => (
-                <GuideCard guide={g} categoryLabel={getCategoryLabel(game, g.data.category)} />
-              ))}
-            </div>
-            <a href={gameUrl} class="all-link">
-              All {game.data.name} guides →
-            </a>
+            <GuideList guides={related} games={[game]} showGame={false} />
+            <p>
+              <a href={gameUrl} class="all-link">
+                See all {game.data.name} guides
+              </a>
+            </p>
           </section>
         )
       }
@@ -212,9 +206,10 @@ const gameUrl = getGameUrl(game);
   }
 
   .sidebar {
-    flex: 1 1 15rem;
+    flex: 1 1 14rem;
     min-width: 0;
     align-self: stretch;
+    padding-top: var(--space-12);
   }
 
   .sidebar-inner {
@@ -227,88 +222,65 @@ const gameUrl = getGameUrl(game);
   .guide-header {
     display: grid;
     gap: var(--space-4);
-    padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .category,
-  .draft {
-    padding: 0.15rem 0.55rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-
-  .category {
-    background: var(--color-surface-2);
-    color: var(--color-text-muted);
-  }
-
-  .category:hover {
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
-  .draft {
-    background: #3a2c10;
-    color: var(--color-warning);
   }
 
   .guide-header h1 {
-    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    line-height: 1;
   }
 
   .lead {
-    color: var(--color-text-muted);
     font-size: var(--text-lg);
   }
 
   .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-6);
-    list-style: none;
-    padding: 0;
     color: var(--color-text-muted);
     font-size: var(--text-sm);
   }
 
-  .author {
-    color: var(--color-text);
-    font-weight: 600;
+  .draft {
+    justify-self: start;
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-highlight-soft);
+    color: var(--color-warning);
+    font-size: var(--text-sm);
+    font-weight: 700;
   }
 
   .hero-image {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-text);
   }
 
-  /* --- Quick answer ------------------------------------------------------- */
+  /* --- Short answer: the highlighted bit -------------------------------- */
 
   .quick-answer {
     display: grid;
     gap: var(--space-2);
-    padding: var(--space-4) var(--space-6);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    background: var(--color-surface);
+    padding-left: var(--space-4);
+    border-left: 4px solid var(--color-text);
   }
 
   .quick-answer h2 {
+    font-family: var(--font-sans);
     font-size: var(--text-base);
+    font-weight: 700;
   }
 
   .quick-answer p {
-    color: #c9ccd3;
+    font-size: var(--text-lg);
+    line-height: 1.7;
+  }
+
+  /* A highlighter stroke behind each line of the answer */
+  .quick-answer mark {
+    padding: 0.08em 0.15em;
+    background: var(--color-highlight);
+    color: var(--color-text);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   /* --- Guide content (rendered from Markdown) ----------------------------- */
@@ -316,23 +288,18 @@ const gameUrl = getGameUrl(game);
   .prose {
     display: grid;
     gap: var(--space-4);
-    color: #c9ccd3;
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    font-size: var(--text-lg);
+    line-height: 1.7;
   }
 
   .prose :global(h2) {
-    margin-top: var(--space-6);
-    color: var(--color-text);
+    margin-top: var(--space-8);
+    padding-top: var(--space-4);
+    border-top: 2px solid var(--color-text);
   }
 
   .prose :global(h3) {
     margin-top: var(--space-4);
-    color: var(--color-text);
-  }
-
-  .prose :global(strong) {
-    color: var(--color-text);
   }
 
   .prose :global(ul),
@@ -342,16 +309,15 @@ const gameUrl = getGameUrl(game);
     padding-left: var(--space-6);
   }
 
-  .prose :global(blockquote) {
-    padding: var(--space-4) var(--space-6);
-    border: 1px solid #4a3d16;
-    border-radius: 12px;
-    background: #2a2412;
-    color: #e6d9b8;
+  .prose :global(li::marker) {
+    font-weight: 700;
   }
 
-  .prose :global(blockquote strong) {
-    color: var(--color-warning);
+  /* Tips and warnings (Markdown "> ..." quotes) */
+  .prose :global(blockquote) {
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-highlight-soft);
+    border-left: 4px solid var(--color-text);
   }
 
   .prose :global(img) {
@@ -359,8 +325,7 @@ const gameUrl = getGameUrl(game);
     width: 100%;
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-text);
     background: var(--color-surface);
   }
 
@@ -379,7 +344,6 @@ const gameUrl = getGameUrl(game);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
     line-height: 1.5;
-    text-align: center;
   }
 
   /* Two or three screenshots on consecutive lines sit side by side. */
@@ -406,17 +370,43 @@ const gameUrl = getGameUrl(game);
     gap: var(--space-1);
     min-height: clamp(9rem, 38vw, 18rem);
     padding: var(--space-6);
-    border: 2px dashed #5b4bb0;
-    border-radius: 12px;
-    background: repeating-linear-gradient(-45deg, #171a21 0 14px, #1a1d26 14px 28px);
+    border: 2px dashed var(--color-text-muted);
+    background: repeating-linear-gradient(-45deg, var(--color-bg) 0 14px, var(--color-surface-2) 14px 28px);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
     text-align: center;
   }
 
   .prose :global(.screenshot-needed strong) {
-    color: var(--color-accent-hover);
+    color: var(--color-text);
     font-size: var(--text-base);
+  }
+
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    background: var(--color-surface);
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose :global(th) {
+    border-bottom: 2px solid var(--color-text);
+    white-space: nowrap;
+  }
+
+  .prose :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--color-border);
   }
 
   /* Full-size screenshot viewer */
@@ -426,14 +416,13 @@ const gameUrl = getGameUrl(game);
     max-width: none;
     max-height: 94vh;
     padding: 0;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border: 2px solid var(--color-text);
     background: var(--color-bg);
     color: var(--color-text);
   }
 
   .lightbox::backdrop {
-    background: rgb(0 0 0 / 0.85);
+    background: rgb(22 24 27 / 0.88);
   }
 
   .lightbox img {
@@ -458,74 +447,44 @@ const gameUrl = getGameUrl(game);
 
   .lightbox-close {
     padding: var(--space-1) var(--space-3);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background: var(--color-surface-2);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius);
+    background: var(--color-surface);
     color: var(--color-text);
     font: inherit;
+    font-weight: 700;
     cursor: pointer;
   }
 
-  .prose :global(table) {
-    display: block;
-    overflow-x: auto;
-    border-collapse: collapse;
-    font-size: var(--text-sm);
-  }
-
-  .prose :global(th),
-  .prose :global(td) {
-    padding: var(--space-3) var(--space-4);
-    border: 1px solid var(--color-border);
-    text-align: left;
-  }
-
-  .prose :global(th) {
-    background: var(--color-surface-2);
-    color: var(--color-text);
-  }
-
-  .prose :global(hr) {
-    border: 0;
-    border-top: 1px solid var(--color-border);
-  }
-
-  /* --- Related guides ----------------------------------------------------- */
+  /* --- More guides -------------------------------------------------------- */
 
   .related {
     display: grid;
     gap: var(--space-4);
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
-    gap: var(--space-4);
+    margin-top: var(--space-4);
   }
 
   .all-link {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   /* The table of contents sits in the sidebar on wide screens,
-     and above the guide content on phones and tablets. */
+     and as a tap-to-open line above the guide on phones and tablets. */
   .toc-mobile {
     display: none;
   }
 
-  .toc-mobile:empty {
-    display: none;
-  }
-
-  @media (max-width: 860px) {
+  @media (max-width: 900px) {
     .sidebar {
       display: none;
     }
 
     .toc-mobile {
       display: block;
+    }
+
+    .toc-mobile:empty {
+      display: none;
     }
   }
 </style>

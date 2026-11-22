@@ -8,8 +8,7 @@ const games = await getActiveGames();
 
 <BaseLayout title="Page not found" description="This page doesn't exist." noindex>
   <section class="container not-found">
-    <p class="code">404</p>
-    <h1>This page doesn't exist</h1>
+        <h1>This page doesn't exist</h1>
     <p class="text">The guide may have moved, or the link has a typo. Try one of these instead:</p>
     <ul class="links">
       <li><a href="/" class="button">Homepage</a></li>
@@ -29,27 +28,24 @@ const games = await getActiveGames();
 <style>
   .not-found {
     display: grid;
-    justify-items: center;
+    justify-items: start;
     gap: var(--space-4);
-    padding-block: var(--space-16);
-    text-align: center;
+    padding-block: var(--space-12);
   }
 
-  .code {
-    color: var(--color-accent);
-    font-size: var(--text-3xl);
-    font-weight: 800;
+  .not-found h1 {
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    line-height: 1;
   }
 
   .text {
     max-width: 32rem;
-    color: var(--color-text-muted);
+    font-size: var(--text-lg);
   }
 
   .links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: var(--space-3);
     list-style: none;
     padding: 0;
@@ -59,17 +55,16 @@ const games = await getActiveGames();
   .button {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    min-height: 48px;
     padding: 0 var(--space-6);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-text);
     border-radius: var(--radius);
-    color: var(--color-text);
-    font-weight: 600;
+    background: var(--color-surface);
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .button:hover {
-    border-color: var(--color-accent);
-    color: var(--color-text);
-    text-decoration: none;
+    background: var(--color-highlight);
   }
 </style>
