@@ -10,7 +10,7 @@ draft: false
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your real numbers (how much your room makes per hour) would be the best part of this guide. -->
 
-The **Grow Room** is ROB RUN’s weed farm, and it’s the business most players want first. Once it’s set up, it keeps producing while you’re out robbing, and one good plant keeps paying for the rest of the week.
+The **Grow Room** is ROB RUN’s farming business, and it’s the business most players want first. Once it’s set up, it keeps producing while you’re out robbing, and one good plant keeps paying for the rest of the week.
 
 ## What you need
 
