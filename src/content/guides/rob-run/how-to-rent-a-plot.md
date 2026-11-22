@@ -24,6 +24,8 @@ You don’t need to buy a whole settlement. Renting one plot inside someone else
 
 A **Land Plot Title** is the document that lets you rent a plot. Since the **4 November update**, renting in a level 1 district costs **documents instead of cash**.
 
+[SCREENSHOT: the Land Plot Title item]
+
 Plots come in **three levels**, matching the **level of the district** they’re in:
 
 | District level | What you need                                    |
@@ -46,6 +48,8 @@ Make sure the settlement’s **district level** matches your title.
 
 Travel to the settlement and find an **empty plot**. Before you pick one, think about:
 
+[SCREENSHOT: a vacant plot with its sign]
+
 - **Distance:** how far it is from Looty Bay and the roads you use most.
 - **Neighbors:** a quiet settlement is safer than a busy one full of crews.
 - **Who controls the district:** if a hostile clan runs it, think twice.
@@ -53,6 +57,8 @@ Travel to the settlement and find an **empty plot**. Before you pick one, think 
 ## Step 4: Pay at the sign
 
 Every plot has a **sign right next to it**. Use it to pay the rent with your title. Once it’s confirmed, the plot is yours and you can start building.
+
+[SCREENSHOT: the rent menu at the plot sign]
 
 ## Why can’t I rent a plot?
 

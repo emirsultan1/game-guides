@@ -29,9 +29,13 @@ The city sits on **three islands along one main road**:
 | Palmside      | Police Station, Art Gallery, hospital                | Crew jobs only                    | Very high     |
 | Loraine Hills | Cottages, luxury houses, a large mansion             | Quiet solo runs                   | Low           |
 
+[SCREENSHOT: the full Looty Bay map with the four areas]
+
 ## Downtown
 
 The busy commercial heart of the city, on the east island.
+
+[SCREENSHOT: Downtown from the street]
 
 **What’s here:**
 
@@ -49,6 +53,8 @@ The busy commercial heart of the city, on the east island.
 
 Hotels and shops along the waterfront and pier, on the west island.
 
+[SCREENSHOT: Sunny Beach]
+
 **What’s here:**
 
 - The **Grand Hotel**, **Reef Hotel** and **Seasons Hotel**
@@ -61,6 +67,8 @@ Hotels and shops along the waterfront and pier, on the west island.
 ## Palmside
 
 The middle of the city, home to the two highest-risk targets.
+
+[SCREENSHOT: Palmside]
 
 **What’s here:**
 
@@ -75,6 +83,8 @@ The middle of the city, home to the two highest-risk targets.
 ## Loraine Hills
 
 Quiet luxury houses on the west island.
+
+[SCREENSHOT: Loraine Hills]
 
 **What’s here:**
 
@@ -102,6 +112,8 @@ Quiet luxury houses on the west island.
 ## The two exits
 
 Looty Bay has **two exits**: **Exit East** and **Exit West**. You need to leave by one to keep your loot and drop your criminal status.
+
+[SCREENSHOT: the map with both exits out of Looty Bay]
 
 Police can **block bridges and set up roadblocks**, so always know where both exits are from wherever you’re robbing. See [how to escape the police](/rob-run/escape-the-police).
 

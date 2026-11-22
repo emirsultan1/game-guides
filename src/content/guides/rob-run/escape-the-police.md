@@ -18,6 +18,8 @@ Here’s how to get out with your bag.
 
 Most escapes are won before the alarm ever goes off.
 
+[SCREENSHOT: the map with an escape route in mind]
+
 - **Know both exits.** The city has **two main bridge exits**. Cops can block one, so you need a backup.
 - **Pick your route** from the target to each exit, ideally on side streets.
 - **Park facing the way out**, behind the building, so you don’t waste seconds turning around.
@@ -27,6 +29,8 @@ Most escapes are won before the alarm ever goes off.
 
 ## During the chase
 
+[SCREENSHOT: a police chase in a car]
+
 ### Break line of sight
 
 Cops can’t chase what they can’t see. Use **side streets, alleys, buildings and parking areas** to break their view and change direction. Don’t stay on one predictable main road.
@@ -34,6 +38,8 @@ Cops can’t chase what they can’t see. Use **side streets, alleys, buildings 
 ### Use the second bridge
 
 Police can set up **roadblocks** and close bridges on the main routes out. If your planned exit is blocked, **switch to the other bridge** instead of trying to force through.
+
+[SCREENSHOT: the second bridge out of Looty Bay]
 
 > **Watch out:** the exit you used to get into the city might not be open when you try to leave.
 

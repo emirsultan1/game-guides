@@ -124,6 +124,7 @@ src/
 | `platforms`  | no       | Shown on the hub page                                                 |
 | `categories` | yes      | Topics guides can be filed under. `id`: lowercase letters, numbers, dashes |
 | `cover`      | no       | Image path inside `public/`. Without it, a placeholder with the name shows |
+| `teaser`     | no       | `true` shows a "Guides coming soon" card on the homepage while it has no guides |
 | `order`      | no       | Lower numbers show first on the homepage (default 100)                |
 
 3. Create the folder `src/content/guides/<game-id>/` for its guides.
@@ -171,25 +172,51 @@ The build fails with a clear message if a field is missing, a date is wrong, or 
 | ------ | ------ |
 | Cell   | Cell   |
 
-![Screenshot description](/images/rob-run/screenshot.jpg)
-```
+![What the screenshot shows](@/assets/guides/rob-run/heist-store.png "Caption under the image")
 
-Put images in `public/images/<game-id>/` and reference them starting with `/images/`.
+[SCREENSHOT: what still needs a screenshot here]
+```
 
 ### Images
 
-| Image                 | Where it goes                         | Size                | Used for                                   |
-| --------------------- | ------------------------------------- | ------------------- | ------------------------------------------ |
-| Game cover            | `public/images/games/<game-id>.jpg`   | 16:9, ~1280×720     | Game cards, hub page, link previews        |
-| Guide main image      | `public/images/<game-id>/<name>.jpg`  | 16:9, ~1280×720     | Top of the guide and its link preview      |
-| Screenshots in guides | `public/images/<game-id>/<name>.jpg`  | Any, max ~1600 wide | Inside the guide text                      |
-| Default link preview  | `public/og-default.png`               | 1200×630            | Pages with no image of their own           |
+**Screenshots inside a guide** go in `src/assets/guides/<game-id>/`. Astro converts them to WebP, makes
+smaller copies for phones and sets their size so the page doesn't jump while loading. Drop in a PNG or JPG
+straight from the game; no need to resize it first.
 
-- Set a game cover with `"cover": "/images/games/rob-run.jpg"` in the game's JSON file.
+```md
+<!-- One image on its own line = a full-width screenshot. The text in quotes is the caption. -->
+![The heist store menu](@/assets/guides/rob-run/heist-store.png "The heist store at the pawn shop")
+
+<!-- Two or three images on lines right after each other = side by side. -->
+![Before](@/assets/guides/rob-run/panel-on.png "Panel on")
+![After](@/assets/guides/rob-run/panel-off.png "Panel off")
+```
+
+- The text in `[ ]` is the **alt text**: describe what's in the picture. Google reads it.
+- The text in quotes is the **caption** shown under the image. It's optional.
+- Readers can click any screenshot to see it full size.
+- Name files in lowercase with dashes: `heist-store.png`, not `Screenshot 2026-11-22 at 15.04.png`.
+
+**Screenshot notes.** A line like `[SCREENSHOT: the bank vault door]` marks a spot that still needs a picture.
+It shows as a dashed box in `npm run dev` and is removed on the live site, so a guide can go live first.
+See [SCREENSHOTS.md](SCREENSHOTS.md) for the full list.
+
+**Other images** go in `public/`, because they need a fixed URL for link previews:
+
+| Image                | Where it goes                         | Size             | Used for                               |
+| -------------------- | ------------------------------------- | ---------------- | -------------------------------------- |
+| Game cover           | `public/images/games/<game-id>.webp`  | 1280×680         | Game cards, hub page, link previews    |
+| Guide main image     | `public/images/<game-id>/<name>.webp` | 16:9, ~1280×720  | Top of the guide and its link preview  |
+| Default link preview | `public/og-default.png`               | 1200×630         | Pages with no image of their own       |
+
+- Set a game cover with `"cover": "/images/games/rob-run.webp"` in the game's JSON file.
 - Set a guide's main image with `image` and `imageAlt` in its frontmatter.
 - Link previews pick the guide image, then the game cover, then the default.
 - **Use your own screenshots.** Official art and other sites' images belong to their owners.
-- Keep files small: save screenshots as JPG or WebP at around 80% quality.
+
+**"Coming soon" games.** Add `"teaser": true` to a game's JSON file to show it on the homepage as a
+"Guides coming soon" card before it has any guides (see GTA 6). It becomes a normal card with its own page
+as soon as its first guide is published.
 
 ## Writing guides that rank
 
@@ -269,7 +296,7 @@ next deploy. The Privacy Policy already mentions it.
 - [ ] Set up Email Routing so `contact@respawnready.com` reaches your inbox
 - [ ] Review every ROB RUN guide, fix anything marked `CHECK` and set `draft: false`
 - [ ] Pick the 3 `featured` guides that show under "Start here"
-- [ ] Add in-game screenshots to the guides
+- [ ] Take the screenshots in [SCREENSHOTS.md](SCREENSHOTS.md) and add them to the guides
 - [ ] Deploy to Cloudflare Pages and add `respawnready.com` (and `www.respawnready.com`) under **Custom domains**
 - [ ] Enable Web Analytics on the Pages project
 - [ ] Verify the domain in Google Search Console and submit the sitemap

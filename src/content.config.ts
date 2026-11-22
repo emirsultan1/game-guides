@@ -31,6 +31,9 @@ const games = defineCollection({
     cover: z.string().startsWith('/', 'Image paths start with / and point into /public').optional(),
     // Lower numbers show first on the homepage.
     order: z.number().int().default(100),
+    // Show a "Guides coming soon" card on the homepage while the game has no published guides.
+    // The card isn't a link, and the game still gets no hub page or sitemap entry until it has guides.
+    teaser: z.boolean().default(false),
   }),
 });
 

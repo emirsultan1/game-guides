@@ -85,6 +85,18 @@ export async function getActiveGames(): Promise<Game[]> {
   return games.filter((game) => game.data.status !== 'archived');
 }
 
+/**
+ * Games with `teaser: true` that have no published guides yet.
+ * The homepage shows them as "Guides coming soon" cards (not links, since they have no hub page).
+ */
+export async function getTeaserGames(): Promise<Game[]> {
+  const [games, withGuides] = await Promise.all([getGames(), getGamesWithGuides()]);
+  const hasGuides = new Set(withGuides.map((game) => game.id));
+  return games.filter(
+    (game) => game.data.teaser && game.data.status !== 'archived' && !hasGuides.has(game.id),
+  );
+}
+
 /** Guides for one game, newest first. */
 export async function getGuidesForGame(gameId: string): Promise<Guide[]> {
   const guides = await getGuides();

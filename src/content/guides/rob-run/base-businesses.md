@@ -38,6 +38,8 @@ Becoming a **Settlement Resident** gives you:
 
 A **Cargo Workbench** opens the crates, suitcases and safes you steal, so you keep what’s inside instead of selling them sealed. It’s cheap to set up, which makes it the best first business. See [cargo: sell it or open it?](/rob-run/cargo-guide).
 
+[SCREENSHOT: cracking cargo at the workbench]
+
 ### Contraband
 
 Buy cheap **Contraband Cargo** at your district’s Sales Center, repack it at a **Contraband Workbench**, and sell the result to the Smuggler for more. A simple loop that doesn’t need a robbery.
@@ -46,9 +48,13 @@ Buy cheap **Contraband Cargo** at your district’s Sales Center, repack it at a
 
 The weed farm. Place **Growing Bushes** on **Grow Tables**, harvest the bags, sell them. Bushes regrow by themselves, so one setup keeps paying all week. See [the Grow Room guide](/rob-run/grow-room-guide).
 
+[SCREENSHOT: the Grow Room in a base]
+
 ### Chemical Lab
 
 The most expensive business. It uses **Chemical Reagents** to make product. Save it for when your other income is running and you have money to spare.
+
+[SCREENSHOT: the Chemical Lab in a base]
 
 <!-- CHECK: how the Chemical Lab works, what it makes, its cost (sources say $110,000) and whether it's worth it compared with the Grow Room -->
 

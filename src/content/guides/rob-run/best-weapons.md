@@ -24,6 +24,8 @@ This guide goes by **stage and role**, not just raw damage.
 
 **DP-9 pistol.** It’s the cheap starter pistol. It loses to any automatic gun in a real fight, but holding a clerk at gunpoint doesn’t need anything better, and it costs almost nothing to lose.
 
+[SCREENSHOT: the starter weapons in the store]
+
 Other cheap options: the **CB45** pistol and the **Harris 500** shotgun, which is good inside small buildings.
 
 > **Tip:** don’t bring an expensive gun to rob a café. If you die, it’s gone.
@@ -51,6 +53,8 @@ Other cheap options: the **CB45** pistol and the **Harris 500** shotgun, which i
 | Marksman                 | **SR Reaper Mk3** | Fast, accurate follow-up shots at range              |
 | Holding a position       | **LM 249 Mk2**   | Huge magazine; slow to reload and very expensive     |
 | Budget                   | **KL-545 Mk3**   | Best value early on                                  |
+
+[SCREENSHOT: the weapons you rate best, side by side or in the shop]
 
 The **AP Scalar** and **SR Reaper** are rated top tier on almost every list, with the **RC 5.56**, **TAG-12K** and **LM 249** close behind.
 

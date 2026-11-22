@@ -42,17 +42,23 @@ Tier II and III cars need a level 2 or 3 settlement to unlock.
 
 The **Longhorn Van** is the cheapest car you can buy and has the **biggest trunk** and plenty of **cargo slots**. It’s slow, but it pays for itself quickly on cargo runs and store jobs.
 
+[SCREENSHOT: the Longhorn Van]
+
 Pick the **Fukurou Tensa** instead only if you want quicker getaways and don’t carry much.
 
 ## Best getaway car: Royal J
 
 The **Royal J** is the best balance of **acceleration, handling and space**. It’s quick off the line, turns well in tight streets, and still carries a decent haul. For crew heists it’s the car to aim for.
 
+[SCREENSHOT: the Royal J]
+
 On a budget, the **Royal E** is a more balanced city car than anything at Tier I.
 
 ## Fastest car: Buletti Soltempra
 
 The **Buletti Soltempra** has the **highest top speed** in the game and is the best car for outrunning the police on open roads.
+
+[SCREENSHOT: the Buletti Soltempra]
 
 **The catch:**
 
@@ -76,6 +82,8 @@ Cops get a **patrol car** for free on duty. The **Longhorn Wild** line is known 
 ## Upgrades: what to buy first
 
 Cars take **modules** under the hood, in the trunk and underneath.
+
+[SCREENSHOT: the car upgrade menu]
 
 - **For getaways:** upgrade **acceleration** and **handling** first. They matter more in the city than top speed.
 - **For cargo:** add **cargo racks** to carry more.

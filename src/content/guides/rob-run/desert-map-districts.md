@@ -35,6 +35,8 @@ There are **no police** in the desert, and the rules are harsher than in the cit
 2. Each district is split into **settlements**, laid out as a hex grid.
 3. Each settlement has **plots** for player bases.
 
+[SCREENSHOT: the desert map with its districts]
+
 **Highlands**, in the **middle** of the map, is the central district. The clan that holds it rules the server as **Shadow Governor**. See [districts and the Shadow Governor](/rob-run/districts-and-shadow-governor).
 
 **Looty Bay** sits on the **east coast**, with **Lenny’s Motel** and the **prison** outside the city.
@@ -58,6 +60,8 @@ See [how to rent a plot](/rob-run/how-to-rent-a-plot).
 ## District hubs
 
 Each district has a **hub** where you can sell loot, as an alternative to the Fence vans in the city.
+
+[SCREENSHOT: a district hub in the desert]
 
 <!-- CHECK: what district hubs offer (selling? Sales Center?) and how to find them -->
 

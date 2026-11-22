@@ -29,6 +29,8 @@ The unlock can cost much more than the item, or much less. Check both before dec
 
 Press **H**, or open it from the side menu. It works in the desert, at Lenny’s Motel and in Looty Bay.
 
+[SCREENSHOT: the Shipments menu]
+
 You buy unlocked items from **Lenny’s laptop** at the motel, or from the **laptop at your base** once you have one.
 
 ## What can block an unlock
@@ -39,6 +41,8 @@ You buy unlocked items from **Lenny’s laptop** at the motel, or from the **lap
 | **Earlier items**            | Some unlocks need the item before them in the same branch     |
 | **Settlement level**         | Your base has to be in a level 2 or 3 settlement              |
 | **Jail time**                | Some top weapons need enough accumulated jail time            |
+
+[SCREENSHOT: an item in Shipments that's locked, with the reason shown]
 
 The **settlement level** requirement is the big one. Moving your base to a higher-level settlement unlocks a whole new set of items, which is why [renting a better plot](/rob-run/how-to-rent-a-plot) matters for your gear too.
 
