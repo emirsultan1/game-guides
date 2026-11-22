@@ -1,7 +1,7 @@
 // Site-wide settings. Change the name, email or tagline here and it updates everywhere.
 export const SITE = {
   name: 'RespawnReady',
-  tagline: 'Game guides from real players.',
+  tagline: 'Game guides that get to the point.',
   description:
     'In-depth game guides, tips and walkthroughs for ROB RUN, GTA 6 and more — clear, fact-checked and kept up to date.',
   locale: 'en',
@@ -21,13 +21,12 @@ export const SITE = {
 
 // Links shown in the header and footer navigation.
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
   { label: 'Games', href: '/#games' },
+  { label: 'About', href: '/about' },
 ] as const;
 
 // Links shown in the footer only.
 export const FOOTER_LINKS = [
-  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy' },
 ] as const;

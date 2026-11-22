@@ -1,29 +1,39 @@
 /* ==========================================================================
-   Global styles — dark gaming theme
+   Global styles — "printed strategy guide" theme
+   Paper background, black ink, and a yellow highlighter for the answers.
    ========================================================================== */
+
+/* Fonts are bundled with the site (no Google Fonts request), latin only. */
+@import '@fontsource/barlow/latin-400.css';
+@import '@fontsource/barlow/latin-400-italic.css';
+@import '@fontsource/barlow/latin-500.css';
+@import '@fontsource/barlow/latin-700.css';
+@import '@fontsource/barlow-condensed/latin-700.css';
 
 :root {
   /* Colors */
-  --color-bg: #0f1115;
-  --color-surface: #171a21;
-  --color-surface-2: #1f232c;
-  --color-border: #2a2f3a;
-  --color-text: #e8e8ea;
-  --color-text-muted: #9aa0ab;
-  --color-accent: #7c5cff;
-  --color-accent-hover: #9479ff;
-  --color-success: #3ecf8e;
-  --color-warning: #f5b544;
+  --color-bg: #f4f5f0; /* paper */
+  --color-surface: #ffffff; /* search box, tables */
+  --color-surface-2: #e9ebe3; /* hover rows, table headers */
+  --color-border: #d5d8cf; /* rules */
+  --color-text: #16181b; /* ink */
+  --color-text-muted: #5a606a; /* secondary text */
+  --color-accent: #16181b; /* buttons and focus use ink */
+  --color-accent-hover: #000000;
+  --color-highlight: #ffe24a; /* the highlighter: answers, link underlines, hover */
+  --color-highlight-soft: #fff4b8; /* tip boxes */
+  --color-warning: #7a5d00;
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.375rem;
-  --text-2xl: 1.75rem;
-  --text-3xl: 2.25rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.625rem;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -36,9 +46,9 @@
   --space-16: 4rem;
 
   /* Layout */
-  --container-width: 72rem;
-  --content-width: 46rem; /* readable width for guide text */
-  --radius: 10px;
+  --container-width: 70rem;
+  --content-width: 42rem; /* readable width for guide text (~70 characters) */
+  --radius: 4px;
   --header-height: 64px;
 }
 
@@ -55,7 +65,7 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-height) + var(--space-4));
 }
@@ -93,17 +103,20 @@ h1,
 h2,
 h3,
 h4 {
-  line-height: 1.25;
+  font-family: var(--font-display);
   font-weight: 700;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--text-3xl);
 }
+
 h2 {
   font-size: var(--text-2xl);
 }
+
 h3 {
   font-size: var(--text-xl);
 }
@@ -112,27 +125,41 @@ p {
   text-wrap: pretty;
 }
 
+/* Links: ink text with a highlighter underline. Hover fills the highlight in. */
 a {
-  color: var(--color-accent);
-  text-decoration: none;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 0.22em;
+  text-underline-offset: 0.12em;
 }
 
 a:hover {
-  color: var(--color-accent-hover);
-  text-decoration: underline;
+  color: var(--color-text);
+  background: var(--color-highlight);
+  text-decoration-color: var(--color-highlight);
+}
+
+strong {
+  font-weight: 700;
 }
 
 code {
   font-family: var(--font-mono);
-  font-size: 0.9em;
+  font-size: 0.875em;
   background: var(--color-surface-2);
   padding: 0.1em 0.35em;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 3px solid var(--color-text);
   outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-highlight);
+  color: var(--color-text);
 }
 
 /* --- Layout helpers ------------------------------------------------------- */
@@ -168,15 +195,14 @@ code {
   left: var(--space-4);
   top: -100px;
   z-index: 100;
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--color-highlight);
+  color: var(--color-text);
   padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius);
+  text-decoration: none;
 }
 
 .skip-link:focus {
   top: var(--space-2);
-  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -185,7 +211,7 @@ code {
   }
 
   h1 {
-    font-size: 2.75rem;
+    font-size: 3.25rem;
   }
 }
 

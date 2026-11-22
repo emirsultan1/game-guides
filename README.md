@@ -308,6 +308,17 @@ next deploy. The Privacy Policy already mentions it.
 - [ ] Watch Search Console for which searches bring visitors, and write more guides around them
 - [ ] Apply for Google AdSense once there's steady traffic and 20+ published guides
 
+## Look and feel
+
+The site looks like a printed strategy guide: paper background, black ink, and a yellow highlighter for answers.
+
+- **Colors** live at the top of `src/styles/global.css`. `--color-highlight` is the yellow used for short answers,
+  link underlines and hover states. Use it only for those, so it keeps meaning "this is the important bit".
+- **Fonts:** Barlow Condensed (headings and the site name) and Barlow (body), installed from npm through
+  `@fontsource` and bundled with the site, so there's no request to Google Fonts.
+- **Logo:** the header shows the name as text. `public/favicon.svg` is only the browser-tab icon.
+- **Keep it simple:** no badges, pills or all-caps labels. Each guide appears once on its game's page.
+
 ## Git workflow
 
 - `main` always holds working, deployable code.

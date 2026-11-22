@@ -1,46 +1,70 @@
 ---
 // "On this page" list built from the guide's ## and ### headings.
+// `collapsible` shows it as a tap-to-open line (used on phones).
 import type { MarkdownHeading } from 'astro';
 
 export interface Props {
   headings: MarkdownHeading[];
+  collapsible?: boolean;
 }
 
+const { collapsible = false } = Astro.props;
 const headings = Astro.props.headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
 {
-  headings.length > 1 && (
-    <nav class="toc" aria-labelledby="toc-heading">
-      <h2 id="toc-heading" class="toc-heading">
-        On this page
-      </h2>
-      <ol>
-        {headings.map((heading) => (
-          <li class={`depth-${heading.depth}`}>
-            <a href={`#${heading.slug}`}>{heading.text}</a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
+  headings.length > 1 &&
+    (collapsible ? (
+      <details class="toc toc-collapsible">
+        <summary>On this page</summary>
+        <ol>
+          {headings.map((heading) => (
+            <li class={`depth-${heading.depth}`}>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    ) : (
+      <nav class="toc" aria-label="On this page">
+        <p class="toc-heading">On this page</p>
+        <ol>
+          {headings.map((heading) => (
+            <li class={`depth-${heading.depth}`}>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    ))
 }
 
 <style>
   .toc {
     display: grid;
     gap: var(--space-3);
-    padding: var(--space-4) var(--space-6);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-text);
+  }
+
+  .toc-heading,
+  summary {
+    font-weight: 700;
+  }
+
+  .toc-collapsible {
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius);
     background: var(--color-surface);
   }
 
-  .toc-heading {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+  summary {
+    cursor: pointer;
+  }
+
+  .toc-collapsible[open] summary {
+    margin-bottom: var(--space-3);
   }
 
   ol {
@@ -49,10 +73,12 @@ const headings = Astro.props.headings.filter((h) => h.depth === 2 || h.depth ===
     list-style: none;
     padding: 0;
     font-size: var(--text-sm);
+    line-height: 1.4;
   }
 
   a {
     color: var(--color-text-muted);
+    text-decoration: none;
   }
 
   a:hover {

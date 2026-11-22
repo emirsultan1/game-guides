@@ -8,55 +8,45 @@ import { SITE } from '@/site.config';
 import { getActiveGames, getGuides, getGuideGameId, getTeaserGames } from '@/utils/content';
 import { websiteSchema } from '@/utils/schema';
 
-const LATEST_GUIDES_COUNT = 6;
+const START_GUIDES_PER_GAME = 3;
 
 const [games, teaserGames, guides] = await Promise.all([getActiveGames(), getTeaserGames(), getGuides()]);
-const latestGuides = guides.slice(0, LATEST_GUIDES_COUNT);
 
 // Games with guides first, then "coming soon" teasers, each group in `order`.
 const gameCards = [...games, ...teaserGames];
 
-// How many guides each game has, for the game cards.
+// How many guides each game has, for the game tiles.
 const guideCounts = new Map<string, number>();
 for (const guide of guides) {
   const gameId = getGuideGameId(guide);
   guideCounts.set(gameId, (guideCounts.get(gameId) ?? 0) + 1);
 }
 
+// "Good places to start": each game's featured guides, in game order.
+const startGuides = games.flatMap((game) =>
+  guides
+    .filter((guide) => getGuideGameId(guide) === game.id && guide.data.featured)
+    .slice(0, START_GUIDES_PER_GAME),
+);
 ---
 
 <BaseLayout>
   <JsonLd slot="head" data={websiteSchema(Astro.site!)} />
 
   <section class="container hero">
-    <p class="eyebrow">Clear, fact-checked guides for the games people are playing now</p>
     <h1>{SITE.tagline}</h1>
-    <p class="lead">
-      Money routes, heists, cars, maps and beginner paths — checked before they’re published and kept up to date after every patch.
-    </p>
-    <div class="hero-search">
-      <SearchForm id="hero-search-input" />
-    </div>
-    <p class="hero-links">
-      Or browse <a href="#games">all games</a> and the <a href="#latest">latest guides</a>.
-    </p>
+    <p class="lead">Stuck on something? Search for it, or pick a game below.</p>
+    <SearchForm id="hero-search-input" />
   </section>
 
   <section id="games" class="container section" aria-labelledby="games-heading">
-    <div class="section-head">
-      <h2 id="games-heading">Games</h2>
-      <p class="muted">More games added as they come out</p>
-    </div>
+    <h2 id="games-heading">Pick a game</h2>
     {
       gameCards.length > 0 ? (
         <div class="game-grid">
           {gameCards.map((game) => (
             <GameCard game={game} guideCount={guideCounts.get(game.id) ?? 0} />
           ))}
-          <div class="next-game">
-            <span class="next-title">Next game</span>
-            <span class="muted">Added when a new hit drops</span>
-          </div>
         </div>
       ) : (
         <p class="empty">The first guides are on the way. Check back soon.</p>
@@ -64,56 +54,34 @@ for (const guide of guides) {
     }
   </section>
 
-  <section id="latest" class="container section" aria-labelledby="latest-heading">
-    <div class="section-head">
-      <h2 id="latest-heading">Latest guides</h2>
-    </div>
-    {
-      latestGuides.length > 0 ? (
-        <GuideList guides={latestGuides} games={games} />
-      ) : (
-        <p class="empty">The first guides are on the way. Check back soon.</p>
-      )
-    }
-  </section>
+  {
+    startGuides.length > 0 && (
+      <section class="container section" aria-labelledby="start-heading">
+        <h2 id="start-heading">Good places to start</h2>
+        <GuideList guides={startGuides} games={games} />
+      </section>
+    )
+  }
 </BaseLayout>
 
 <style>
   .hero {
     display: grid;
     gap: var(--space-4);
-    justify-items: start;
-    padding-block: var(--space-12) var(--space-8);
-  }
-
-  .eyebrow {
-    padding: 0.35rem 0.8rem;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    color: var(--color-text-muted);
-    font-size: 0.8rem;
-    font-weight: 600;
+    padding-block: var(--space-8) var(--space-12);
   }
 
   .hero h1 {
-    max-width: 48rem;
-    letter-spacing: -0.02em;
+    max-width: 14ch;
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    line-height: 0.95;
   }
 
   .lead {
-    max-width: 38rem;
-    color: var(--color-text-muted);
-    font-size: var(--text-lg);
-  }
-
-  .hero-search {
-    width: 100%;
+    max-width: 34rem;
     margin-top: var(--space-2);
-  }
-
-  .hero-links {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
   }
 
   .section {
@@ -122,45 +90,13 @@ for (const guide of guides) {
     padding-block: var(--space-8);
   }
 
-  .section-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-2) var(--space-4);
-  }
-
-  .muted {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-
   .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
     gap: var(--space-6);
   }
 
-  .next-game {
-    display: grid;
-    place-content: center;
-    gap: var(--space-1);
-    min-height: 16rem;
-    padding: var(--space-6);
-    border: 1px dashed var(--color-border);
-    border-radius: 14px;
-    text-align: center;
-  }
-
-  .next-title {
-    font-weight: 700;
-  }
-
   .empty {
-    padding: var(--space-8);
-    border: 1px dashed var(--color-border);
-    border-radius: 14px;
     color: var(--color-text-muted);
-    text-align: center;
   }
 </style>
