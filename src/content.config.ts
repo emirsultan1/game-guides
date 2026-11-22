@@ -26,9 +26,12 @@ const games = defineCollection({
         }),
       )
       .min(1),
-    // Path in /public, e.g. "/images/games/rob-run.jpg". Optional until we have art.
-    // Also used as the link-preview image for the game's hub page.
+    // Original illustration for the game, in /public, e.g. "/images/games/rob-run.webp" (1280×680).
+    // Shown on the homepage tile and the game's page, and used for link previews.
+    // Never a game screenshot or official art.
     cover: z.string().startsWith('/', 'Image paths start with / and point into /public').optional(),
+    // Describes the illustration for screen readers and Google.
+    coverAlt: z.string().optional(),
     // Lower numbers show first on the homepage.
     order: z.number().int().default(100),
     // Show a "Guides coming soon" card on the homepage while the game has no published guides.
@@ -56,11 +59,6 @@ const guides = defineCollection({
     // The game patch the guide was last checked on, e.g. "0.9.2".
     gameVersion: z.string().optional(),
     author: z.string().default('Emir'),
-    // Optional main image: shown under the title and used for link previews.
-    // Path in /public, e.g. "/images/rob-run/bank-vault.jpg". Use your own screenshots.
-    image: z.string().startsWith('/', 'Image paths start with / and point into /public').optional(),
-    // Describes the image for screen readers and Google. Defaults to the title.
-    imageAlt: z.string().optional(),
     // Featured guides show in the "Start here" section of the game hub.
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),

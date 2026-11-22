@@ -23,8 +23,6 @@ There’s also a second ladder people confuse with roles: the **Power Pyramid**,
 | Criminal   | Put on your mask                            | Robberies, heists, Notoriety              | Your bag contents                    |
 | Police     | Enlist at the police station when a slot is open | Patrols, confiscations, safer income | Only department-issued gear          |
 
-[SCREENSHOT: a masked player (criminal) next to an unmasked one (civilian)]
-
 ## Civilian: the safe way to learn
 
 Everyone enters Looty Bay as a civilian. You stay one until you put on your mask.
@@ -59,8 +57,6 @@ Put on your mask and you’re a criminal. You **stay a criminal until you leave 
 ## Police: steady income, lower risk
 
 Real players are the police in ROB RUN, not bots. To join, go to the **Looty Bay Police Station** and enlist when a slot is open.
-
-[SCREENSHOT: a player in police uniform on duty]
 
 **What you get:**
 

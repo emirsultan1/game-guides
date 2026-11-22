@@ -44,7 +44,7 @@ const headings = Astro.props.headings.filter((h) => h.depth === 2 || h.depth ===
     display: grid;
     gap: var(--space-3);
     padding-left: var(--space-4);
-    border-left: 2px solid var(--color-text);
+    border-left: 2px solid var(--color-rule);
   }
 
   .toc-heading,
@@ -54,7 +54,7 @@ const headings = Astro.props.headings.filter((h) => h.depth === 2 || h.depth ===
 
   .toc-collapsible {
     padding: var(--space-3) var(--space-4);
-    border: 2px solid var(--color-text);
+    border: 2px solid var(--color-rule);
     border-radius: var(--radius);
     background: var(--color-surface);
   }
@@ -82,6 +82,7 @@ const headings = Astro.props.headings.filter((h) => h.depth === 2 || h.depth ===
   }
 
   a:hover {
+    background: none;
     color: var(--color-text);
   }
 

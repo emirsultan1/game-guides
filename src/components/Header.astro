@@ -57,7 +57,7 @@ const currentPath = cleanPath(Astro.url.pathname);
     z-index: 50;
     height: var(--header-height);
     background: var(--color-bg);
-    border-bottom: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-rule);
   }
 
   .header-inner {
@@ -79,6 +79,7 @@ const currentPath = cleanPath(Astro.url.pathname);
 
   .wordmark:hover {
     background: none;
+    color: var(--color-text);
   }
 
   .nav-list {

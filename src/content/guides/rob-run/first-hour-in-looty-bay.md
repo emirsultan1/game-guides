@@ -25,8 +25,6 @@ So: **scout with the mask off, rob with the mask on.** Most new players die beca
 
 Talk to Lenny at the motel and finish his intro quests before you do anything else. They teach you how roles work, how selling works and how the Shipments window works (press **H** to open it).
 
-[SCREENSHOT: Lenny and the first intro quest on screen]
-
 The motel is also the only place you can store cash before you have a base, and Lenny’s laptop is where you buy tools from the Black Market.
 
 ### About Lenny’s $1,000,000 debt
@@ -38,8 +36,6 @@ Lenny tells you that you owe him **$1,000,000** for breaking you out. **Don’t 
 ## Step 2: Take the free car
 
 You can’t reach Looty Bay on foot. Use the yellow **Parking Terminal** outside the motel to get a free rental car when you don’t own one.
-
-[SCREENSHOT: the yellow Parking Terminal outside the motel, with the free rental car]
 
 It’s slow and has a small trunk, but it’s free. Two things to know:
 
@@ -62,8 +58,6 @@ Drive into the city as a civilian and look around:
 ## Step 4: Buy the tools for your first job
 
 Open Shipments (**H**) and unlock **Lockpicks**, then buy a few from the Black Market on Lenny’s laptop. A lockpick opens doors and containers without setting off the alarm.
-
-[SCREENSHOT: the store menu with the Lockpick and starter tools]
 
 That’s all you need for a first store: cabinets, registers and small safes. The **Mini Drill**, which cracks the heavy safes in locked rooms, needs your base in a level 2 settlement, so it comes later. See [every robbery tool](/rob-run/robbery-tools).
 
@@ -96,8 +90,6 @@ The Fence pays more the higher your **Notoriety**, which rises the longer you st
 ## Step 7: Open a bank account
 
 Leave the city to drop your criminal status, then come back as a **civilian** and open an account at the **Looty Bay Bank**. One visit is enough.
-
-[SCREENSHOT: the bank screen where you open your account]
 
 A bank account unlocks:
 

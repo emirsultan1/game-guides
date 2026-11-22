@@ -18,8 +18,6 @@ All of these are in **Esc → Settings**.
 
 ROB RUN can sit at 60 FPS even on a strong PC until you change two things in **Graphics → General**:
 
-[SCREENSHOT: the graphics settings menu showing the frame rate limit]
-
 1. Turn **VSync** off.
 2. Set **Frame Rate** to **Unlimited**, or to your monitor’s refresh rate (for example 144 or 240).
 
@@ -28,8 +26,6 @@ Press **Confirm** to apply.
 ## Step 2: The settings that give the most FPS
 
 Not every setting matters. These are the ones worth lowering first:
-
-[SCREENSHOT: the full graphics settings page with the recommended values]
 
 | Setting                 | Set to    | Why                                                        |
 | ----------------------- | --------- | ---------------------------------------------------------- |
@@ -63,8 +59,6 @@ If your FPS drops when you move the mouse quickly, the cause is often a **very h
 ## Step 5: Control settings worth changing
 
 In **Controls**:
-
-[SCREENSHOT: the controls / keybinds settings page]
 
 - **Center-of-screen Marker While in Vehicle: On.** Keeps a marker in the middle of the screen, which makes shooting from a car much easier.
 - **Hold to Sprint: On.** Fewer accidental stops while running.

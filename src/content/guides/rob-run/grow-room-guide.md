@@ -1,5 +1,5 @@
 ---
-title: 'ROB RUN Grow Room Guide: How to Set Up a Weed Farm'
+title: 'ROB RUN Grow Room Guide: How to Set It Up and Make It Pay'
 description: 'How to start a Grow Room in ROB RUN: what to unlock, where to find Growing Bushes, how harvests work, where to sell, and whether it’s worth it.'
 category: 'money'
 quickAnswer: 'Rent a plot, unlock and buy a Grow Room and a Grow Table, then find Growing Bushes in Looty Bay and place them on the table. A mature bush gives a few Harvest Bags and regrows on its own. Sell the bags to a Fence and launder the cash.'
@@ -34,8 +34,6 @@ The **Grow Room** is ROB RUN’s farming business, and it’s the business most 
 2. Buy it on the **Black Market** at your base’s laptop.
 3. Place it on your plot.
 
-[SCREENSHOT: the Grow Room in Shipments or the build menu]
-
 Then do the same for a **Grow Table**, and place it in the room.
 
 <!-- CHECK: sources say the Grow Room is $150,000 to unlock and $100,000 to buy, and a Grow Table $30,000 to unlock and $40,000 to buy -->
@@ -43,8 +41,6 @@ Then do the same for a **Grow Table**, and place it in the room.
 ## Step 2: Find Growing Bushes
 
 Growing Bushes are **found in Looty Bay**, inside certain buildings. They count as **cargo**, so you carry them in your hands or in your trunk, not your bag.
-
-[SCREENSHOT: a Growing Bush in the world]
 
 Once you grab one, **go straight home**. Don’t keep looting with a bush in hand. If you die or get caught, you lose it.
 
@@ -55,8 +51,6 @@ Once you grab one, **go straight home**. Don’t keep looting with a bush in han
 1. Place the bush on a free spot on a **Grow Table**. A **clock icon** shows it’s growing.
 2. Wait until the clock turns into a **tick**.
 3. **Harvest** it. You get **Harvest Bags**, and the bush starts growing again.
-
-[SCREENSHOT: the Grow Room with plants growing]
 
 Better bushes give more valuable bags.
 

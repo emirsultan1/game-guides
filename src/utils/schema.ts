@@ -71,6 +71,6 @@ export function guideSchema(guide: Guide, game: Game, site: URL): JsonLd {
     publisher: { '@type': 'Organization', name: SITE.name, url: absolute('/', site) },
     about: { '@type': 'VideoGame', name: game.data.name },
     ...(guide.data.tags.length > 0 && { keywords: guide.data.tags.join(', ') }),
-    ...((guide.data.image ?? game.data.cover) && { image: absolute((guide.data.image ?? game.data.cover)!, site) }),
+    ...(game.data.cover && { image: absolute(game.data.cover, site) }),
   };
 }

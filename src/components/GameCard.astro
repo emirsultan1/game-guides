@@ -1,5 +1,6 @@
 ---
-// A big game tile for the homepage: the game's name, one line about it and how many guides it has.
+// A big game tile for the homepage: the game's illustration, its name, one line about it
+// and how many guides it has.
 // Games with guides link to their page. Teaser games (no guides yet) aren't links,
 // because they don't have a page yet.
 import { getGameUrl, type Game } from '@/utils/content';
@@ -10,33 +11,59 @@ export interface Props {
 }
 
 const { game, guideCount } = Astro.props;
-const { name, tagline } = game.data;
+const { name, tagline, cover, coverAlt } = game.data;
 const isTeaser = guideCount === 0;
 const Tag = isTeaser ? 'div' : 'a';
 ---
 
 <Tag href={isTeaser ? undefined : getGameUrl(game)} class:list={['game-tile', { teaser: isTeaser }]}>
-  <span class="name">{name}</span>
-  <span class="tagline">{tagline}</span>
-  <span class="count">
-    {isTeaser ? 'Guides coming soon' : guideCount === 1 ? '1 guide' : `${guideCount} guides`}
+  {
+    cover && (
+      <img src={cover} alt={coverAlt ?? ''} class="cover" width="1280" height="680" loading="lazy" decoding="async" />
+    )
+  }
+  <span class="body">
+    <span class="name">{name}</span>
+    <span class="tagline">{tagline}</span>
+    <span class="count">
+      {isTeaser ? 'Guides coming soon' : guideCount === 1 ? '1 guide' : `${guideCount} guides`}
+    </span>
   </span>
 </Tag>
 
 <style>
   .game-tile {
-    display: grid;
-    align-content: start;
-    gap: var(--space-2);
-    padding: var(--space-6);
-    border: 2px solid var(--color-text);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--color-rule);
     border-radius: var(--radius);
     background: var(--color-surface);
     text-decoration: none;
   }
 
+  .cover {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 680;
+    object-fit: cover;
+    border-bottom: 2px solid var(--color-rule);
+  }
+
+  a.game-tile:hover .cover {
+    border-bottom-color: var(--color-highlight);
+  }
+
+  .body {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-6);
+  }
+
   a.game-tile:hover {
-    background: var(--color-highlight);
+    border-color: var(--color-highlight);
+    background: var(--color-surface);
+    color: var(--color-text);
   }
 
   .teaser {
@@ -57,9 +84,6 @@ const Tag = isTeaser ? 'div' : 'a';
     color: var(--color-text-muted);
   }
 
-  a.game-tile:hover .tagline {
-    color: var(--color-text);
-  }
 
   .count {
     margin-top: var(--space-2);

@@ -1,6 +1,5 @@
 /* ==========================================================================
-   Global styles — "printed strategy guide" theme
-   Paper background, black ink, and a yellow highlighter for the answers.
+   Global styles: dark theme with a yellow highlighter for the answers.
    ========================================================================== */
 
 /* Fonts are bundled with the site (no Google Fonts request), latin only. */
@@ -12,17 +11,19 @@
 
 :root {
   /* Colors */
-  --color-bg: #f4f5f0; /* paper */
-  --color-surface: #ffffff; /* search box, tables */
-  --color-surface-2: #e9ebe3; /* hover rows, table headers */
-  --color-border: #d5d8cf; /* rules */
-  --color-text: #16181b; /* ink */
-  --color-text-muted: #5a606a; /* secondary text */
-  --color-accent: #16181b; /* buttons and focus use ink */
-  --color-accent-hover: #000000;
+  --color-bg: #0f1115; /* page background */
+  --color-surface: #171a21; /* search box, tables, game tiles */
+  --color-surface-2: #1f232c; /* table headers, code */
+  --color-border: #2a2f3a; /* thin dividers */
+  --color-rule: #3a404c; /* stronger lines: header, tiles, section rules */
+  --color-text: #e8e8ea; /* main text */
+  --color-text-muted: #9aa0ab; /* secondary text */
+  --color-accent: #e8e8ea; /* buttons and focus */
+  --color-accent-hover: #ffffff;
   --color-highlight: #ffe24a; /* the highlighter: answers, link underlines, hover */
-  --color-highlight-soft: #fff4b8; /* tip boxes */
-  --color-warning: #7a5d00;
+  --color-on-highlight: #16181b; /* text on top of the highlighter */
+  --color-highlight-soft: #262110; /* tip boxes */
+  --color-warning: #ffcf5a;
 
   /* Typography */
   --font-sans: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -65,7 +66,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-height) + var(--space-4));
 }
@@ -135,7 +136,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-text);
+  color: var(--color-on-highlight);
   background: var(--color-highlight);
   text-decoration-color: var(--color-highlight);
 }
@@ -159,7 +160,7 @@ code {
 
 ::selection {
   background: var(--color-highlight);
-  color: var(--color-text);
+  color: var(--color-on-highlight);
 }
 
 /* --- Layout helpers ------------------------------------------------------- */
@@ -196,7 +197,7 @@ code {
   top: -100px;
   z-index: 100;
   background: var(--color-highlight);
-  color: var(--color-text);
+  color: var(--color-on-highlight);
   padding: var(--space-2) var(--space-4);
   text-decoration: none;
 }

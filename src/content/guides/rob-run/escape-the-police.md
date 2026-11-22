@@ -8,7 +8,7 @@ tags: ['police', 'escape', 'criminal']
 draft: false
 ---
 
-<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the city exits would really help this guide. -->
+<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->
 
 A robbery isn’t done when the safe is empty. **Your loot only counts once you’re out of Looty Bay alive.** You stay a criminal until you leave the city, and the cops chasing you are real players who know the roads as well as you do.
 
@@ -17,8 +17,6 @@ Here’s how to get out with your bag.
 ## Before the robbery: plan the exit
 
 Most escapes are won before the alarm ever goes off.
-
-[SCREENSHOT: the map with an escape route in mind]
 
 - **Know both exits.** The city has **two main bridge exits**. Cops can block one, so you need a backup.
 - **Pick your route** from the target to each exit, ideally on side streets.
@@ -29,8 +27,6 @@ Most escapes are won before the alarm ever goes off.
 
 ## During the chase
 
-[SCREENSHOT: a police chase in a car]
-
 ### Break line of sight
 
 Cops can’t chase what they can’t see. Use **side streets, alleys, buildings and parking areas** to break their view and change direction. Don’t stay on one predictable main road.
@@ -38,8 +34,6 @@ Cops can’t chase what they can’t see. Use **side streets, alleys, buildings 
 ### Use the second bridge
 
 Police can set up **roadblocks** and close bridges on the main routes out. If your planned exit is blocked, **switch to the other bridge** instead of trying to force through.
-
-[SCREENSHOT: the second bridge out of Looty Bay]
 
 > **Watch out:** the exit you used to get into the city might not be open when you try to leave.
 

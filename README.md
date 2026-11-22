@@ -62,13 +62,11 @@ src/
 ├── components/          Reusable UI pieces
 │   ├── Breadcrumbs.astro
 │   ├── Footer.astro
-│   ├── GameCard.astro        Game tile on the homepage
-│   ├── GuideCard.astro       Featured / related guide tile
-│   ├── GuideList.astro       List of guides with game, category and date
+│   ├── GameCard.astro        Game tile on the homepage (illustration, name, guide count)
+│   ├── GuideList.astro       Plain list of guides, one per row
 │   ├── Header.astro
 │   ├── JsonLd.astro          Structured data for Google
 │   ├── SeoHead.astro         Title, description, canonical and link-preview tags
-│   ├── StatusBadge.astro     Live / Coming soon / Archived pill
 │   └── TableOfContents.astro "On this page" list
 ├── content/
 │   ├── games/               One JSON file per game
@@ -76,6 +74,8 @@ src/
 │       ├── _TEMPLATE.md      Copy this to start a new guide (ignored by the site)
 │       └── rob-run/
 ├── content.config.ts    The rules every game and guide file must follow
+├── plugins/
+│   └── guide-cleanup.mjs    Removes <!-- notes --> from guides on the live site
 ├── layouts/
 │   └── BaseLayout.astro     Page shell: head, header, main, footer
 ├── pages/
@@ -110,7 +110,8 @@ src/
     { "id": "beginner", "label": "Beginner" },
     { "id": "money", "label": "Money" }
   ],
-  "cover": "/images/games/gta-6.jpg",
+  "cover": "/images/games/gta-6.webp",
+  "coverAlt": "Illustration of a neon sunset over the sea with palm trees",
   "order": 2
 }
 ```
@@ -123,7 +124,8 @@ src/
 | `status`     | yes      | `live`, `coming-soon` or `archived` (archived games leave the homepage) |
 | `platforms`  | no       | Shown on the hub page                                                 |
 | `categories` | yes      | Topics guides can be filed under. `id`: lowercase letters, numbers, dashes |
-| `cover`      | no       | Image path inside `public/`. Without it, a placeholder with the name shows |
+| `cover`      | no       | Original illustration in `public/images/games/` (1280×680). Never a screenshot or official art |
+| `coverAlt`   | no       | Describes the illustration for screen readers and Google |
 | `teaser`     | no       | `true` shows a "Guides coming soon" card on the homepage while it has no guides |
 | `order`      | no       | Lower numbers show first on the homepage (default 100)                |
 
@@ -172,58 +174,34 @@ The build fails with a clear message if a field is missing, a date is wrong, or 
 | ------ | ------ |
 | Cell   | Cell   |
 
-![What the screenshot shows](@/assets/guides/rob-run/heist-store.png "Caption under the image")
-
-[SCREENSHOT: what still needs a screenshot here]
+<!-- A note for yourself. It's removed from the live site. -->
 ```
 
 ### Images
 
-**Screenshots inside a guide** go in `src/assets/guides/<game-id>/`. Astro converts them to WebP, makes
-smaller copies for phones and sets their size so the page doesn't jump while loading. Drop in a PNG or JPG
-straight from the game; no need to resize it first.
+Guides are text only: no screenshots or game images inside guides.
 
-```md
-<!-- One image on its own line = a full-width screenshot. The text in quotes is the caption. -->
-![The heist store menu](@/assets/guides/rob-run/heist-store.png "The heist store at the pawn shop")
+The only pictures on the site are:
 
-<!-- Two or three images on lines right after each other = side by side. -->
-![Before](@/assets/guides/rob-run/panel-on.png "Panel on")
-![After](@/assets/guides/rob-run/panel-off.png "Panel off")
-```
+| Image                | Where it goes                         | Size     | Used for                            |
+| -------------------- | ------------------------------------- | -------- | ----------------------------------- |
+| Game illustration    | `public/images/games/<game-id>.webp`  | 1280×680 | Game tile, game page, link previews |
+| Default link preview | `public/og-default.png`               | 1200×630 | Pages without a game illustration   |
 
-- The text in `[ ]` is the **alt text**: describe what's in the picture. Google reads it.
-- The text in quotes is the **caption** shown under the image. It's optional.
-- Readers can click any screenshot to see it full size.
-- Name files in lowercase with dashes: `heist-store.png`, not `Screenshot 2026-11-22 at 15.04.png`.
-
-**Screenshot notes.** A line like `[SCREENSHOT: the bank vault door]` marks a spot that still needs a picture.
-It shows as a dashed box in `npm run dev` and is removed on the live site, so a guide can go live first.
-See [SCREENSHOTS.md](SCREENSHOTS.md) for the full list.
-
-**Other images** go in `public/`, because they need a fixed URL for link previews:
-
-| Image                | Where it goes                         | Size             | Used for                               |
-| -------------------- | ------------------------------------- | ---------------- | -------------------------------------- |
-| Game cover           | `public/images/games/<game-id>.webp`  | 1280×680         | Game cards, hub page, link previews    |
-| Guide main image     | `public/images/<game-id>/<name>.webp` | 16:9, ~1280×720  | Top of the guide and its link preview  |
-| Default link preview | `public/og-default.png`               | 1200×630         | Pages with no image of their own       |
-
-- Set a game cover with `"cover": "/images/games/rob-run.webp"` in the game's JSON file.
-- Set a guide's main image with `image` and `imageAlt` in its frontmatter.
-- Link previews pick the guide image, then the game cover, then the default.
-- **Use your own screenshots.** Official art and other sites' images belong to their owners.
+- Game illustrations are **original artwork** made for this site, never in-game screenshots or official art.
+  The About page says so.
+- Set one with `"cover"` and `"coverAlt"` in the game's JSON file.
 
 **"Coming soon" games.** Add `"teaser": true` to a game's JSON file to show it on the homepage as a
-"Guides coming soon" card before it has any guides (see GTA 6). It becomes a normal card with its own page
-as soon as its first guide is published.
+"Guides coming soon" card before it has any guides. It becomes a normal card with its own page as soon as
+its first guide is published.
 
 ## Writing guides that rank
 
 - **One question per guide.** "How to launder money in ROB RUN" gets its own page.
 - **Use the exact search phrase** in the title, the file name (URL) and the first sentence.
 - **Answer first.** Fill in `quickAnswer`, then go into detail.
-- **Be first-hand.** Exact numbers, your own screenshots, routes and mistakes beat generic guides.
+- **Be first-hand.** Exact numbers, routes, and mistakes you made yourself beat generic guides.
 - **Keep it fresh.** After each patch, check your guides, update them and set `updatedAt`.
 - **Link between guides.** Link to related guides inside the text, not only at the bottom.
 - **Be fast on new content.** Publish within a day of a patch or new feature.
@@ -290,16 +268,15 @@ next deploy. The Privacy Policy already mentions it.
 - [x] Link-preview image (`public/og-default.png`) and favicon
 - [x] Contact email set (`contact@respawnready.com`)
 - [x] Privacy Policy covers hosting, analytics and ads
+- [x] Email Routing: `contact@respawnready.com` forwards to Gmail
+- [x] All guides published
+- [x] Deployed to Cloudflare Pages with `respawnready.com` and the www redirect
+- [x] Web Analytics enabled
+- [x] Domain verified in Google Search Console and sitemap submitted
 
 **To do**
 
-- [ ] Set up Email Routing so `contact@respawnready.com` reaches your inbox
-- [ ] Review every ROB RUN guide, fix anything marked `CHECK` and set `draft: false`
-- [ ] Pick the 3 `featured` guides that show under "Start here"
-- [ ] Take the screenshots in [SCREENSHOTS.md](SCREENSHOTS.md) and add them to the guides
-- [ ] Deploy to Cloudflare Pages and add `respawnready.com` (and `www.respawnready.com`) under **Custom domains**
-- [ ] Enable Web Analytics on the Pages project
-- [ ] Verify the domain in Google Search Console and submit the sitemap
+- [ ] Go through the guides' `CHECK` notes and fix or remove each one
 - [ ] Check a link preview by pasting a guide link into Discord or WhatsApp
 
 **After launch**
@@ -310,7 +287,7 @@ next deploy. The Privacy Policy already mentions it.
 
 ## Look and feel
 
-The site looks like a printed strategy guide: paper background, black ink, and a yellow highlighter for answers.
+Dark background, light text, and a yellow highlighter for the answers.
 
 - **Colors** live at the top of `src/styles/global.css`. `--color-highlight` is the yellow used for short answers,
   link underlines and hover states. Use it only for those, so it keeps meaning "this is the important bit".

@@ -30,8 +30,6 @@ Here’s how to go from broke to steady income on your own, in the order that ma
 
 Searching **dumpsters** around Looty Bay is the lowest-risk way to start. You don’t need a mask, tools or a plan, so you can do it while you learn the map.
 
-[SCREENSHOT: searching a dumpster and the loot it gives]
-
 It won’t make you rich, but it gets you the cash for your first tools without risking anything.
 
 <!-- CHECK: is dumpster loot still worth it after the launch patches? Which areas have the best dumpsters? -->
@@ -39,8 +37,6 @@ It won’t make you rich, but it gets you the cash for your first tools without 
 ## 2. Small store robberies: your main early income
 
 Once you have **lockpicks**, small stores are the backbone of solo money. Add **Mini Drills** once you’re in a level 2 settlement to crack the heavy safes in locked rooms.
-
-[SCREENSHOT: inside a small store during a robbery]
 
 **Good solo targets:** convenience stores, cafés, pharmacies, gas stations and jewelry stores in quieter parts of the city.
 
@@ -67,8 +63,6 @@ Always **take the cash off the counter immediately** after selling. Cash left th
 
 The **Action Camera** is one of the best early investments. You buy it, then **fill it by doing criminal actions** at the Notoriety level it asks for. A full camera sells for much more than you paid.
 
-[SCREENSHOT: an Action Camera in the inventory or being used]
-
 The basic idea:
 
 1. Buy an Action Camera with your first spare cash.
@@ -83,8 +77,6 @@ Each one pays for itself the first time you fill it.
 ## 4. Cargo: bigger money, more attention
 
 During **cargo events**, containers are marked on the map. Pick them up and either:
-
-[SCREENSHOT: a cargo box being carried or loaded into a car]
 
 - **Sell the cargo directly.** Faster and safer, which is usually better solo.
 - **Take it back to your base** and break it down on your **workbench** before selling. This can pay more, but you need a safe base and the right equipment.
