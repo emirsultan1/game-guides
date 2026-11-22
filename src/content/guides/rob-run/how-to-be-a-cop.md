@@ -19,6 +19,8 @@ Playing cop is the low-risk way to earn in ROB RUN. The department gives you fre
 3. Talk to the officer inside and choose **Start Duty**.
 4. If you have a **badge**, pick its better kit. Otherwise you get the standard one.
 
+[SCREENSHOT: the police station / where you sign up for duty]
+
 No unlock is needed for your first shift. In a party, everyone has to be at the station to enlist together.
 
 <!-- CHECK: exact menu option name and where the station is on the map -->
@@ -26,6 +28,8 @@ No unlock is needed for your first shift. In a party, everyone has to be at the 
 ## Why you can’t join: slots are full
 
 There are only a few police slots per city, and they fill up fast. If you can’t join:
+
+[SCREENSHOT: the message that police slots are full]
 
 - **Wait** and check back.
 - **Answer a backup call.** When the police are short on players, a backup request pops up. Accepting it puts you on duty with **better gear** and a **temporary pay bonus**.
@@ -58,6 +62,8 @@ At the end of your shift, part of your pay comes as **confiscated goods** rather
 ## Arrest, don’t kill
 
 This is the most important cop tip. **An arrest pays several times more than a kill.**
+
+[SCREENSHOT: a cop arresting a criminal]
 
 You can only arrest a criminal who has **surrendered** (hands up) or been **knocked out**. So:
 

@@ -14,6 +14,8 @@ Quick answers to the questions new players ask most. Each one links to a full gu
 
 ## The game
 
+[SCREENSHOT: the ROB RUN main menu or Steam page header]
+
 ### What is ROB RUN?
 
 A multiplayer crime sandbox by **Kefir**. You rob stores and banks in the city of **Looty Bay**, or play as a cop chasing real-player robbers, then build a base and businesses in the desert and climb the **Power Pyramid**, from broke Hobo to Shadow Governor.

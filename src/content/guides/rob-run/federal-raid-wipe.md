@@ -16,6 +16,8 @@ ROB RUN doesn’t let you build forever. Every server is wiped once a week in an
 
 **Every server wipes 7 days after it opens.** Each server has its own clock, so check how old your server is.
 
+[SCREENSHOT: the in-game countdown or notice for the weekly Federal Raid]
+
 New servers open **every day** in each region, so there’s always a fresh one to start on.
 
 <!-- CHECK: fresh server opening times. Sources say EU servers open at 5 PM UTC and East US at 8 PM ET. Where does the game show the wipe timer? -->
@@ -29,6 +31,8 @@ New servers open **every day** in each region, so there’s always a fresh one t
 | Vehicles                            | Tutorial progress           |
 | All cash, **including banked money** | Settings                   |
 | Settlements and districts you own   | Accumulated jail time       |
+
+[SCREENSHOT: what your base or inventory looks like after the wipe]
 
 The big one people miss: **laundering protects your money from other players, not from the wipe.** Banked money is reset too.
 

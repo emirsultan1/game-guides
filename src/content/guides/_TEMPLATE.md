@@ -24,4 +24,8 @@ Write the guide here in Markdown. Use `##` for main sections and `###` for sub-s
 1. Numbered steps work like this.
 2. Keep each step short.
 
-> Tips and warnings can go in a quote block for now.
+> **Tip:** quote blocks become yellow tip / warning boxes.
+
+![What the screenshot shows](@/assets/guides/rob-run/your-screenshot.png "Optional caption under the image")
+
+[SCREENSHOT: describe a screenshot you still need to take — only shows in npm run dev]

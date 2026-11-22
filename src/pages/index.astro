@@ -5,13 +5,16 @@ import GuideList from '@/components/GuideList.astro';
 import JsonLd from '@/components/JsonLd.astro';
 import SearchForm from '@/components/SearchForm.astro';
 import { SITE } from '@/site.config';
-import { getActiveGames, getGuides, getGuideGameId } from '@/utils/content';
+import { getActiveGames, getGuides, getGuideGameId, getTeaserGames } from '@/utils/content';
 import { websiteSchema } from '@/utils/schema';
 
 const LATEST_GUIDES_COUNT = 6;
 
-const [games, guides] = await Promise.all([getActiveGames(), getGuides()]);
+const [games, teaserGames, guides] = await Promise.all([getActiveGames(), getTeaserGames(), getGuides()]);
 const latestGuides = guides.slice(0, LATEST_GUIDES_COUNT);
+
+// Games with guides first, then "coming soon" teasers, each group in `order`.
+const gameCards = [...games, ...teaserGames];
 
 // How many guides each game has, for the game cards.
 const guideCounts = new Map<string, number>();
@@ -45,9 +48,9 @@ for (const guide of guides) {
       <p class="muted">More games added as they come out</p>
     </div>
     {
-      games.length > 0 ? (
+      gameCards.length > 0 ? (
         <div class="game-grid">
-          {games.map((game) => (
+          {gameCards.map((game) => (
             <GameCard game={game} guideCount={guideCounts.get(game.id) ?? 0} />
           ))}
           <div class="next-game">

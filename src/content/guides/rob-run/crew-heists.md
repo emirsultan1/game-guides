@@ -18,6 +18,8 @@ Parties go up to **three players**. Here’s how to use them.
 
 These aren’t official classes. They’re a simple way to split the work so nobody is doing two jobs at once. The developers’ help center suggests the same split: breaking in, hauling loot and providing cover.
 
+[SCREENSHOT: a crew of three geared up before a heist]
+
 | Role     | Job                                                   | Carries                         |
 | -------- | ----------------------------------------------------- | ------------------------------- |
 | Breacher | Opens doors, safes and the vault                      | Lockpicks, Mini Drills, the Drill, keys and cards |
@@ -69,6 +71,8 @@ Scout the target as **civilians** first. Nobody treats unmasked players as crimi
 
 The bank is the classic crew job, and the hardest.
 
+[SCREENSHOT: the bank vault door]
+
 **What it needs:**
 
 - **Mini Drills** for the large safes
@@ -91,6 +95,8 @@ The bank is the classic crew job, and the hardest.
 ## The Art Gallery
 
 The other big crew target. It has the most loot spots in the city and a **Fabergé Egg** in the vault, which needs a **keycard** and a **Glass Cutter**. The crack is timed, so the cover player needs to hold the building while it runs.
+
+[SCREENSHOT: inside the Art Gallery]
 
 <!-- CHECK: gallery steps and what the Glass Cutter needs -->
 

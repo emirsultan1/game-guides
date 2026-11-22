@@ -22,6 +22,8 @@ The top two tiers of ROB RUN’s **Power Pyramid** can’t be reached alone. **D
 | Settlement Resident | A player renting a plot                        | A base                                             |
 | Hobo              | Everyone at the start                            | A bed at Lenny’s Motel                             |
 
+[SCREENSHOT: the Power Pyramid screen]
+
 Settlement Owner is the highest you can get on your own. Above that, you need a clan. See [how to join or create a clan](/rob-run/how-to-join-or-create-a-clan).
 
 ## How the money flows
@@ -55,6 +57,8 @@ Members with the right **rank** can call conflicts and join them.
 ## How to become Shadow Governor
 
 There’s **only one** Shadow Governor per server:
+
+[SCREENSHOT: the Shadow Governor shown in-game]
 
 1. Build a strong, **active** clan.
 2. Take and hold districts to build income and laundering power.

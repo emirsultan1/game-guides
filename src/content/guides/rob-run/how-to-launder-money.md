@@ -25,6 +25,8 @@ The developers’ own help center sums it up: open a bank account at the Looty B
 1. Go to **Looty Bay** as a **civilian**: mask off. If you’re masked, leave the city first to drop your criminal status.
 2. Go to the **Looty Bay Bank** and open an account at the counter.
 
+[SCREENSHOT: the bank account screen]
+
 One visit is enough, and you don’t need a plot first.
 
 A bank account also lets you **bribe the police** when you’re caught, and you need one to **found a clan**.
@@ -32,6 +34,8 @@ A bank account also lets you **bribe the police** when you’re caught, and you 
 ## Step 2: Launder at your Laundering Desk
 
 Once you have a base:
+
+[SCREENSHOT: the Laundering Desk in a base, with its menu open]
 
 1. Go back to your base and use the **Laundering Desk**.
 2. Move the cash you want to clean from your inventory into the desk.
@@ -43,6 +47,8 @@ Once you have a base:
 ### Your money is in three different places
 
 This is where new players get confused:
+
+[SCREENSHOT: the HUD or menu showing cash, dirty money and bank balance]
 
 | Where the money is        | Safe?                                                  |
 | ------------------------- | ------------------------------------------------------ |

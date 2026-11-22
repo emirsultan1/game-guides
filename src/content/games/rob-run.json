@@ -3,16 +3,43 @@
   "tagline": "Heists, money, bases and police — everything for Looty Bay.",
   "description": "ROB RUN guides for making money solo or with a crew, heists, laundering, bases and dealing with real-player police.",
   "status": "live",
-  "platforms": ["PC (Steam)"],
-  "categories": [
-    { "id": "beginner", "label": "Beginner" },
-    { "id": "money", "label": "Money" },
-    { "id": "heists", "label": "Heists" },
-    { "id": "base", "label": "Base & plot" },
-    { "id": "police", "label": "Police" },
-    { "id": "gear", "label": "Gear & cars" },
-    { "id": "clans", "label": "Clans & territory" },
-    { "id": "maps", "label": "Maps" }
+  "platforms": [
+    "PC (Steam)"
   ],
+  "categories": [
+    {
+      "id": "beginner",
+      "label": "Beginner"
+    },
+    {
+      "id": "money",
+      "label": "Money"
+    },
+    {
+      "id": "heists",
+      "label": "Heists"
+    },
+    {
+      "id": "base",
+      "label": "Base & plot"
+    },
+    {
+      "id": "police",
+      "label": "Police"
+    },
+    {
+      "id": "gear",
+      "label": "Gear & cars"
+    },
+    {
+      "id": "clans",
+      "label": "Clans & territory"
+    },
+    {
+      "id": "maps",
+      "label": "Maps"
+    }
+  ],
+  "cover": "/images/games/rob-run.webp",
   "order": 1
 }

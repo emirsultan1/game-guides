@@ -166,7 +166,34 @@ const gameUrl = getGameUrl(game);
       </div>
     </aside>
   </div>
+
+  <dialog class="lightbox" aria-label="Screenshot">
+    <img src="" alt="" />
+    <div class="lightbox-bar">
+      <span class="lightbox-caption"></span>
+      <button type="button" class="lightbox-close">Close</button>
+    </div>
+  </dialog>
 </BaseLayout>
+
+<script>
+  // Click a screenshot to see it full size. Click anywhere or press Esc to close.
+  const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+  const big = dialog?.querySelector('img');
+  const caption = dialog?.querySelector('.lightbox-caption');
+
+  if (dialog && big && caption) {
+    document.querySelectorAll<HTMLImageElement>('.prose .guide-figure img').forEach((img) => {
+      img.addEventListener('click', () => {
+        big.src = img.currentSrc || img.src;
+        big.alt = img.alt;
+        caption.textContent = img.closest('figure')?.querySelector('figcaption')?.textContent ?? img.alt;
+        dialog.showModal();
+      });
+    });
+    dialog.addEventListener('click', () => dialog.close());
+  }
+</script>
 
 <style>
   .guide-layout {
@@ -328,8 +355,115 @@ const gameUrl = getGameUrl(game);
   }
 
   .prose :global(img) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 12px;
     border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  /* Screenshots: one per line becomes a captioned figure (see src/plugins/guide-media.mjs). */
+  .prose :global(.guide-figure) {
+    display: grid;
+    gap: var(--space-2);
+    margin: var(--space-2) 0;
+  }
+
+  .prose :global(.guide-figure img) {
+    cursor: zoom-in;
+  }
+
+  .prose :global(figcaption) {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Two or three screenshots on consecutive lines sit side by side. */
+  .prose :global(.guide-gallery) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  .prose :global(.guide-gallery .guide-figure) {
+    margin: 0;
+  }
+
+  .prose :global(.guide-gallery img) {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  /* [SCREENSHOT: ...] notes. Only shown in `npm run dev`. */
+  .prose :global(.screenshot-needed) {
+    display: grid;
+    place-content: center;
+    gap: var(--space-1);
+    min-height: clamp(9rem, 38vw, 18rem);
+    padding: var(--space-6);
+    border: 2px dashed #5b4bb0;
+    border-radius: 12px;
+    background: repeating-linear-gradient(-45deg, #171a21 0 14px, #1a1d26 14px 28px);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    text-align: center;
+  }
+
+  .prose :global(.screenshot-needed strong) {
+    color: var(--color-accent-hover);
+    font-size: var(--text-base);
+  }
+
+  /* Full-size screenshot viewer */
+  .lightbox {
+    margin: auto;
+    width: min(96vw, 1600px);
+    max-width: none;
+    max-height: 94vh;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .lightbox::backdrop {
+    background: rgb(0 0 0 / 0.85);
+  }
+
+  .lightbox img {
+    display: block;
+    width: 100%;
+    max-height: calc(94vh - 3.5rem);
+    object-fit: contain;
+  }
+
+  .lightbox-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .lightbox-caption {
+    color: var(--color-text-muted);
+  }
+
+  .lightbox-close {
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface-2);
+    color: var(--color-text);
+    font: inherit;
+    cursor: pointer;
   }
 
   .prose :global(table) {

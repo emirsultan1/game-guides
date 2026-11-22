@@ -1,15 +1,35 @@
 {
   "name": "GTA 6",
-  "tagline": "Story guides now, GTA 6 Online guides when it launches.",
-  "description": "GTA 6 guides covering the story, money, vehicles and secrets, with GTA 6 Online guides as soon as it launches.",
+  "tagline": "Story, money, vehicles and secrets — guides coming soon.",
+  "description": "GTA 6 guides covering the story, money, vehicles and secrets, with GTA 6 Online guides when it launches.",
   "status": "live",
-  "platforms": ["PS5", "Xbox Series X|S"],
-  "categories": [
-    { "id": "beginner", "label": "Beginner" },
-    { "id": "story", "label": "Story" },
-    { "id": "money", "label": "Money" },
-    { "id": "vehicles", "label": "Vehicles" },
-    { "id": "secrets", "label": "Secrets" }
+  "platforms": [
+    "PS5",
+    "Xbox Series X|S"
   ],
-  "order": 2
+  "categories": [
+    {
+      "id": "beginner",
+      "label": "Beginner"
+    },
+    {
+      "id": "story",
+      "label": "Story"
+    },
+    {
+      "id": "money",
+      "label": "Money"
+    },
+    {
+      "id": "vehicles",
+      "label": "Vehicles"
+    },
+    {
+      "id": "secrets",
+      "label": "Secrets"
+    }
+  ],
+  "cover": "/images/games/gta-6.webp",
+  "order": 2,
+  "teaser": true
 }

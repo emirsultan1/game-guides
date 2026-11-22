@@ -18,6 +18,8 @@ Your base is a **warehouse and a money machine**, not a trophy room. A base that
 
 Everything on your base is an **item you place from your inventory**. You buy what you need, then put it down on your plot. Buildings, storage, desks and production are all placed this way.
 
+[SCREENSHOT: the build menu]
+
 <!-- CHECK: where you buy base items, and roughly what the first ones cost -->
 
 ## The build order
@@ -25,6 +27,8 @@ Everything on your base is an **item you place from your inventory**. You buy wh
 ### 1. Storage
 
 Somewhere to keep your loot and gear that isn’t your bag or the motel. Put it in the **building you’ll protect the most**.
+
+[SCREENSHOT: a storage box in a base]
 
 ### 2. Security System and fuses
 
@@ -38,11 +42,15 @@ See [how to protect your base from raids](/rob-run/protect-base-from-raids).
 
 Now your money can start moving to the bank, where raiders can’t touch it. Run the desk often and transfer what’s done.
 
+[SCREENSHOT: the Laundering Desk placed in a base]
+
 See [how to launder money](/rob-run/how-to-launder-money).
 
 ### 4. Workbench
 
 A **workbench** lets you work on items at your base, like breaking down stolen **cargo** before you sell it. It’s useful, but it isn’t urgent.
+
+[SCREENSHOT: the Workbench in a base]
 
 <!-- CHECK: what else the workbench does -->
 

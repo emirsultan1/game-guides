@@ -29,6 +29,8 @@ But “earns more” isn’t the whole story. What matters is how much you **kee
 
 Cops don’t get a fixed hourly wage. They earn from catching criminals:
 
+[SCREENSHOT: the payout after an arrest]
+
 - **Arrests:** you get a percentage of the value of the loot you confiscate. The richer the robber, the bigger your cut.
 - **Arrest instead of kill:** an arrest pays more than a kill. Turning on the siren and ordering the criminal to surrender before arresting them gives extra.
 - **Bribes:** a criminal with money in the bank can offer you a bribe. Accept it and they keep their bag, but you get paid.
@@ -41,6 +43,8 @@ Cop pay is cash, so it’s wiped at the weekly Federal Raid like everything else
 ## How criminals get paid
 
 Criminals earn by **selling stolen loot to the Fence**. The more **Notoriety** you build during a masked spree, the more the Fence pays.
+
+[SCREENSHOT: the payout after selling loot from a robbery]
 
 The upside has no real ceiling: bigger targets, better tools and a crew mean bigger hauls. The downside:
 

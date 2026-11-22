@@ -42,6 +42,8 @@ Park **behind** the building, away from the street, so your car isn’t on displ
 
 Before you touch anything, go to the **electrical panel** and disable it. On many buildings this turns off the **alarm** and the **cameras** at the same time.
 
+[SCREENSHOT: the electrical panel at a store]
+
 Not every building has one, and not every alarm can be turned off this way. If there’s no panel, move on to the cameras.
 
 <!-- CHECK: do you break the panel or hack it? Does it disable cameras too on every building? -->
@@ -50,12 +52,16 @@ Not every building has one, and not every alarm can be turned off this way. If t
 
 Any camera still working can raise the alarm the moment it sees you. **Shoot them before they see you**, from outside or the doorway if you can.
 
+[SCREENSHOT: a security camera inside a store]
+
 Jewelry stores have several cameras, so plan which ones you’ll take out first.
 
 ## Step 4: Get in with a lockpick, not glass
 
 - **Use a lockpick** on doors and locked containers. Lockpicking **doesn’t trigger the alarm**.
 - **Don’t break windows or glass** to get in. Breaking glass can set off the alarm.
+
+[SCREENSHOT: lockpicking a door (the lockpick minigame)]
 
 A lockpick is cheap and you’ll use it on almost every job. Always carry one.
 

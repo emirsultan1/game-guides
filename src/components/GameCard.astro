@@ -1,5 +1,7 @@
 ---
 // A game tile for the homepage grid: cover art (or a placeholder), name, status and tagline.
+// Games with guides link to their hub page. Teaser games (no guides yet) show a
+// "Guides coming soon" card that isn't a link, because they have no hub page yet.
 import StatusBadge from '@/components/StatusBadge.astro';
 import { getGameUrl, type Game } from '@/utils/content';
 
@@ -10,12 +12,17 @@ export interface Props {
 
 const { game, guideCount } = Astro.props;
 const { name, tagline, status, cover } = game.data;
+const isTeaser = guideCount === 0;
+const Tag = isTeaser ? 'div' : 'a';
 ---
 
-<a href={getGameUrl(game)} class="game-card">
+<Tag
+  href={isTeaser ? undefined : getGameUrl(game)}
+  class:list={['game-card', { teaser: isTeaser }]}
+>
   {
     cover ? (
-      <img src={cover} alt="" class="cover" width="640" height="340" loading="lazy" />
+      <img src={cover} alt="" class="cover" width="1280" height="680" loading="lazy" decoding="async" />
     ) : (
       <div class="cover cover-placeholder" aria-hidden="true">
         {name}
@@ -25,14 +32,14 @@ const { name, tagline, status, cover } = game.data;
   <div class="body">
     <div class="title-row">
       <h3 class="name">{name}</h3>
-      <StatusBadge status={status} />
+      {isTeaser ? <span class="soon">Guides soon</span> : <StatusBadge status={status} />}
     </div>
     <p class="tagline">{tagline}</p>
     <p class="count">
-      {guideCount === 0 ? 'Guides coming soon' : `${guideCount} guide${guideCount === 1 ? '' : 's'}`}
+      {isTeaser ? 'Guides coming soon' : `${guideCount} guide${guideCount === 1 ? '' : 's'}`}
     </p>
   </div>
-</a>
+</Tag>
 
 <style>
   .game-card {
@@ -48,15 +55,20 @@ const { name, tagline, status, cover } = game.data;
       transform 0.15s ease;
   }
 
-  .game-card:hover {
+  a.game-card:hover {
     border-color: var(--color-accent);
     color: var(--color-text);
     text-decoration: none;
     transform: translateY(-2px);
   }
 
+  .teaser {
+    border-style: dashed;
+  }
+
   .cover {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 8.5;
     object-fit: cover;
   }
@@ -87,6 +99,17 @@ const { name, tagline, status, cover } = game.data;
   .name {
     font-size: var(--text-xl);
     font-weight: 800;
+  }
+
+  .soon {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: #3a2c10;
+    color: var(--color-warning);
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .tagline {

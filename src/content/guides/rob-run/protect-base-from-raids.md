@@ -44,6 +44,8 @@ Wiping a whole base off the map is much harder. It needs an extremely rare item 
 
 **Electronic Fuses** go into the Security System panel. Every fuse adds defense points, so raiders need more Decoders and more time.
 
+[SCREENSHOT: the Security System with fuses loaded]
+
 - Fill **every fuse slot** on the buildings that hold your valuables.
 - Better fuses add more points. A building full of top-tier fuses can take raiders a huge number of Decoders to break, which turns a quick raid into a planned operation.
 - Fuses **aren’t destroyed** by a hack, and repairing the panel brings the protection back.
@@ -53,6 +55,8 @@ Wiping a whole base off the map is much harder. It needs an extremely rare item 
 ## 2. Install a raid alarm
 
 An **Alarm System** warns you when someone starts hacking. There are three levels:
+
+[SCREENSHOT: the raid alarm installed in a base]
 
 1. Warns **only you**
 2. Warns **you and your clan**
@@ -79,6 +83,8 @@ Raiders have to spend real resources on Decoders, so they pick bases that look w
 ## 5. Split your storage
 
 Don’t keep everything in one building.
+
+[SCREENSHOT: two separate storage boxes in a base]
 
 - Put your **most valuable items** in the building with the **most fuses**.
 - Keep **cheap, replaceable things** in the outer buildings.
