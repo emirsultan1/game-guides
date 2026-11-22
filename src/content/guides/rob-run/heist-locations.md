@@ -9,7 +9,7 @@ tags: ['heists', 'locations', 'map']
 draft: false
 ---
 
-<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the map with your favourite targets marked would make this guide much better. -->
+<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->
 
 Looty Bay has **28 robbery targets**, from corner stores to the bank vault. They aren’t all worth your time. The right target depends on whether you’re solo or in a crew, what tools you have, and how much attention you can handle.
 
@@ -29,8 +29,6 @@ The developers describe the range as everything from small corner stores and jew
 ## Small businesses: your first targets
 
 **Convenience stores, cafés, pharmacies, gas stations and electronics stores.**
-
-[SCREENSHOT: a small store from the outside]
 
 These are where every robber starts. They have a safe or two, some cabinets, a clerk and a few cameras. They’re quick, they don’t pull the whole police force, and you can do them alone.
 
@@ -56,8 +54,6 @@ Remote houses are a favourite for solo players. Police care much more about the 
 
 There are two: **Jewelry Store East** in **Downtown** and **Jewelry Store West** in **Sunny Beach**.
 
-[SCREENSHOT: the jewelry store display cases]
-
 They don’t need a key. You’re looting cabinets and display cases, and the items are small and valuable, so a full bag is worth a lot. The catch is the **cameras**: you need a fast plan to get in and out.
 
 - **You need:** a fast exit plan; a **glass cutter** helps with display cases
@@ -81,8 +77,6 @@ Fast jobs with useful loot: weapons, ammo and gear.
 
 The classic job. The bank has **large safes**, **deposit boxes** and a **gold vault**.
 
-[SCREENSHOT: the Looty Bay Bank from the outside]
-
 - **You need:** **Mini Drills** for the safes, a **Drill** for the vault, and the bank’s **ID Card** for the gold
 - **The catch:** robbing the vault **alerts the whole city**. Expect nearly every cop on the server to come for you.
 - **Crew:** yes. Bring a full party, heavy armor and a getaway plan. See [crew heists](/rob-run/crew-heists).
@@ -92,8 +86,6 @@ The classic job. The bank has **large safes**, **deposit boxes** and a **gold va
 ### Art Gallery (Palmside)
 
 One of the richest targets, with the most loot spots in the city and a **Fabergé Egg** in the vault.
-
-[SCREENSHOT: the Art Gallery from the outside]
 
 - **You need:** a **keycard** for the vault; a **Glass Cutter** for the egg
 - **The catch:** a timed crack and heavy police response

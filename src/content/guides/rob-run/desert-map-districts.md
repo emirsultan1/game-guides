@@ -8,7 +8,7 @@ tags: ['map', 'desert', 'districts']
 draft: false
 ---
 
-<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the global map would help a lot here. -->
+<!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->
 
 ROB RUN’s world has two halves:
 
@@ -17,7 +17,6 @@ ROB RUN’s world has two halves:
 
 This guide covers the desert.
 
-<!-- CHECK: add global map screenshot here, e.g. ![The ROB RUN global map](/images/rob-run/global-map.jpg) -->
 
 ## The desert is lawless
 
@@ -34,8 +33,6 @@ There are **no police** in the desert, and the rules are harsher than in the cit
 1. The desert is split into **districts**.
 2. Each district is split into **settlements**, laid out as a hex grid.
 3. Each settlement has **plots** for player bases.
-
-[SCREENSHOT: the desert map with its districts]
 
 **Highlands**, in the **middle** of the map, is the central district. The clan that holds it rules the server as **Shadow Governor**. See [districts and the Shadow Governor](/rob-run/districts-and-shadow-governor).
 
@@ -60,8 +57,6 @@ See [how to rent a plot](/rob-run/how-to-rent-a-plot).
 ## District hubs
 
 Each district has a **hub** where you can sell loot, as an alternative to the Fence vans in the city.
-
-[SCREENSHOT: a district hub in the desert]
 
 <!-- CHECK: what district hubs offer (selling? Sales Center?) and how to find them -->
 

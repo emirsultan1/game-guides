@@ -16,8 +16,6 @@ draft: false
 
 Don’t confuse the two:
 
-[SCREENSHOT: the Fence and the Smuggler selling screens]
-
 - The **Fence** buys **normal loot** from your bag: jewelry, electronics, cash.
 - The **Smuggler** buys **cargo**. Smuggler vans are marked on the map with a **box icon**, usually in **covered car parks**.
 
@@ -46,8 +44,6 @@ Like the Fence, the Smuggler pays more the higher your **Notoriety** during that
 3. Buy it on the **Black Market**.
 4. Place it on your plot.
 
-[SCREENSHOT: the Cargo Workbench]
-
 Then bring cargo home, put it on the bench and wait for it to open.
 
 <!-- CHECK: Cargo Workbench unlock and purchase cost -->
@@ -55,8 +51,6 @@ Then bring cargo home, put it on the bench and wait for it to open.
 ## The Valuable Cargo event
 
 **Valuable Cargo** is a city event and one of the best single payouts in the game:
-
-[SCREENSHOT: the Valuable Cargo event notice or marker]
 
 1. A notification warns you a few minutes **before it starts**, and the spot appears on the **map**.
 2. When it starts, the container unlocks in a **car trunk**.

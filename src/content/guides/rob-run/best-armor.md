@@ -29,8 +29,6 @@ Armor in ROB RUN is a buffer: it soaks up hits **before** your health does. Like
 | Heavy Body Armor      | 100        | 4        | Crew heists and base raids                  |
 | Bastion Body Armor    | 100        | 4        | The bank vault: takes **less damage** from every hit |
 
-[SCREENSHOT: the armor options in the shop with their stats]
-
 Bastion has the same protection as Heavy, but **reduces the damage of every hit**, which makes it the best armor in the game. It’s also very expensive and rare.
 
 <!-- CHECK: protection and segment numbers, and how much less damage Bastion takes (one source says 25%). Prices: sources list Light $4,000, Medium $15,000, Assault $70,000, Heavy $140,000, Bastion $350,000. -->
@@ -51,8 +49,6 @@ So moving up in settlements isn’t just about your base. It unlocks better gear
 ## Steel Plates: always carry spares
 
 **Steel Plates** fix broken armor segments.
-
-[SCREENSHOT: Steel Plates in the inventory]
 
 - You can use one **while moving**. Jumping won’t cancel it.
 - You **can’t** use one on armor that’s still fully intact.

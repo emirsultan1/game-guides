@@ -38,8 +38,6 @@ You need a **bank account** to create or join a clan. Go to the **Looty Bay Bank
 3. Search by name, or pick one from the list.
 4. Press **JOIN**. Open clans let you straight in; others need approval.
 
-[SCREENSHOT: the clan menu with the join option]
-
 You can also be **invited** by a clan member. The official ROB RUN Discord has a channel for clan recruitment too.
 
 **Clans belong to one server.** You and your friends need to be on the same server to be in the same clan.
@@ -51,15 +49,11 @@ You can also be **invited** by a clan member. The official ROB RUN Discord has a
 3. Press **CREATE**, choose a **name**, an **emblem** and whether the clan is **open** or needs approval to join.
 4. **Invite players** by their ID or through chat.
 
-[SCREENSHOT: the create-a-clan screen]
-
 <!-- CHECK: the exact cost to create a clan -->
 
 ## Clan ranks
 
 Clans have **ranks** with rights you can set, such as:
-
-[SCREENSHOT: the clan ranks / members list]
 
 - Recruiting and kicking members
 - Managing the clan **treasury**

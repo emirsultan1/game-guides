@@ -21,8 +21,6 @@ You’ll find keys all the time while looting in ROB RUN. Each one opens somethi
 | **Keycard**  | A restricted area, like a vault or armory      | Random loot                                     |
 | **ID Card**  | Special big-heist areas, like the bank’s Gold Vault | Trades at Lenny’s Motel                   |
 
-[SCREENSHOT: the four key types in the inventory]
-
 You **can’t buy** Safe Keys, Room Keys or Keycards. They only come from searching.
 
 <!-- CHECK: sources count 14 Safe Keys, 13 Room Keys, 4 Keycards and 2 ID Cards -->
@@ -33,8 +31,6 @@ You **can’t buy** Safe Keys, Room Keys or Keycards. They only come from search
 2. **Go to that building.**
 3. **Find the locked safe or room** and use the key.
 4. Behind a locked room there’s often a **heavy safe**, which needs a **Mini Drill**, and a **computer** for your USB Hacking Tool.
-
-[SCREENSHOT: using a key on a locked door]
 
 ## Where keys lead
 

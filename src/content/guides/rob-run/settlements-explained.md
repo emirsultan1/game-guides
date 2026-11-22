@@ -18,8 +18,6 @@ A **settlement** is a player-run area out in the desert, split into plots that p
 - Each district contains many **settlements**.
 - Each settlement is split into **plots**.
 
-[SCREENSHOT: the map showing settlements]
-
 Each district has a **level** (1, 2 or 3), and every settlement and plot in it shares that level. **Highlands**, in the middle of the map, is the central district.
 
 <!-- CHECK: sources say there are 10 districts with 51 settlements each: Rustvale, Fairfield, Dustbowl, Redstone, Loneford, Cascadas, Fallrock, Rivertown, El Peso and Highlands. Confirm before adding. -->
@@ -37,8 +35,6 @@ Each district has a **level** (1, 2 or 3), and every settlement and plot in it s
 
 Residents pay the owner a share whenever they:
 
-[SCREENSHOT: the settlement tax screen]
-
 - **Launder money**, and
 - **Buy from the Black Market**
 
@@ -52,8 +48,6 @@ The owner collects it **in person** at the **Debt Collectors’ Van** in the set
 2. Buy a **Settlement Title** that matches the **district level**.
 3. Go to the unclaimed settlement and **use the title** to claim it.
 4. It opens for residents, and you can place your base on a **free plot**.
-
-[SCREENSHOT: the screen for buying a settlement]
 
 <!-- CHECK: Settlement Title prices per level, and how many settlements one player can own (sources say up to 5) -->
 

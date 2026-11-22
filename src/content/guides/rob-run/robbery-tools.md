@@ -23,8 +23,6 @@ The right tool turns a locked door into loot. The wrong one, or none, means walk
 | **Master Key**       | Other players’ protected storage                   | Unlock in Shipments, then buy    |
 | **Decoders**         | Other players’ base security systems               | Loot only                        |
 
-[SCREENSHOT: all the robbery tools in the shop]
-
 ## Lockpick
 
 Your most-used tool. A Lockpick opens **ordinary doors and containers without setting off the alarm**, and it can also open **other players’ car trunks**, police cars included.
@@ -36,8 +34,6 @@ It’s cheap and one of the first things you should unlock. Always carry several
 ## Mini Drill
 
 Cracks the **heavy safes** you find inside **locked rooms**, plus the **large safes** in the Looty Bay Bank. You need one in your inventory for each heavy safe you want to open.
-
-[SCREENSHOT: the Mini Drill being used]
 
 **Important:** the Mini Drill is a **Tier II** unlock. You need your base in a **level 2 settlement** before you can unlock it. On your first runs, stick to cabinets, registers and small safes.
 
@@ -80,8 +76,6 @@ Carry them on every run so they fill as you go. See [how to make money fast solo
 ## The suspicious door: bartering for heist tools
 
 Next to **Lenny’s Motel** is a **suspicious door**. It’s a barter trader: instead of cash, it wants specific items.
-
-[SCREENSHOT: the suspicious door / barter screen]
 
 - **Glass Cutter:** trade **filled Code Tablets**.
 - **Drill:** trade a **filled Action Camera** and **filled USB Hacking Tools**, plus some cash.

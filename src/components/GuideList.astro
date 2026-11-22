@@ -59,6 +59,7 @@ const gamesById = new Map(games.map((game) => [game.id, game]));
 
   .guide-row:hover {
     background: var(--color-highlight);
+    color: var(--color-on-highlight);
   }
 
   .title {
@@ -81,8 +82,9 @@ const gamesById = new Map(games.map((game) => [game.id, game]));
   }
 
   .guide-row:hover .game,
-  .guide-row:hover .description {
-    color: var(--color-text);
+  .guide-row:hover .description,
+  .guide-row:hover .draft {
+    color: var(--color-on-highlight);
   }
 
   .draft {

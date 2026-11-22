@@ -156,6 +156,7 @@ import SearchForm from '@/components/SearchForm.astro';
 
   .results :global(.result:hover) {
     background: var(--color-highlight);
+    color: var(--color-on-highlight);
   }
 
   .results :global(.result-meta) {
@@ -176,6 +177,6 @@ import SearchForm from '@/components/SearchForm.astro';
 
   .results :global(.result:hover .result-meta),
   .results :global(.result:hover .result-description) {
-    color: var(--color-text);
+    color: var(--color-on-highlight);
   }
 </style>

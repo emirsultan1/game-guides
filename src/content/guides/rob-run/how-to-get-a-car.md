@@ -16,8 +16,6 @@ You can’t reach Looty Bay on foot, so a car is the first thing you need. The g
 
 If you don’t have an active car, rent one **free** at a **Parking Terminal**. There’s one outside Lenny’s Motel, and you can also use one at your base.
 
-[SCREENSHOT: the free rental car]
-
 The free car is slow and has a tiny trunk, but it costs nothing to lose. Use it until you have a plot.
 
 ## Step 2: Get a plot with a house or garage
@@ -35,8 +33,6 @@ See [how to rent a plot](/rob-run/how-to-rent-a-plot).
 
 Press **H** to open **Shipments** and find the **vehicles** section. Pay once to unlock the car you want.
 
-[SCREENSHOT: a car in the Shipments menu]
-
 - Each car unlocks **after the one before it** in its line.
 - **Tier II and Tier III cars** also need your base to be in a **level 2 or level 3 settlement**.
 
@@ -51,8 +47,6 @@ Unlocking doesn’t give you the car. Open the **Black Market** on the **laptop 
 ## Step 5: Put the key in your Key Locker
 
 Go home and put the key in an empty slot of your **Key Locker**. The car then **appears in your garage**, ready to drive.
-
-[SCREENSHOT: the Key Locker with a car key in it]
 
 Car keys can also turn up as **loot**, which is a cheap way to get one.
 

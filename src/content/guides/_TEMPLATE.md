@@ -10,8 +10,6 @@ quickAnswer: 'The short answer in one or two sentences.'
 publishedAt: 2026-11-19
 # updatedAt: 2026-11-25   # set this every time you update the guide
 # gameVersion: '0.9.2'
-# image: '/images/rob-run/your-screenshot.jpg'   # optional, 16:9, your own screenshot
-# imageAlt: 'What the screenshot shows'
 featured: false
 tags: []
 draft: true # set to false when it's ready to go live
@@ -24,8 +22,6 @@ Write the guide here in Markdown. Use `##` for main sections and `###` for sub-s
 1. Numbered steps work like this.
 2. Keep each step short.
 
-> **Tip:** quote blocks become yellow tip / warning boxes.
+> **Tip:** quote blocks become tip / warning boxes with a yellow edge.
 
-![What the screenshot shows](@/assets/guides/rob-run/your-screenshot.png "Optional caption under the image")
-
-[SCREENSHOT: describe a screenshot you still need to take — only shows in npm run dev]
+<!-- Notes like this one are for you only: they're removed from the live site. -->

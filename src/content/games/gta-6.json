@@ -29,6 +29,8 @@
       "label": "Secrets"
     }
   ],
+  "cover": "/images/games/gta-6.webp",
+  "coverAlt": "Illustration of a neon sunset over the sea with palm trees",
   "order": 2,
   "teaser": true
 }

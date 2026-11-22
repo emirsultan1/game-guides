@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
-import { guideMedia } from './src/plugins/guide-media.mjs';
+import { guideCleanup } from './src/plugins/guide-cleanup.mjs';
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
@@ -17,14 +17,9 @@ export default defineConfig({
     format: 'file',
   },
 
-  image: {
-    // Screenshots get several sizes (srcset), so phones download a small file.
-    layout: 'constrained',
-  },
-
   markdown: {
-    // Turns guide images into captioned figures and galleries, and handles [SCREENSHOT: ...] notes.
-    // See src/plugins/guide-media.mjs.
-    processor: satteri({ hastPlugins: [guideMedia()] }),
+    // Removes <!-- ... --> author notes from guides so they never reach the page source.
+    // See src/plugins/guide-cleanup.mjs.
+    processor: satteri({ hastPlugins: [guideCleanup()] }),
   },
 });

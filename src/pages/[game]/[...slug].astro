@@ -60,13 +60,11 @@ const {
   gameVersion,
   author,
   draft,
-  image,
-  imageAlt,
 } = guide.data;
 const { Content, headings } = await render(guide);
 
 const categoryLabel = getCategoryLabel(game, category);
-// Link previews use the guide's image, then the game's cover, then the site default.
+// Link previews use the game's illustration, then the site default.
 const gameUrl = getGameUrl(game);
 ---
 
@@ -75,7 +73,7 @@ const gameUrl = getGameUrl(game);
   description={description}
   type="article"
   noindex={draft}
-  image={image ?? game.data.cover}
+  image={game.data.cover}
 >
   <JsonLd
     slot="head"
@@ -113,12 +111,6 @@ const gameUrl = getGameUrl(game);
           {gameVersion && <span>, checked on version {gameVersion}</span>}
         </p>
       </header>
-
-      {
-        image && (
-          <img src={image} alt={imageAlt ?? title} class="hero-image" width="1280" height="720" />
-        )
-      }
 
       {
         quickAnswer && (
@@ -161,33 +153,8 @@ const gameUrl = getGameUrl(game);
     </aside>
   </div>
 
-  <dialog class="lightbox" aria-label="Screenshot">
-    <img src="" alt="" />
-    <div class="lightbox-bar">
-      <span class="lightbox-caption"></span>
-      <button type="button" class="lightbox-close">Close</button>
-    </div>
-  </dialog>
 </BaseLayout>
 
-<script>
-  // Click a screenshot to see it full size. Click anywhere or press Esc to close.
-  const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
-  const big = dialog?.querySelector('img');
-  const caption = dialog?.querySelector('.lightbox-caption');
-
-  if (dialog && big && caption) {
-    document.querySelectorAll<HTMLImageElement>('.prose .guide-figure img').forEach((img) => {
-      img.addEventListener('click', () => {
-        big.src = img.currentSrc || img.src;
-        big.alt = img.alt;
-        caption.textContent = img.closest('figure')?.querySelector('figcaption')?.textContent ?? img.alt;
-        dialog.showModal();
-      });
-    });
-    dialog.addEventListener('click', () => dialog.close());
-  }
-</script>
 
 <style>
   .guide-layout {
@@ -247,20 +214,13 @@ const gameUrl = getGameUrl(game);
     font-weight: 700;
   }
 
-  .hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border: 2px solid var(--color-text);
-  }
-
   /* --- Short answer: the highlighted bit -------------------------------- */
 
   .quick-answer {
     display: grid;
     gap: var(--space-2);
     padding-left: var(--space-4);
-    border-left: 4px solid var(--color-text);
+    border-left: 4px solid var(--color-highlight);
   }
 
   .quick-answer h2 {
@@ -278,7 +238,7 @@ const gameUrl = getGameUrl(game);
   .quick-answer mark {
     padding: 0.08em 0.15em;
     background: var(--color-highlight);
-    color: var(--color-text);
+    color: var(--color-on-highlight);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
@@ -295,7 +255,7 @@ const gameUrl = getGameUrl(game);
   .prose :global(h2) {
     margin-top: var(--space-8);
     padding-top: var(--space-4);
-    border-top: 2px solid var(--color-text);
+    border-top: 2px solid var(--color-rule);
   }
 
   .prose :global(h3) {
@@ -317,69 +277,7 @@ const gameUrl = getGameUrl(game);
   .prose :global(blockquote) {
     padding: var(--space-4) var(--space-6);
     background: var(--color-highlight-soft);
-    border-left: 4px solid var(--color-text);
-  }
-
-  .prose :global(img) {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border: 2px solid var(--color-text);
-    background: var(--color-surface);
-  }
-
-  /* Screenshots: one per line becomes a captioned figure (see src/plugins/guide-media.mjs). */
-  .prose :global(.guide-figure) {
-    display: grid;
-    gap: var(--space-2);
-    margin: var(--space-2) 0;
-  }
-
-  .prose :global(.guide-figure img) {
-    cursor: zoom-in;
-  }
-
-  .prose :global(figcaption) {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    line-height: 1.5;
-  }
-
-  /* Two or three screenshots on consecutive lines sit side by side. */
-  .prose :global(.guide-gallery) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-    gap: var(--space-4);
-    align-items: start;
-  }
-
-  .prose :global(.guide-gallery .guide-figure) {
-    margin: 0;
-  }
-
-  .prose :global(.guide-gallery img) {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
-
-  /* [SCREENSHOT: ...] notes. Only shown in `npm run dev`. */
-  .prose :global(.screenshot-needed) {
-    display: grid;
-    place-content: center;
-    gap: var(--space-1);
-    min-height: clamp(9rem, 38vw, 18rem);
-    padding: var(--space-6);
-    border: 2px dashed var(--color-text-muted);
-    background: repeating-linear-gradient(-45deg, var(--color-bg) 0 14px, var(--color-surface-2) 14px 28px);
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    text-align: center;
-  }
-
-  .prose :global(.screenshot-needed strong) {
-    color: var(--color-text);
-    font-size: var(--text-base);
+    border-left: 4px solid var(--color-highlight);
   }
 
   .prose :global(table) {
@@ -400,60 +298,13 @@ const gameUrl = getGameUrl(game);
   }
 
   .prose :global(th) {
-    border-bottom: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-rule);
     white-space: nowrap;
   }
 
   .prose :global(hr) {
     border: 0;
     border-top: 1px solid var(--color-border);
-  }
-
-  /* Full-size screenshot viewer */
-  .lightbox {
-    margin: auto;
-    width: min(96vw, 1600px);
-    max-width: none;
-    max-height: 94vh;
-    padding: 0;
-    border: 2px solid var(--color-text);
-    background: var(--color-bg);
-    color: var(--color-text);
-  }
-
-  .lightbox::backdrop {
-    background: rgb(22 24 27 / 0.88);
-  }
-
-  .lightbox img {
-    display: block;
-    width: 100%;
-    max-height: calc(94vh - 3.5rem);
-    object-fit: contain;
-  }
-
-  .lightbox-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding: var(--space-3) var(--space-4);
-    font-size: var(--text-sm);
-  }
-
-  .lightbox-caption {
-    color: var(--color-text-muted);
-  }
-
-  .lightbox-close {
-    padding: var(--space-1) var(--space-3);
-    border: 2px solid var(--color-text);
-    border-radius: var(--radius);
-    background: var(--color-surface);
-    color: var(--color-text);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
   }
 
   /* --- More guides -------------------------------------------------------- */

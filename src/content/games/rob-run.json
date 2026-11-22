@@ -40,5 +40,7 @@
       "label": "Maps"
     }
   ],
+  "cover": "/images/games/rob-run.webp",
+  "coverAlt": "Illustration of a desert with red mesas, a cactus, a getaway car and a money bag",
   "order": 1
 }
