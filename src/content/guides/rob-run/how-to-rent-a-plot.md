@@ -5,7 +5,7 @@ category: 'base'
 quickAnswer: 'Get a Land Plot Title that matches the district level, find a settlement that already has an owner, pick a vacant plot and pay at the sign next to it. You can’t rent in a settlement nobody owns.'
 publishedAt: 2026-11-21
 tags: ['base', 'plot', 'settlement']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

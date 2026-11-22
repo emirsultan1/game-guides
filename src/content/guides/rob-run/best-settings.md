@@ -5,7 +5,7 @@ category: 'beginner'
 quickAnswer: 'Turn VSync off and set the frame rate to unlimited or your monitor’s refresh rate. Disable shadows, Additional Light and HBAO for the biggest FPS gains, and keep Object Visibility Distance high so you see players early.'
 publishedAt: 2026-11-20
 tags: ['settings', 'fps', 'pc']
-draft: true # Emir: test these on your own PC and add your setup, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Best idea: add your own PC specs and the FPS you get with these settings. -->

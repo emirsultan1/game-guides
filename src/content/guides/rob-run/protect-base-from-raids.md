@@ -5,7 +5,7 @@ category: 'base'
 quickAnswer: 'There’s no offline raid protection in ROB RUN. Fill your Security System with Electronic Fuses, install a raid alarm, launder your cash so it’s in the bank instead of the base, and don’t make your base look rich.'
 publishedAt: 2026-11-20
 tags: ['base', 'raids', 'defense']
-draft: true # Emir: check against your own base, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. If you've raided or been raided, that story is gold for this guide. -->

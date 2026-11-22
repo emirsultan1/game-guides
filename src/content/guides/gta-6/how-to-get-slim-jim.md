@@ -5,7 +5,7 @@ category: 'vehicles'
 quickAnswer: 'You get the Slim Jim in Chapter 2 from Moses, the mechanic in Port Gellhorn, during the story mission “Moses”. It opens locked car doors and trunks without breaking glass or setting off the alarm. It can’t start keyless cars.'
 publishedAt: 2026-11-22
 tags: ['cars', 'slim jim', 'stealing', 'moses']
-draft: true # Emir: check against videos / a friend's game, then set to false
+draft: false
 ---
 
 <!-- EMIR: confirmed by Game Rant, PC Gamer, Dork, GMTreks, games.gg, HowToVideoGame, Izoate and others. No story spoilers. -->

@@ -5,7 +5,7 @@ category: 'heists'
 quickAnswer: 'Split your crew into three jobs: a breacher who opens the target, a hauler who carries the loot, and cover who watches the staff and the street. Plan the escape before anyone puts on a mask, especially for the bank vault, which alerts the whole city.'
 publishedAt: 2026-11-20
 tags: ['heists', 'crew', 'bank']
-draft: true # Emir: check against your own crew runs, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. Your own crew experience is the most valuable thing you can add here. -->

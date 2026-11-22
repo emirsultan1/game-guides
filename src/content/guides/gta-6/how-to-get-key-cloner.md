@@ -5,7 +5,7 @@ category: 'vehicles'
 quickAnswer: 'The Key Cloner is a story unlock in the middle of Chapter 3. Randy gives it to you at the start of the mission “Clonin’ Keys, Makin’ Gs” (also shown as “Steal the Zorrusso for Randy”). Stand by a keyless car’s door and choose Clone Key to unlock and start it.'
 publishedAt: 2026-11-22
 tags: ['cars', 'key cloner', 'keyless', 'randy', 'stealing']
-draft: true # Emir: check against videos / a friend's game, then set to false
+draft: false
 ---
 
 <!-- EMIR: confirmed by Vice, PC Gamer, Beebom, Game Rant, NoobFeed, LeonidaList, Magic Game World and others. No story spoilers. -->

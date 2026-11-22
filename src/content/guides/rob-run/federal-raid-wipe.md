@@ -5,7 +5,7 @@ category: 'base'
 quickAnswer: 'Every ROB RUN server wipes 7 days after it opens. The Federal Raid resets your plot, base, weapons and all cash, banked money included. Cosmetics, your name, tutorial progress, settings and jail time carry over.'
 publishedAt: 2026-11-20
 tags: ['wipe', 'federal raid', 'base']
-draft: true # Emir: check against your own experience of a wipe, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

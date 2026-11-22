@@ -5,7 +5,7 @@ category: 'money'
 quickAnswer: 'Open an account at the Looty Bay Bank as a civilian, then put your cash into the Laundering Desk at your base. It takes time, but once the money reaches your bank account nobody can steal it until the next wipe.'
 publishedAt: 2026-11-20
 tags: ['money', 'laundering', 'bank']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

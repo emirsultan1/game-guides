@@ -5,7 +5,7 @@ category: 'heists'
 quickAnswer: 'Lockpicks open doors and containers quietly. Mini Drills crack heavy safes. The Drill opens the bank vault and the Glass Cutter takes the Art Gallery exhibit; you can’t buy either, you barter for them at the suspicious door near Lenny’s Motel using filled Code Tablets, USB Hacking Tools and Action Cameras.'
 publishedAt: 2026-11-21
 tags: ['heists', 'tools', 'items']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

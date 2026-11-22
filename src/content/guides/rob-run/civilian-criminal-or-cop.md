@@ -6,7 +6,7 @@ quickAnswer: 'Start as a civilian to learn the city safely. Mask up as a crimina
 publishedAt: 2026-11-20
 featured: true
 tags: ['beginner', 'roles', 'police']
-draft: true # Emir: check every fact against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

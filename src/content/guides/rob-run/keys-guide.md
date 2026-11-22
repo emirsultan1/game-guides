@@ -5,7 +5,7 @@ category: 'heists'
 quickAnswer: 'Keys are random loot. Safe Keys open one safe and Room Keys open one locked room, in the building named on the key. Keycards open restricted areas like vaults. Read the key’s name, go to that building, and use it before you sell it by mistake.'
 publishedAt: 2026-11-21
 tags: ['heists', 'keys', 'items']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

@@ -5,7 +5,7 @@ category: 'gear'
 quickAnswer: 'Use the free rental from a Parking Terminal until you have a plot with a house or garage. Then unlock a car in Shipments, buy its key on the Black Market, and put the key in your Key Locker so the car appears in your garage.'
 publishedAt: 2026-11-21
 tags: ['vehicles', 'car', 'gear']
-draft: true # Emir: check against your own game, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

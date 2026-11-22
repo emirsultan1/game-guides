@@ -5,7 +5,7 @@ category: 'maps'
 quickAnswer: 'Outside Looty Bay is the desert: a lawless global map split into districts of settlements, with Highlands in the middle. There are no police there, and dying in the desert costs everything you carry. Pick a district by its level and by which clan controls it.'
 publishedAt: 2026-11-21
 tags: ['map', 'desert', 'districts']
-draft: true # Emir: check every detail, and add a screenshot of the global map, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the global map would help a lot here. -->

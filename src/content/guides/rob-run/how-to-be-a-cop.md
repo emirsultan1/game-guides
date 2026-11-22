@@ -5,7 +5,7 @@ category: 'police'
 quickAnswer: 'Enter Looty Bay as a civilian, go to the Police Station and start duty when a slot is open, or answer a backup call. Use your siren, order criminals to surrender and arrest them alive: an arrest pays far more than a kill.'
 publishedAt: 2026-11-20
 tags: ['police', 'cop', 'money']
-draft: true # Emir: check against your own cop shifts, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. -->

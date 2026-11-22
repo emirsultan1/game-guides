@@ -5,7 +5,7 @@ category: 'maps'
 quickAnswer: 'Looty Bay has four areas: Downtown (the bank and most shops), Sunny Beach (hotels, jewelry and gun shops), Palmside (the police station and Art Gallery) and Loraine Hills (houses and mansions). Fence vans, marked with a dollar sign, are where you sell.'
 publishedAt: 2026-11-21
 tags: ['map', 'looty bay', 'locations']
-draft: true # Emir: check every location, and add a screenshot of the map, then set to false
+draft: false
 ---
 
 <!-- EMIR: Things to check before publishing are marked with CHECK comments. They don't show on the site. A screenshot of the in-game map with the areas and key places marked would make this guide 10x better. Put it in public/images/rob-run/ and add it below the intro. -->
