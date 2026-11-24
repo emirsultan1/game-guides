@@ -66,7 +66,7 @@ Not every buyer takes every car:
 - **Pay ’n’ Sprays** buy most stolen cars.
 - **Randy** only wants certain flashy, expensive cars.
 
-WAiNK shows the sell value and which buyer suits the car.
+WAiNK shows the sell value and which buyer suits the car. Full breakdown: [how to sell stolen cars in GTA 6](/gta-6/how-to-sell-cars).
 
 ## After you register
 
@@ -86,6 +86,7 @@ WAiNK shows the sell value and which buyer suits the car.
 
 ## Related guides
 
+- [How to sell stolen cars in GTA 6](/gta-6/how-to-sell-cars)
 - [How to steal cars in GTA 6](/gta-6/how-to-steal-cars)
 - [GTA 6 trackers explained](/gta-6/car-trackers-explained)
 - [How to get the Slim Jim in GTA 6](/gta-6/how-to-get-slim-jim)

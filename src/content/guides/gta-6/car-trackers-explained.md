@@ -77,6 +77,8 @@ Full walkthrough: [how to register cars in GTA 6](/gta-6/how-to-register-cars).
 
 ## Related guides
 
+- [How to sell stolen cars in GTA 6](/gta-6/how-to-sell-cars)
+- [Randy’s Wish List in GTA 6](/gta-6/randys-wish-list)
 - [How to steal cars in GTA 6](/gta-6/how-to-steal-cars)
 - [How to register cars in GTA 6](/gta-6/how-to-register-cars)
 - [How to get the Key Cloner in GTA 6](/gta-6/how-to-get-key-cloner)
