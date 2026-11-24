@@ -4,6 +4,7 @@ description: 'Where and when you get the Slim Jim in GTA 6, how to use it to ope
 category: 'vehicles'
 quickAnswer: 'You get the Slim Jim in Chapter 2 from Moses, the mechanic in Port Gellhorn, during the story mission “Moses”. It opens locked car doors and trunks without breaking glass or setting off the alarm. It can’t start keyless cars.'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'slim jim', 'stealing', 'moses']
 draft: false
 ---
@@ -23,10 +24,6 @@ You can’t buy it or find it lying around. It’s a **story unlock**:
 5. Moses gives Lucia the Slim Jim and walks you through how to use it.
 
 **There’s no way to get it early.** If you’re still in Chapter 1, keep playing the story.
-
-Once it’s unlocked, **both Jason and Lucia** can use it.
-
-<!-- CHECK: confirm in a video that Jason also has the Slim Jim right away after the Moses mission (GMTreks says both characters can use it). -->
 
 ## How to use the Slim Jim
 

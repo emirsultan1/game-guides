@@ -2,8 +2,9 @@
 title: 'GTA 6 Trackers Explained: Standard vs. Advanced Trackers'
 description: 'What standard and advanced trackers do in GTA 6, how to check a car before stealing it, how to escape an advanced tracker, and how to get rid of each one.'
 category: 'vehicles'
-quickAnswer: 'A standard tracker only stops you modifying the car until you register it. An advanced tracker reports your location to the police whenever you drive too slowly. Register a standard-tracker car at a Pay ’n’ Spray from Chapter 3; advanced-tracker cars can only be registered after a later job for Randy.'
+quickAnswer: 'A standard tracker only stops you modifying the car until you register it. An advanced tracker reports your location to the police whenever you drive too slowly. Register a standard-tracker car at a Pay ’n’ Spray from Chapter 3; advanced-tracker cars can only be registered after Randy’s Mamba GT job, late in the story.'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'trackers', 'advanced tracker', 'register']
 draft: false
 ---
@@ -22,18 +23,16 @@ Scan it with **WAiNK** before you steal it: hold **Up on the D-pad**, aim at the
 | --- | --- | --- | --- |
 | **None** | Older, cheaper cars | Nothing | Yes, from **Chapter 2** (Moses) |
 | **Standard** | Mid-range cars | You **can’t modify** the car until it’s registered | Yes, from **Chapter 3** (Pay ’n’ Spray) |
-| **Advanced** | High-end and exotic cars | **Reports you to the police** if you drive too slowly | Only after a **later Randy job** in Chapter 3 |
+| **Advanced** | High-end and exotic cars | **Reports you to the police** if you drive too slowly | Only after **Randy’s Mamba GT job** |
 
 ## Standard trackers
 
 A standard tracker is mostly a nuisance:
 
 - You **can’t take the car to a mod shop** until you’ve registered it.
-- It’s not known to call the police on you.
+- It **doesn’t give away your location**, so it won’t bring the police by itself.
 
 **How to get rid of it:** register the car at any **Pay ’n’ Spray**. That becomes possible early in **Chapter 3**.
-
-<!-- CHECK: guides say a standard tracker doesn't alert the police, but some note this isn't fully confirmed yet. -->
 
 ## Advanced trackers
 
@@ -54,9 +53,14 @@ Advanced trackers are the dangerous ones. You’ll mostly find them on expensive
 
 ### How to get rid of an advanced tracker
 
-You can only register advanced-tracker cars after unlocking it through **Randy** in **Chapter 3**: complete his job where you steal a **’64 Declasse Mamba GT** for him. After that, advanced-tracker cars can be registered like any other.
+You can only get rid of an advanced tracker after a job for **Randy**:
 
-<!-- CHECK: guides disagree on WHERE you register advanced-tracker cars after Randy's job: Randy's garage only, or any Pay 'n' Spray. Some also mention a follow-up phone call after the Mamba GT job. Confirm in a video. -->
+1. Work through **Randy’s Wish List** until he asks you to steal a **’64 Declasse Mamba GT** from a mansion in **Leaf Links, Vice Beach**.
+2. Deliver it to him.
+3. **Wait for Randy’s follow-up call**, a few in-game hours later.
+4. From then on, **any Pay ’n’ Spray** will register (or buy) cars with advanced trackers.
+
+This comes late in the story. Guides place the Mamba GT job at the end of Chapter 3 or early in Chapter 4, depending on how fast you work through Randy’s list.
 
 ## Trackers and registering: at a glance
 
@@ -65,14 +69,14 @@ You can only register advanced-tracker cars after unlocking it through **Randy**
 | Chapter 1 | Nowhere | None yet |
 | Chapter 2 | **Moses**, Port Gellhorn | **No tracker** only |
 | Early Chapter 3 | Any **Pay ’n’ Spray** | No tracker or **standard** tracker |
-| Later Chapter 3 | After **Randy’s Mamba GT** job | **Advanced** tracker too |
+| Late Chapter 3 or Chapter 4 | Any **Pay ’n’ Spray**, after **Randy’s Mamba GT** job and his call | **Advanced** tracker too |
 
 Full walkthrough: [how to register cars in GTA 6](/gta-6/how-to-register-cars).
 
 ## Tips
 
 - **Early game? Steal untracked cars.** You can keep them from Chapter 2, and they won’t bring the police.
-- **Don’t get attached to advanced-tracker cars too early.** You can drive them, but you can’t keep them until Randy’s job.
+- **Don’t get attached to advanced-tracker cars too early.** You can drive them, but you can’t keep them until Randy’s Mamba GT job.
 - **Scan before you steal.** It takes two seconds and tells you exactly what kind of escape you’re in for.
 
 ## Related guides

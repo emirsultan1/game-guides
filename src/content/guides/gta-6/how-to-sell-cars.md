@@ -22,7 +22,7 @@ Stealing a car is only half the job. To turn it into money you need the right bu
 
 Not sure which tracker a car has? Scan it with **WAiNK** before you take it: hold **Up on the D-pad**, aim at the car, then hold **R1 / RB**. More on that in [GTA 6 trackers explained](/gta-6/car-trackers-explained).
 
-<!-- CHECK: one guide says Pay 'n' Spray buys stolen standard-tracker cars as soon as you've met Moses; most say early Chapter 3. Confirm in game. -->
+> **Daily limits:** Pay ’n’ Sprays only buy **three stolen cars per in-game day**, and Moses can run out of budget for the day too. If a buyer says no, come back the next day or try another buyer.
 
 ## Selling to Moses (Chapter 2)
 
@@ -42,9 +42,13 @@ Once Chapter 3 opens it up, any Pay ’n’ Spray will buy cars with a **standar
 
 1. Steal a **standard-tracker** car. It won’t call the police on you.
 2. Drive into the nearest **Pay ’n’ Spray**.
-3. Pick **Sell** from the menu.
+3. Pick **Sell** from the menu and confirm. The money goes into your BuckMe account.
 
-There are Pay ’n’ Sprays all over the map, so this is usually the fastest loop in Chapter 3: steal, short drive, sell, repeat.
+**Limit:** three stolen cars per in-game day. After that, wait for the next day.
+
+There are Pay ’n’ Sprays all over the map, so this is a quick loop in Chapter 3: steal, short drive, sell. Do your three a day, then switch to something else.
+
+**Later on:** after Randy’s **Mamba GT** job, Pay ’n’ Sprays also buy cars with **advanced trackers**.
 
 ## Selling to Randy (mid Chapter 3)
 
