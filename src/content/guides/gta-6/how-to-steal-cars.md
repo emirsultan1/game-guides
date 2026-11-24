@@ -112,6 +112,7 @@ WAiNK tells you which buyer a car suits.
 
 ## Related guides
 
+- [How to sell stolen cars in GTA 6](/gta-6/how-to-sell-cars)
 - [How to get the Slim Jim in GTA 6](/gta-6/how-to-get-slim-jim)
 - [How to get the Key Cloner in GTA 6](/gta-6/how-to-get-key-cloner)
 - [GTA 6 trackers explained](/gta-6/car-trackers-explained)
