@@ -48,6 +48,8 @@ Randy’s Wish List is the best car money in GTA 6 before bank vaults. He wants 
 
 Some of these come through Randy’s missions with a marked location. The rest you hunt down yourself.
 
+The **Truffade Thrax** is the last one. Randy only tells you where it is, the **Dalton Island Club** (by ferry from Waxman Island), after you’ve delivered every other car.
+
 ## How to find the cars
 
 Most Wish List cars spawn at **fixed spots**, but they show as **location unknown** at first. **Randy texts you a hint** about where to look, so read his messages.
@@ -78,7 +80,7 @@ More on escaping: [GTA 6 trackers explained](/gta-6/car-trackers-explained).
 
 - **Do Wish List cars when you’re fresh.** These drives are tense. Don’t start one at the end of a session.
 - **Bank your $30,000 straight away.** Pocket cash is lost if you die or get arrested. See [how to keep your money safe](/gta-6/keep-money-safe).
-- **Want to keep one?** After Randy’s Mamba GT job, you can [register](/gta-6/how-to-register-cars) advanced-tracker cars instead of selling them.
+- **Want to keep one?** Cars you deliver are gone. But after Randy’s Mamba GT job and his follow-up call, any Pay ’n’ Spray can [register](/gta-6/how-to-register-cars) advanced-tracker cars, so you can steal a second copy for yourself.
 
 ## Related guides
 

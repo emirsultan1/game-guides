@@ -4,6 +4,7 @@ description: 'Where to find Paul Walker’s green Fast & Furious car in GTA 6, h
 category: 'vehicles'
 quickAnswer: 'It’s the green Maibatsu ’97 Penumbra FF, locked in a villa garage in the middle of Vespucci Island (Rialto Islands, Vice City). You can steal it as soon as free roam opens. Bring it to Moses as your first car in Chapter 2 and he registers it for free, saving about $6,750.'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'paul walker', 'fast and furious', 'penumbra ff', 'free car']
 featured: true
 draft: false
@@ -50,14 +51,12 @@ Driving off doesn’t make the car yours. If you don’t register it, you can **
 
 **Already used your free registration?** You can still keep it. You just pay the normal fee, at Moses or later at a **Pay ’n’ Spray**. See [how to register cars in GTA 6](/gta-6/how-to-register-cars).
 
-<!-- CHECK: scan it with WAiNK in a video to confirm it has no tracker (Moses only takes untracked cars). Every guide says Moses registers it, which means it shouldn't have one. -->
-
 ## Is it worth it?
 
 Yes, especially early on:
 
 - It **handles really well** and is **much faster than the starter cars**.
-- It’s **free**, and with Moses’ offer, so is registering it.
+- It’s **free**, it has **no tracker**, and with Moses’ offer, so is registering it.
 - It’s a great-looking car to mod once it’s registered.
 
 Later in the game you’ll find faster supercars (see [the best cars in GTA 6](/gta-6/best-cars)), but nothing beats the Penumbra FF for the first few chapters.

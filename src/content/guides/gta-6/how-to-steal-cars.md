@@ -4,6 +4,7 @@ description: 'How car theft works in GTA 6: scanning cars with WAiNK, smashing a
 category: 'vehicles'
 quickAnswer: 'Scan the car with WAiNK first. Older cars can be smashed open and hotwired, the Slim Jim (Chapter 2) opens locked cars without setting off the alarm, and the Key Cloner (Chapter 3) is the only way to take keyless cars. Then check the tracker before you decide to keep or sell it.'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'stealing', 'slim jim', 'key cloner', 'trackers']
 featured: true
 draft: false
@@ -93,15 +94,13 @@ Full details: [GTA 6 trackers explained](/gta-6/car-trackers-explained).
 
 A stolen car isn’t yours just because you drove it away. To keep it, you need to **register** it, and to store it you need a **free garage space**.
 
-- **Register it** to make it your personal vehicle. You can start registering cars in **Chapter 2** with Moses, at **Pay ’n’ Sprays** from **Chapter 3**, and advanced-tracker cars only after a later job for Randy. See [how to register cars in GTA 6](/gta-6/how-to-register-cars).
+- **Register it** to make it your personal vehicle. You can start registering cars in **Chapter 2** with Moses, at **Pay ’n’ Sprays** from **Chapter 3**, and advanced-tracker cars only after Randy’s Mamba GT job, late in the story. See [how to register cars in GTA 6](/gta-6/how-to-register-cars).
 - **Sell it** if you just want the money. Different buyers want different cars:
   - **Moses** buys older, cheaper cars.
-  - **Pay ’n’ Sprays** buy most stolen cars.
+  - **Pay ’n’ Sprays** buy standard-tracker cars from Chapter 3, but only **three a day**.
   - **Randy** only wants certain flashy, expensive cars.
 
-WAiNK tells you which buyer a car suits.
-
-<!-- CHECK: one guide (PC Gamer) says Pay 'n' Sprays only buy 3 stolen cars per day. Worth adding if you can confirm it. -->
+WAiNK tells you which buyer a car suits. Full breakdown: [how to sell stolen cars in GTA 6](/gta-6/how-to-sell-cars).
 
 ## Tips
 

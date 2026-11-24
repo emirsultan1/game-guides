@@ -4,6 +4,7 @@ description: 'When you unlock the Key Cloner in GTA 6, which Randy mission gives
 category: 'vehicles'
 quickAnswer: 'The Key Cloner is a story unlock in the middle of Chapter 3. Randy gives it to you at the start of the mission “Clonin’ Keys, Makin’ Gs” (also shown as “Steal the Zorrusso for Randy”). Stand by a keyless car’s door and choose Clone Key to unlock and start it.'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'key cloner', 'keyless', 'randy', 'stealing']
 draft: false
 ---
@@ -17,12 +18,12 @@ Newer and more expensive cars in GTA 6 are **keyless**. There’s no ignition to
 It’s a **story unlock**. You can’t buy it or find it early.
 
 - **Chapter:** around the middle of **Chapter 3**, well into the story.
-- **Mission:** Randy’s job **“Clonin’ Keys, Makin’ Gs”**. Some guides and the in-game objective call it **“Steal the Zorrusso for Randy”**. It’s the same mission.
-- **What happens:** Randy calls near the start of the mission and has you add the Key Cloner to your phone. Your first use is stealing a **Zorrusso** in **Ocean Beach** for him.
+- **Mission:** Randy’s job **“Clonin’ Keys, Makin’ Gs”**, which opens after you finish **“Crosstown Traffic”**. Some guides and the in-game objective call it **“Steal the Zorrusso for Randy”**. It’s the same mission.
+- **What happens:** Randy calls near the start of the mission and tells you to install the Key Cloner. Open your phone (**Up on the D-pad**), go to **Settings** and choose **Install key_cloner**. Your first use is stealing a **Zorrusso** in **Ocean Beach** for him.
 
-After that mission, the Key Cloner is yours **permanently**.
+After that mission, the Key Cloner is yours **permanently**, for both Jason and Lucia.
 
-<!-- CHECK: guides disagree on which mission unlocks it. Some say it comes after "Crosstown Traffic", one says after "First Impressions". Confirm the order in a walkthrough video before adding it. -->
+> **No “Clone Key” prompt?** Make sure you actually installed it in Settings. Reading Randy’s message isn’t enough.
 
 ## How to use the Key Cloner
 

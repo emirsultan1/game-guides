@@ -2,8 +2,9 @@
 title: 'Best Cars in GTA 6: Fastest Cars and Where to Find Them'
 description: 'The fastest and best cars in GTA 6 by in-game stats: Thrax, Emerus, Vitello, Furia, Gauntlet Hellfire and the best free early car, with where to find each one.'
 category: 'vehicles'
-quickAnswer: 'By the in-game Speed rating, the fastest cars found so far are the Truffade Thrax (8.7/10), Progen Emerus (8.3) and Pegassi Vitello (8.2). Most top supercars are on Randy’s Wish List in Chapter 3 and need the Key Cloner. Early on, the best free car is the Penumbra FF (Paul Walker’s car).'
+quickAnswer: 'By the in-game Speed rating, the fastest cars found so far are the Truffade Thrax (8.7/10), Progen Emerus (8.3) and Pegassi Vitello (8.2). The best Thrax to keep is Andrew Node’s, from a Vice Beach side quest, with no tracker. Most other top supercars are on Randy’s Wish List and need the Key Cloner. Early on, the best free car is the Penumbra FF (Paul Walker’s car).'
 publishedAt: 2026-11-22
+updatedAt: 2026-11-25
 tags: ['cars', 'best cars', 'fastest cars', 'supercars', 'randy']
 featured: true
 draft: false
@@ -39,24 +40,35 @@ Almost every car at the top of this list is on **Randy’s Wish List**, a set of
 - Many have an **advanced tracker**: drive too slowly and the police get your location. See [trackers explained](/gta-6/car-trackers-explained).
 - **Randy pays more for cars in perfect condition**, so repair any damage before you deliver one.
 
-<!-- CHECK: it's not clear yet whether you can register and KEEP Randy's wish-list cars or only deliver them to him (one site says the Vitello is "Randy fence only"). Confirm before telling readers they can keep them. -->
+**Want to keep one instead of delivering it?** Cars you hand to Randy are gone. To keep a car with an advanced tracker, you have to wait until after his **Mamba GT** job, when Pay ’n’ Sprays start registering them. Then steal another copy and register it. See [how to register cars](/gta-6/how-to-register-cars).
 
 ## Fastest overall: Truffade Thrax
 
-The **Thrax** has the highest Speed rating found so far, **8.7**.
+The **Thrax** has the highest Speed rating found so far, **8.7**. There are three ways to get one:
 
-- **Where:** the car park of the **Dalton Island Club**. Take the **ferry from Waxman Island**.
-- **When:** it only shows up **after you’ve collected every other car on Randy’s Wish List**. Randy then calls you about it.
-- **Watch out:** there’s a guard to get past.
+**1. Andrew Node’s Thrax (the one to keep)**
+- **Where:** a mansion garage off **Sabal Circle**, on the south side of **Starfish Island** (Vice Beach).
+- **How:** it’s the reward for the **No Flusher** side quest in Vice Beach: scan the small blue toilet graffiti tags around Vice Beach with WAiNK and answer **yes** to the text you get. Takes about 20 minutes.
+- **Why it’s the best:** it’s unlocked, has **no tracker** and doesn’t need the Key Cloner. There are a couple of guards at the mansion.
+- **Keeping it** costs about **$70,000** to register.
+
+**2. Boone Speedway trailer (the quick one)**
+- **Where:** on a car transporter at the **south entrance of Boone Speedway** in Hamlet.
+- It **has a tracker**, and the transporter doesn’t always carry a Thrax. Scan it first. Good for a joyride.
+
+**3. Randy’s final Wish List car**
+- **Where:** the car park behind the **Dalton Island Club**. Take the **ferry from Waxman Island**.
+- **When:** only **after you’ve collected every other car on Randy’s Wish List**. Randy then contacts you about it.
+- This one goes to Randy, so you don’t keep it.
 
 ## Best all-rounder: Progen Emerus
 
 The **Emerus** (Speed **8.3**, Handling **8.4**) is the best all-rounder on the list. You can get rare **“standout”** versions with their own paint and parts at fixed spots:
 
-- **Royal Ruby Emerus** (blood red): parked at the **Vespucci Mansion** on **Vespucci Island**, close to Paul Walker’s car. It’s an illegal-operation site, so expect resistance.
+- **Royal Ruby Emerus** (blood red): parked at the **Vespucci Mansion** on **Vespucci Island**, close to Paul Walker’s car. It’s an illegal-operation site, so expect resistance. It has **no tracker**, which makes it one of the best free supercars to keep.
 - **Purple Drank Emerus** (purple, pearlescent): inside a **shipping container** at **Chatfield Storage & Logistics** on **Waxman Island**, also an illegal operation.
 
-<!-- CHECK: confirm in a video when in the story these two Emerus spawns become available, and whether they're keyless/tracked. -->
+<!-- CHECK: confirm in a video when in the story these two Emerus spawns become available, and whether the Purple Drank one has a tracker. -->
 
 ## Best acceleration: Pegassi Vitello
 
@@ -89,7 +101,7 @@ Before Chapter 3 you won’t have the Key Cloner, so most supercars are off the 
 
 - **Where:** a villa garage in the middle of **Vespucci Island**.
 - **When:** as soon as you can roam freely.
-- **Bonus:** bring it to Moses as your first car in Chapter 2 and he **registers it for free**.
+- **Bonus:** it has no tracker, so bring it to Moses as your first car in Chapter 2 and he **registers it for free**.
 
 Full guide: [how to get Paul Walker’s car in GTA 6](/gta-6/paul-walker-car).
 
